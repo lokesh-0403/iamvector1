@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import imageconverter.Goto;
+
 @Test
 public class Imagecompressortesting {
 	
@@ -19,7 +21,8 @@ public class Imagecompressortesting {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -41,7 +44,8 @@ public class Imagecompressortesting {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -62,7 +66,8 @@ public class Imagecompressortesting {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 

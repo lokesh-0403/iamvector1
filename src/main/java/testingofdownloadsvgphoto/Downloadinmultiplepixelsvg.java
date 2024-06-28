@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import imageconverter.Goto;
 @Test
 public class Downloadinmultiplepixelsvg {
 	
@@ -20,7 +22,8 @@ public class Downloadinmultiplepixelsvg {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 	
@@ -62,7 +65,8 @@ public class Downloadinmultiplepixelsvg {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -101,7 +105,8 @@ public class Downloadinmultiplepixelsvg {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -138,7 +143,8 @@ public class Downloadinmultiplepixelsvg {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -175,7 +181,8 @@ public class Downloadinmultiplepixelsvg {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -212,7 +219,8 @@ public class Downloadinmultiplepixelsvg {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		

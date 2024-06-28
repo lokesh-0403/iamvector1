@@ -10,16 +10,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 @Test
 public class testingofimageconverter {
 
 	public void imageConverterSvgToPng() throws AWTException {
-
+		
 		WebDriver driver = new ChromeDriver();
+		
+     
+       
+	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		driver.get("https://iamvector.com");
+	    Goto page1 = new Goto(driver);
+	       page1.goTo();
+	       
+	
 		driver.manage().window().maximize();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -41,7 +46,8 @@ public class testingofimageconverter {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -63,7 +69,8 @@ public class testingofimageconverter {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -84,7 +91,8 @@ public class testingofimageconverter {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 

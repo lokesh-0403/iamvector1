@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="testingoffigmaplugin(failed)">
+    <classes>
+      <class name="testingoffigmaplugin.Figmaplugintesting">
+        <methods>
+          <include name="testingOfFigmaPlugin"/>
+        </methods>
+      </class> <!-- testingoffigmaplugin.Figmaplugintesting -->
+    </classes>
+  </test> <!-- testingoffigmaplugin(failed) -->
   <test thread-count="5" parallel="tests" name="testingofdownloadsvgphoto(failed)">
     <classes>
       <class name="testingofdownloadsvgphoto.Downloadsvgphoto">
         <methods>
-          <include name="outlinedSvgDownload"/>
-          <include name="multicolourSvgDownload"/>
+          <include name="allAssestsSvgDownload"/>
+          <include name="filledrSvgDownload"/>
+          <include name="iconSvgDownload"/>
+          <include name="monocolourSvgDownload"/>
         </methods>
       </class> <!-- testingofdownloadsvgphoto.Downloadsvgphoto -->
+      <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg">
+        <methods>
+          <include name="downloadInPngWith1024px"/>
+          <include name="downloadInPngWith512px"/>
+          <include name="downloadInPngWith128px"/>
+        </methods>
+      </class> <!-- testingofdownloadsvgphoto.Downloadinmultiplepixelsvg -->
     </classes>
   </test> <!-- testingofdownloadsvgphoto(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testingoffigmaplugin.Figmaplugintesting">
+      <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp">
         <methods>
-          <include name="testingOfFigmaPlugin"/>
+          <include name="downloadInWebpWith46px"/>
         </methods>
-      </class> <!-- testingoffigmaplugin.Figmaplugintesting -->
+      </class> <!-- testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -11,7 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-@Test
+
+import imageconverter.Goto;
+
 public class Downloadinginmultiplepixelwebp {
 	
 	public void downloadInWebpWith26px() {
@@ -19,8 +21,8 @@ public class Downloadinginmultiplepixelwebp {
 
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 	
@@ -59,14 +61,15 @@ public class Downloadinginmultiplepixelwebp {
 	
 	
 	
-		
+		@Test
 		public void downloadInWebpWith46px() {
 		
 
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -104,8 +107,8 @@ public class Downloadinginmultiplepixelwebp {
 
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -142,7 +145,8 @@ public class Downloadinginmultiplepixelwebp {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -179,7 +183,8 @@ public class Downloadinginmultiplepixelwebp {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		
@@ -216,7 +221,8 @@ public class Downloadinginmultiplepixelwebp {
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-			driver.get("https://iamvector.com");
+			 Goto page1 = new Goto(driver);
+		       page1.goTo();
 			driver.manage().window().maximize();
 
 		

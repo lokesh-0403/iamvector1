@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import imageconverter.Goto;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -20,7 +22,8 @@ public class Downloadsvgphoto {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 	
@@ -55,7 +58,8 @@ public class Downloadsvgphoto {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 		// Search for "doctor SVG"
@@ -92,7 +96,8 @@ public class Downloadsvgphoto {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 		// Search for "doctor SVG"
@@ -129,7 +134,8 @@ public class Downloadsvgphoto {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 		// Search for "doctor SVG"
@@ -168,7 +174,8 @@ public class Downloadsvgphoto {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 		// Search for "doctor SVG"
@@ -205,7 +212,8 @@ public class Downloadsvgphoto {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-		driver.get("https://iamvector.com");
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
 		driver.manage().window().maximize();
 
 		// Search for "doctor SVG"
