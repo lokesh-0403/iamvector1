@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import imageconverter.ChromeOptionConfig;
 import imageconverter.Goto;
 
 @Test
@@ -18,7 +19,7 @@ public class Imagecompressortesting {
 
 		public void svgimageCompressor() throws AWTException, InterruptedException {
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 			 Goto page1 = new Goto(driver);
@@ -41,7 +42,7 @@ public class Imagecompressortesting {
 
 		public void pngimageCompressor() throws AWTException, InterruptedException {
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 			 Goto page1 = new Goto(driver);
@@ -63,7 +64,7 @@ public class Imagecompressortesting {
 
 		public void jpgimageConverter() throws AWTException, InterruptedException {
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 			 Goto page1 = new Goto(driver);

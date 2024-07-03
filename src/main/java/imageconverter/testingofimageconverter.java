@@ -10,17 +10,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+
+
 @Test
 public class testingofimageconverter {
 
 	public void imageConverterSvgToPng() throws AWTException {
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		
      
-       
-	
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	    Goto page1 = new Goto(driver);
 	       page1.goTo();
 	       
@@ -43,7 +43,7 @@ public class testingofimageconverter {
 
 	public void imageConverterSvgToJpeg() throws AWTException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -66,7 +66,7 @@ public class testingofimageconverter {
 
 	public void imageConverterSvgToBase64() throws AWTException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -88,7 +88,7 @@ public class testingofimageconverter {
 
 	public void imageConverterSvgToWebp() throws AWTException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);

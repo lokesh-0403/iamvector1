@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import imageconverter.ChromeOptionConfig;
 import imageconverter.Goto;
 @Test
 public class Downloadinmultiplepixelsvg {
@@ -19,7 +20,7 @@ public class Downloadinmultiplepixelsvg {
 	public void downloadInPngWith26px() {
 	
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -62,7 +63,7 @@ public class Downloadinmultiplepixelsvg {
 		public void downloadInPngWith46px() {
 		
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -102,7 +103,7 @@ public class Downloadinmultiplepixelsvg {
 		public void downloadInPngWith96px() {
 		
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -140,7 +141,7 @@ public class Downloadinmultiplepixelsvg {
 		public void downloadInPngWith128px() {
 			
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -178,7 +179,7 @@ public class Downloadinmultiplepixelsvg {
 		public void downloadInPngWith512px() {
 			
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -216,7 +217,7 @@ public class Downloadinmultiplepixelsvg {
 		public void downloadInPngWith1024px() {
 			
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);

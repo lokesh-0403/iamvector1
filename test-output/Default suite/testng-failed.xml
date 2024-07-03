@@ -5,7 +5,11 @@
     <classes>
       <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp">
         <methods>
+          <include name="downloadInWebpWith26px"/>
           <include name="downloadInWebpWith46px"/>
+          <include name="downloadInWebpWith96px"/>
+          <include name="downloadInWebpWith128px"/>
+          <include name="downloadInWebpWith1024px"/>
         </methods>
       </class> <!-- testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp -->
     </classes>

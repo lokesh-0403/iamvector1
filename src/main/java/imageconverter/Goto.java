@@ -19,7 +19,7 @@ public class Goto {
 
 	public void goTo() {
 
-		driver.get("https://dev.iamvector.com");
+		driver.get("https://iamvector.com/");
 
 }
 }

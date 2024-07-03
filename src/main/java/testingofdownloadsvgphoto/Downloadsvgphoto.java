@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import imageconverter.ChromeOptionConfig;
 import imageconverter.Goto;
 
 import java.time.Duration;
@@ -19,7 +20,7 @@ public class Downloadsvgphoto {
 
 	public void allAssestsSvgDownload() {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -55,7 +56,7 @@ public class Downloadsvgphoto {
 
 	public void outlinedSvgDownload() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -93,7 +94,7 @@ public class Downloadsvgphoto {
 
 	public void multicolourSvgDownload() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -131,7 +132,7 @@ public class Downloadsvgphoto {
 
 	public void monocolourSvgDownload() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -171,7 +172,7 @@ public class Downloadsvgphoto {
 
 	public void iconSvgDownload() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);
@@ -209,7 +210,7 @@ public class Downloadsvgphoto {
 
 	public void filledrSvgDownload() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		 Goto page1 = new Goto(driver);

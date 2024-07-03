@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel= "tests" name="Suite">
+	
+		<test thread-count="5" name="imageconverter">
+		<classes>
+			
+			<class name="imageconverter.testingofimageconverter" />
+			
+		</classes>
+	</test>
+	
+
+	</suite>

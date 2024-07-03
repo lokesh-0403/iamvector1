@@ -2,22 +2,22 @@ package testingoffigmaplugin;
 
 import java.awt.AWTException;
 import java.time.Duration;
-import java.util.List;
-import java.util.Random;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import imageconverter.ChromeOptionConfig;
+
 @Test
 public class Figmaplugintesting {
 	public void testingOfFigmaPlugin() throws AWTException, InterruptedException {
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
 		driver.get("https://www.figma.com/login?is_not_gen_0=true");

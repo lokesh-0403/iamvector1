@@ -12,14 +12,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import imageconverter.ChromeOptionConfig;
 import imageconverter.Goto;
-
+@Test
 public class Downloadinginmultiplepixelwebp {
 	
 	public void downloadInWebpWith26px() {
 		
 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		 Goto page1 = new Goto(driver);
 	       page1.goTo();
@@ -61,11 +62,11 @@ public class Downloadinginmultiplepixelwebp {
 	
 	
 	
-		@Test
+		
 		public void downloadInWebpWith46px() {
 		
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -105,7 +106,7 @@ public class Downloadinginmultiplepixelwebp {
 		public void downloadInWebpWith96px() {
 		
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			 Goto page1 = new Goto(driver);
 		       page1.goTo();
@@ -142,7 +143,7 @@ public class Downloadinginmultiplepixelwebp {
 		public void downloadInWebpWith128px() {
 			
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -180,7 +181,7 @@ public class Downloadinginmultiplepixelwebp {
 		public void downloadInWebpWith512px() {
 			
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);
@@ -218,7 +219,7 @@ public class Downloadinginmultiplepixelwebp {
 		public void downloadInWebpWith1024px() {
 			
 
-			WebDriver driver = new ChromeDriver();
+			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 			 Goto page1 = new Goto(driver);

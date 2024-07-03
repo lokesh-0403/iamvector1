@@ -12,18 +12,28 @@
   </test> <!-- testingoffigmaplugin(failed) -->
   <test thread-count="5" parallel="tests" name="testingofdownloadsvgphoto(failed)">
     <classes>
+      <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp">
+        <methods>
+          <include name="downloadInWebpWith26px"/>
+          <include name="downloadInWebpWith46px"/>
+          <include name="downloadInWebpWith96px"/>
+          <include name="downloadInWebpWith128px"/>
+          <include name="downloadInWebpWith1024px"/>
+        </methods>
+      </class> <!-- testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp -->
       <class name="testingofdownloadsvgphoto.Downloadsvgphoto">
         <methods>
           <include name="allAssestsSvgDownload"/>
           <include name="filledrSvgDownload"/>
           <include name="iconSvgDownload"/>
-          <include name="monocolourSvgDownload"/>
         </methods>
       </class> <!-- testingofdownloadsvgphoto.Downloadsvgphoto -->
       <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg">
         <methods>
+          <include name="downloadInPngWith96px"/>
           <include name="downloadInPngWith1024px"/>
-          <include name="downloadInPngWith512px"/>
+          <include name="downloadInPngWith26px"/>
+          <include name="downloadInPngWith46px"/>
           <include name="downloadInPngWith128px"/>
         </methods>
       </class> <!-- testingofdownloadsvgphoto.Downloadinmultiplepixelsvg -->
