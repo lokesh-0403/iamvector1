@@ -94,7 +94,7 @@ public class testingofimageconverter {
 		driver.manage().window().maximize();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		// Scroll down the page
+	
 		js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
 		driver.findElement(
 				By.xpath("//a[@href='/image-convertor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']"))
