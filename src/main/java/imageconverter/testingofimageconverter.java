@@ -104,7 +104,7 @@ public class testingofimageconverter {
 		ele.sendKeys("//Users/yeshsharma//Documents//Female doctor to guide.svg");
 		driver.findElement(By.cssSelector(".files-item__download")).click();
 		driver.close();
-		
+		//driver
 		
 	}
 
