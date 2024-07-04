@@ -105,7 +105,7 @@ public class testingofimageconverter {
 		driver.findElement(By.cssSelector(".files-item__download")).click();
 		driver.close();
 		
-		//driver
+		
 	}
 
 }
