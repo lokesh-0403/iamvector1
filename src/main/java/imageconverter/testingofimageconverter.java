@@ -18,7 +18,7 @@ public class testingofimageconverter {
 	public void imageConverterSvgToPng() throws AWTException {
 		
 		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		
+		//close
      
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	    Goto page1 = new Goto(driver);
