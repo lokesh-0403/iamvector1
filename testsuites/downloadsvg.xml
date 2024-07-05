@@ -1,13 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel= "tests" name="Suite">
 	
-		<test thread-count="5" name="imageconverte">
+		<test thread-count="5" name="testingofdownloadsvgphoto">
 		<classes>
-			
-			<class name="imageconverter.testingofimageconverter" />
-			
+			<class name="testingofdownloadsvgphoto.Downloadsvgphoto" />
+			<class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg" />
+			<class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp" />
 		</classes>
-	</test>
+	</test> <!--Test -->
 	
 
 	</suite>
