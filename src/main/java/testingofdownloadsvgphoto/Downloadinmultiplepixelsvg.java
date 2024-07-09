@@ -10,247 +10,235 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import imageconverter.ChromeOptionConfig;
 import imageconverter.Goto;
+
 @Test
 public class Downloadinmultiplepixelsvg {
-	
+
+	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+	@BeforeMethod
+	public void setUp() {
+		driver.set(new ChromeDriver(ChromeOptionConfig.getChromeOptions()));
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		getDriver().manage().window().maximize();
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		getDriver().quit();
+		driver.remove();
+	}
+
+	private WebDriver getDriver() {
+		return driver.get();
+	}
+
 	public void downloadInPngWith26px() {
-	
 
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebDriver driver = getDriver();
 
-		 Goto page1 = new Goto(driver);
-	       page1.goTo();
+		Goto page1 = new Goto(driver);
+		page1.goTo();
 		driver.manage().window().maximize();
 
-	
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("doctor");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("doctor");
 
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
-		driver.findElement(By.id("png-option")).click();
-		driver.findElement(By.cssSelector("button[data-test-id='icon_size_option_26']")).click();
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-         driver.close();
-}
-	
-	
-	
-	
-	
-		
-		public void downloadInPngWith46px() {
-		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
 
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		webpOption.click();
+		WebElement sizeOption = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_26']")));
+		sizeOption.click();
 
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
 
-		
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			try {
-				WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-						By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-				searchBox.sendKeys("books");
-				driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-						.click();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("here the error :" + e);
-			}
-
-			List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-			// Get a random index to select a random SVG icon
-			Random random = new Random();
-			int randomIndex = random.nextInt(ele.size());
-
-			// Click on the random SVG icon to download it
-			WebElement randomSVGIcon = ele.get(randomIndex);
-			randomSVGIcon.click();
-			driver.findElement(By.id("png-option")).click();
-			driver.findElement(By.cssSelector("button[data-test-id='icon_size_option_46']")).click();
-				
-			driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		     driver.close();
 	}
-		
-		
-		public void downloadInPngWith96px() {
-		
 
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	public void downloadInPngWith46px() {
 
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
+		WebDriver driver = getDriver();
 
-		
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			try {
-				WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-						By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-				searchBox.sendKeys("helicopter");
-				driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-						.click();
+		Goto page1 = new Goto(driver);
+		page1.goTo();
+		driver.manage().window().maximize();
 
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("here the error :" + e);
-			}
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-			List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-			// Get a random index to select a random SVG icon
-			Random random = new Random();
-			int randomIndex = random.nextInt(ele.size());
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("table");
 
-			// Click on the random SVG icon to download it
-			WebElement randomSVGIcon = ele.get(randomIndex);
-			randomSVGIcon.click();
-			driver.findElement(By.id("png-option")).click();
-			driver.findElement(By.cssSelector("button[data-test-id='icon_size_option_96']")).click();
-				
-			driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		     driver.close();
-}
-		public void downloadInPngWith128px() {
-			
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
 
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		webpOption.click();
+		WebElement sizeOption = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_46']")));
+		sizeOption.click();
 
-		
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			try {
-				WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-						By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-				searchBox.sendKeys("car");
-				driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-						.click();
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
 
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("here the error :" + e);
-			}
+	}
 
-			List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-			// Get a random index to select a random SVG icon
-			Random random = new Random();
-			int randomIndex = random.nextInt(ele.size());
+	public void downloadInPngWith96px() {
+		WebDriver driver = getDriver();
 
-			// Click on the random SVG icon to download it
-			WebElement randomSVGIcon = ele.get(randomIndex);
-			randomSVGIcon.click();
-			driver.findElement(By.id("png-option")).click();
-			driver.findElement(By.cssSelector("button[data-test-id='icon_size_option_128']")).click();
-				
-			driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		     driver.close();
-}
-		public void downloadInPngWith512px() {
-			
+		Goto page1 = new Goto(driver);
+		page1.goTo();
+		driver.manage().window().maximize();
 
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("bike");
 
-		
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			try {
-				WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-						By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-				searchBox.sendKeys("apple");
-				driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-						.click();
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("here the error :" + e);
-			}
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
 
-			List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-			// Get a random index to select a random SVG icon
-			Random random = new Random();
-			int randomIndex = random.nextInt(ele.size());
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		webpOption.click();
+		WebElement sizeOption = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_96']")));
+		sizeOption.click();
 
-			// Click on the random SVG icon to download it
-			WebElement randomSVGIcon = ele.get(randomIndex);
-			randomSVGIcon.click();
-			driver.findElement(By.id("png-option")).click();
-			driver.findElement(By.cssSelector("button[data-test-id='icon_size_option_512']")).click();
-				
-			driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		     driver.close();
-}
-		public void downloadInPngWith1024px() {
-			
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
 
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	}
 
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
+	public void downloadInPngWith128px() {
 
-		
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-			try {
-				WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-						By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-				searchBox.sendKeys("watch");
-				driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-						.click();
+		WebDriver driver = getDriver();
 
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("here the error :" + e);
-			}
+		Goto page1 = new Goto(driver);
+		page1.goTo();
+		driver.manage().window().maximize();
 
-			List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-			// Get a random index to select a random SVG icon
-			Random random = new Random();
-			int randomIndex = random.nextInt(ele.size());
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-			// Click on the random SVG icon to download it
-			WebElement randomSVGIcon = ele.get(randomIndex);
-			randomSVGIcon.click();
-			driver.findElement(By.id("png-option")).click();
-			driver.findElement(By.cssSelector("button[data-test-id='icon_size_option_1024']")).click();
-				
-			driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		     driver.close();
-}
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("telephone");
+
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
+
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		webpOption.click();
+		WebElement sizeOption = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_128']")));
+		sizeOption.click();
+
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+
+	}
+
+	public void downloadInPngWith512px() {
+		WebDriver driver = getDriver();
+
+		Goto page1 = new Goto(driver);
+		page1.goTo();
+		driver.manage().window().maximize();
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("screen");
+
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
+
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		webpOption.click();
+		WebElement sizeOption = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_512']")));
+		sizeOption.click();
+
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+
+	}
+
+	public void downloadInPngWith1024px() {
+
+		WebDriver driver = getDriver();
+
+		Goto page1 = new Goto(driver);
+		page1.goTo();
+		driver.manage().window().maximize();
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("cup");
+
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
+
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		webpOption.click();
+		WebElement sizeOption = wait.until(ExpectedConditions
+				.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_1024']")));
+		sizeOption.click();
+
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+
+	}
 
 }

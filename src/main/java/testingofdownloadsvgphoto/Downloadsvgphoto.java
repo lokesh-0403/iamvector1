@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import imageconverter.ChromeOptionConfig;
@@ -17,231 +19,348 @@ import java.util.Random;
 
 @Test
 public class Downloadsvgphoto {
+	
+	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	public void allAssestsSvgDownload() {
+	@BeforeMethod
+	public void setUp() {
+		driver.set(new ChromeDriver(ChromeOptionConfig.getChromeOptions()));
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		getDriver().manage().window().maximize();
+	}
 
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	@AfterMethod
+	public void tearDown() {
+		getDriver().quit();
+		driver.remove();
+	}
 
-		 Goto page1 = new Goto(driver);
-	       page1.goTo();
-		driver.manage().window().maximize();
+	private WebDriver getDriver() {
+		return driver.get();
+	}
 
 	
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("doctor");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
+	public void allAssestsSvgDownload() {
+		WebDriver driver = getDriver();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
+		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("doctor");
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		driver.close();
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+		
+		WebElement sizeOption = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_26']")));
+		sizeOption.click();
+
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
 	}
+	@Test
 
 	public void outlinedSvgDownload() throws InterruptedException {
-
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
 	       page1.goTo();
 		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		// Search for "doctor SVG"
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("hospital");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("doctor");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		driver.findElement(By.cssSelector("li[data-test-id='filter_type_outlined']")).click();
-		Thread.sleep(3000);
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_outlined']")));
+		element11.click();
 
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		driver.close();
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+		
+		
+	
 	}
 
-	public void multicolourSvgDownload() throws InterruptedException {
+	public void multicolorSvgDownload() throws InterruptedException {
+		
+		
 
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
 	       page1.goTo();
 		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		// Search for "doctor SVG"
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("building");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		driver.findElement(By.cssSelector("li[data-test-id='filter_type_multicolor']")).click();
-		Thread.sleep(3000);
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_multicolor']")));
+		element11.click();
 
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		driver.close();
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
 	}
 
 	public void monocolourSvgDownload() throws InterruptedException {
 
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
 	       page1.goTo();
 		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		// Search for "doctor SVG"
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("bike");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		driver.findElement(By.cssSelector("li[data-test-id='filter_type_monocolor']")).click();
-		Thread.sleep(3000);
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_monocolor']")));
+		element11.click();
 
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		driver.close();
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+		
+		
+		
+		
+		
 	}
 
 	
 
 	public void iconSvgDownload() throws InterruptedException {
-
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
 	       page1.goTo();
 		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		// Search for "doctor SVG"
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("animal");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		driver.findElement(By.cssSelector("li[data-test-id='filter_type_icon']")).click();
-		Thread.sleep(3000);
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_icon']")));
+		element11.click();
 
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		driver.close();
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+		
 	}
 
 	public void filledrSvgDownload() throws InterruptedException {
-
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
 	       page1.goTo();
 		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		// Search for "doctor SVG"
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-		try {
-			WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-					By.cssSelector("input[class='bg-white px-3 px-md-4 search-input-radius fw-medium form-control']")));
-			searchBox.sendKeys("watch");
-			driver.findElement(By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer"))
-					.click();
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("here the error :" + e);
-		}
-		driver.findElement(By.cssSelector("li[data-test-id='filter_type_filled']")).click();
-		Thread.sleep(3000);
-		List<WebElement> ele = driver.findElements(By.id("icons_div_container"));
-		// Get a random index to select a random SVG icon
-		Random random = new Random();
-		int randomIndex = random.nextInt(ele.size());
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
 
-		// Click on the random SVG icon to download it
-		WebElement randomSVGIcon = ele.get(randomIndex);
-		randomSVGIcon.click();
+		
 
-		driver.findElement(By.cssSelector("button[onclick='downloadIcon()']")).click();
-		driver.close();
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_filled']")));
+		element11.click();
+
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+	
 	}
+	
+	public void flatSvgDownload() throws InterruptedException {
+		WebDriver driver = getDriver();
+
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
+		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
+
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
+
+		
+
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_flat']")));
+		element11.click();
+
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+	
+	}
+	
+	
+	
+	public void interfaceSvgDownload() throws InterruptedException {
+		WebDriver driver = getDriver();
+
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
+		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
+
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
+
+		
+
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_interface']")));
+		element11.click();
+
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
+	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+	
+	}
+	
+	
+	
+	
 }
