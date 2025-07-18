@@ -3,6 +3,7 @@ package testingofdownloadsvgphoto;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,9 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import imageconverter.ChromeOptionConfig;
 import imageconverter.Goto;
-
 @Test
 public class Downloadinginmultiplepixelwebp {
 
@@ -23,7 +22,7 @@ public class Downloadinginmultiplepixelwebp {
 
 	@BeforeMethod
 	public void setUp() {
-		driver.set(new ChromeDriver(ChromeOptionConfig.getChromeOptions()));
+		driver.set(new ChromeDriver());
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		getDriver().manage().window().maximize();
 	}
@@ -38,6 +37,7 @@ public class Downloadinginmultiplepixelwebp {
 		return driver.get();
 	}
 
+	@Test
 	public void downloadInWebpWith26px() {
 		WebDriver driver = getDriver();
 
@@ -46,14 +46,31 @@ public class Downloadinginmultiplepixelwebp {
 		driver.manage().window().maximize();
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
 		searchBox.sendKeys("doctor");
 
-		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
-				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
-		searchButton.click();
+//		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+//				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+//		searchButton.click();
+
+		try {
+
+			WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
+					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+			searchEnter.sendKeys(Keys.ENTER);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement element1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
@@ -84,9 +101,20 @@ public class Downloadinginmultiplepixelwebp {
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
 		searchBox.sendKeys("books");
 
-		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
-				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
-		searchButton.click();
+//		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+//				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+//		searchButton.click();
+
+		try {
+
+			WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
+					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+			searchEnter.sendKeys(Keys.ENTER);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement element1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
@@ -118,9 +146,20 @@ public class Downloadinginmultiplepixelwebp {
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
 		searchBox.sendKeys("office");
 
-		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
-				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
-		searchButton.click();
+//		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+//				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+//		searchButton.click();
+
+		try {
+
+			WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
+					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+			searchEnter.sendKeys(Keys.ENTER);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement element1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
@@ -152,9 +191,20 @@ public class Downloadinginmultiplepixelwebp {
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
 		searchBox.sendKeys("bottle");
 
-		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
-				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
-		searchButton.click();
+//		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+//				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+//		searchButton.click();
+
+		try {
+
+			WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
+					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+			searchEnter.sendKeys(Keys.ENTER);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement element1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
@@ -185,9 +235,20 @@ public class Downloadinginmultiplepixelwebp {
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
 		searchBox.sendKeys("mobile");
 
-		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
-				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
-		searchButton.click();
+//		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+//				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+//		searchButton.click();
+
+		try {
+
+			WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
+					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+			searchEnter.sendKeys(Keys.ENTER);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement element1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
@@ -218,9 +279,20 @@ public class Downloadinginmultiplepixelwebp {
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
 		searchBox.sendKeys("car");
 
-		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
-				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
-		searchButton.click();
+//		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+//				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+//		searchButton.click();
+
+		try {
+
+			WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
+					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+			searchEnter.sendKeys(Keys.ENTER);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement element1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));

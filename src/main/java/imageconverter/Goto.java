@@ -1,12 +1,6 @@
 package imageconverter;
 
 import org.openqa.selenium.WebDriver;
-
-
-
-
-
-
 public class Goto {
 	WebDriver driver;
 	
@@ -22,4 +16,5 @@ public class Goto {
 		driver.get("https://iamvector.com/");
 
 }
+
 }

@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,12 +21,11 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.TestCollection" class="method navigator-link" hash-for-method="addToCollectionCreateNewCollectionThenDeletecollection(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_bee_1752140472777)">addToCollectionCreateNewCollectionThenDeletecollection(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_bee_1752140472777)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,42 +117,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="allAssestsSvgDownload">allAssestsSvgDownload</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.TestCollection" class="method navigator-link" hash-for-method="addToCollection(yeshsharma516032@gmail.com, Yesh255198@, login)">addToCollection(yeshsharma516032@gmail.com, Yesh255198@, login)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="filledrSvgDownload">filledrSvgDownload</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.TestCollection" class="method navigator-link" hash-for-method="addToCollection(yeshsharma516032@gmail.com, Yesh255198@, doctor)">addToCollection(yeshsharma516032@gmail.com, Yesh255198@, doctor)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="flatSvgDownload">flatSvgDownload</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.TestCollection" class="method navigator-link" hash-for-method="addToCollection(yeshsharma516032@gmail.com, Yesh255198@, key)">addToCollection(yeshsharma516032@gmail.com, Yesh255198@, key)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="iconSvgDownload">iconSvgDownload</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="interfaceSvgDownload">interfaceSvgDownload</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="monocolourSvgDownload">monocolourSvgDownload</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="multicolorSvgDownload">multicolorSvgDownload</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.Downloadsvgphoto" class="method navigator-link" hash-for-method="outlinedSvgDownload">outlinedSvgDownload</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testingofdownloadsvgphoto.TestCollection" class="method navigator-link" hash-for-method="addToCollectionCreateNewCollectionThenEditcollectionName(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_yellowjacket_1752140599770)">addToCollectionCreateNewCollectionThenEditcollectionName(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_yellowjacket_1752140599770)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -154,66 +147,88 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testingofdownloadsvgphoto.Downloadsvgphoto</span>
+              <img src="failed.png"/>
+              <span class="class-name">testingofdownloadsvgphoto.TestCollection</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="allAssestsSvgDownload">
-                  </a> <!-- allAssestsSvgDownload -->
-                  <span class="method-name">allAssestsSvgDownload</span>
+                  <a name="addToCollectionCreateNewCollectionThenDeletecollection(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_bee_1752140472777)">
+                  </a> <!-- addToCollectionCreateNewCollectionThenDeletecollection(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_bee_1752140472777) -->
+                  <span class="method-name">addToCollectionCreateNewCollectionThenDeletecollection</span>
+                  <span class="parameters">(yeshsharma516032@gmail.com,Yesh255198@,login,AutoCollection_bee_1752140472777)</span>
+                  <div class="stack-trace">java.lang.RuntimeException: Save to Collection button could not be found after scrolling/loading.
+	at testingofdownloadsvgphoto.TestCollection.addToCollectionCreateNewCollectionThenDeletecollection(TestCollection.java:272)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testingofdownloadsvgphoto.TestCollection</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addToCollection(yeshsharma516032@gmail.com, Yesh255198@, login)">
+                  </a> <!-- addToCollection(yeshsharma516032@gmail.com, Yesh255198@, login) -->
+                  <span class="method-name">addToCollection</span>
+                  <span class="parameters">(yeshsharma516032@gmail.com,Yesh255198@,login)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="filledrSvgDownload">
-                  </a> <!-- filledrSvgDownload -->
-                  <span class="method-name">filledrSvgDownload</span>
+                  <a name="addToCollection(yeshsharma516032@gmail.com, Yesh255198@, doctor)">
+                  </a> <!-- addToCollection(yeshsharma516032@gmail.com, Yesh255198@, doctor) -->
+                  <span class="method-name">addToCollection</span>
+                  <span class="parameters">(yeshsharma516032@gmail.com,Yesh255198@,doctor)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="flatSvgDownload">
-                  </a> <!-- flatSvgDownload -->
-                  <span class="method-name">flatSvgDownload</span>
+                  <a name="addToCollection(yeshsharma516032@gmail.com, Yesh255198@, key)">
+                  </a> <!-- addToCollection(yeshsharma516032@gmail.com, Yesh255198@, key) -->
+                  <span class="method-name">addToCollection</span>
+                  <span class="parameters">(yeshsharma516032@gmail.com,Yesh255198@,key)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="iconSvgDownload">
-                  </a> <!-- iconSvgDownload -->
-                  <span class="method-name">iconSvgDownload</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="interfaceSvgDownload">
-                  </a> <!-- interfaceSvgDownload -->
-                  <span class="method-name">interfaceSvgDownload</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="monocolourSvgDownload">
-                  </a> <!-- monocolourSvgDownload -->
-                  <span class="method-name">monocolourSvgDownload</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="multicolorSvgDownload">
-                  </a> <!-- multicolorSvgDownload -->
-                  <span class="method-name">multicolorSvgDownload</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="outlinedSvgDownload">
-                  </a> <!-- outlinedSvgDownload -->
-                  <span class="method-name">outlinedSvgDownload</span>
+                  <a name="addToCollectionCreateNewCollectionThenEditcollectionName(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_yellowjacket_1752140599770)">
+                  </a> <!-- addToCollectionCreateNewCollectionThenEditcollectionName(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_yellowjacket_1752140599770) -->
+                  <span class="method-name">addToCollectionCreateNewCollectionThenEditcollectionName</span>
+                  <span class="parameters">(yeshsharma516032@gmail.com,Yesh255198@,login,AutoCollection_yellowjacket_1752140599770)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -221,7 +236,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/x9/xxt7kvhx1v7fgwvg8m4x3n6c0000gn/T/testng-eclipse--1508053587/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/x9/xxt7kvhx1v7fgwvg8m4x3n6c0000gn/T/testng-eclipse--309363059/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,7 +245,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testingofdownloadsvgphoto.Downloadsvgphoto&quot;/&gt;
+      &lt;class name=&quot;testingofdownloadsvgphoto.TestCollection&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -270,44 +285,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'allAssestsSvgDownload')
-data.setCell(0, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(0, 3, 209543);
+data.setCell(0, 1, 'addToCollectionCreateNewCollectionThenDeletecollection')
+data.setCell(0, 2, 'testingofdownloadsvgphoto.TestCollection')
+data.setCell(0, 3, 123323);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'outlinedSvgDownload')
-data.setCell(1, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(1, 3, 104717);
+data.setCell(1, 1, 'addToCollectionCreateNewCollectionThenEditcollectionName')
+data.setCell(1, 2, 'testingofdownloadsvgphoto.TestCollection')
+data.setCell(1, 3, 32199);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'flatSvgDownload')
-data.setCell(2, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(2, 3, 101892);
+data.setCell(2, 1, 'addToCollection')
+data.setCell(2, 2, 'testingofdownloadsvgphoto.TestCollection')
+data.setCell(2, 3, 28909);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'monocolourSvgDownload')
-data.setCell(3, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(3, 3, 68658);
+data.setCell(3, 1, 'addToCollection')
+data.setCell(3, 2, 'testingofdownloadsvgphoto.TestCollection')
+data.setCell(3, 3, 21819);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'interfaceSvgDownload')
-data.setCell(4, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(4, 3, 37217);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'multicolorSvgDownload')
-data.setCell(5, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(5, 3, 11614);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'iconSvgDownload')
-data.setCell(6, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(6, 3, 9402);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'filledrSvgDownload')
-data.setCell(7, 2, 'testingofdownloadsvgphoto.Downloadsvgphoto')
-data.setCell(7, 3, 8887);
+data.setCell(4, 1, 'addToCollection')
+data.setCell(4, 2, 'testingofdownloadsvgphoto.TestCollection')
+data.setCell(4, 3, 21433);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -333,103 +336,49 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testingofdownloadsvgphoto.Downloadsvgphoto</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testingofdownloadsvgphoto.TestCollection</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">allAssestsSvgDownload</span>
-                <span class="method-start">998 ms</span>
+                <span class="method-name">addToCollection(yeshsharma516032@gmail.com, Yesh255198@, key)</span>
+                <span class="method-start">4463 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">210542 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">210663 ms</span>
+                <span class="method-start">26285 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">filledrSvgDownload</span>
-                <span class="method-start">211500 ms</span>
+                <span class="method-name">addToCollection(yeshsharma516032@gmail.com, Yesh255198@, doctor)</span>
+                <span class="method-start">29387 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">220388 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">220477 ms</span>
+                <span class="method-start">50822 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">flatSvgDownload</span>
-                <span class="method-start">221206 ms</span>
+                <span class="method-name">addToCollection(yeshsharma516032@gmail.com, Yesh255198@, login)</span>
+                <span class="method-start">53918 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">323100 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">323192 ms</span>
+                <span class="method-start">82879 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">iconSvgDownload</span>
-                <span class="method-start">323913 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">addToCollectionCreateNewCollectionThenDeletecollection(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_bee_1752140472777)</span>
+                <span class="method-start">86524 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">333317 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">333403 ms</span>
+                <span class="method-start">209871 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">interfaceSvgDownload</span>
-                <span class="method-start">334123 ms</span>
+                <span class="method-name">addToCollectionCreateNewCollectionThenEditcollectionName(yeshsharma516032@gmail.com, Yesh255198@, login, AutoCollection_yellowjacket_1752140599770)</span>
+                <span class="method-start">213674 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">371340 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">371429 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">monocolourSvgDownload</span>
-                <span class="method-start">372166 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">440825 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">440917 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">multicolorSvgDownload</span>
-                <span class="method-start">441666 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">453281 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">453368 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">outlinedSvgDownload</span>
-                <span class="method-start">454104 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">558822 ms</span>
-              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

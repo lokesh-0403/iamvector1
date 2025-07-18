@@ -1,86 +1,65 @@
 package testingofimagecompressor;
-
 import java.awt.AWTException;
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import imageconverter.ChromeOptionConfig;
-import imageconverter.Goto;
+import utils.TestDataProvider;
+import pageobjectmodal.BasePage;
+import pageobjectmodal.ImageCompressorPage;
+import pageobjectmodal.LoginPage;
 
-@Test
 public class Imagecompressortesting {
-	
-	
-
-		public void svgimageCompressor() throws AWTException, InterruptedException {
-
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-
-			// Scroll down the page
-			js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-			driver.findElement(By.xpath("//a[@href='/image-compressor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']")).click();
-			driver.findElement(By.cssSelector("input[data-test-id='compressor_upload_file_input']")).sendKeys("//Users/yeshsharma//Documents//Female doctor to guide.svg");
-	        driver.findElement(By.cssSelector("a[class='files-item__download']")).click();
-	        Thread.sleep(3000);
-	        driver.close();
-
+    private WebDriver driver;
+    private BasePage basePage;
+    private LoginPage loginPage;
+    private ImageCompressorPage imageCompressorPage;
+    
+    @BeforeMethod
+    public void setUp() {
+        driver = new ChromeDriver();
+        basePage = new BasePage(driver);
+        loginPage = new LoginPage(driver);
+        imageCompressorPage = new ImageCompressorPage(driver);
+        
+        basePage.setupDriver();
+        basePage.navigateToApplication();
+    }
+    
+    @AfterMethod
+    public void tearDown() {
+        basePage.closeBrowser();
+    }
+    
+    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)
+    public void testSvgImageCompressorWithLogin(String emailId, String password) throws AWTException, InterruptedException {
+        // Login to the application
+        loginPage.login(emailId, password); 
+        
+        // Compress SVG image
+        String svgFilePath = "/Users/yeshsharma/Documents/Female doctor to guide.svg";
+        imageCompressorPage.compressImage(svgFilePath);
+    }   
+    
+    @Test
+    public void testPngImageCompressor() throws AWTException, InterruptedException {
+        // Navigate directly to image compressor (no login required)
+        String pngFilePath = "/Users/yeshsharma/Documents/Camp Kanga logo.png";
+        imageCompressorPage.compressImage(pngFilePath);
+    }
+    
+    @Test
+    public void testJpgImageCompressor() throws AWTException, InterruptedException {
+        // Navigate directly to image compressor (no login required)
+        String jpgFilePath = "/Users/yeshsharma/Documents/input-onlinejpgtools.jpg";
+        imageCompressorPage.compressImage(jpgFilePath);
+    }
+    
+    @Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class)
+    public void testImageCompressorWithDifferentFormats(String fileType, String filePath) throws AWTException, InterruptedException {
+        // Test different image formats without login
+        imageCompressorPage.compressImage(filePath);
+    }
 }
-
-	
-	
-
-		public void pngimageCompressor() throws AWTException, InterruptedException {
-
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-
-			// Scroll down the page
-			js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-			driver.findElement(By.xpath("//a[@href='/image-compressor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']")).click();
-			driver.findElement(By.cssSelector("input[data-test-id='compressor_upload_file_input']")).sendKeys("//Users/yeshsharma//Documents//Car travel.png");
-			driver.findElement(By.cssSelector("a[class='files-item__download']")).click();
-	        Thread.sleep(3000);
-            driver.close();
-}
-		
-	
-	
-
-		public void jpgimageConverter() throws AWTException, InterruptedException {
-
-			WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-			 Goto page1 = new Goto(driver);
-		       page1.goTo();
-			driver.manage().window().maximize();
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-
-			// Scroll down the page
-			js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-			// Scroll down the page
-						js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-						driver.findElement(By.xpath("//a[@href='/image-compressor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']")).click();
-						driver.findElement(By.cssSelector("input[data-test-id='compressor_upload_file_input']")).sendKeys("//Users/yeshsharma//Documents//input-onlinejpgtools.jpg");
-						driver.findElement(By.cssSelector("a[class='files-item__download']")).click();
-				        Thread.sleep(3000);
-			            driver.close();
-	
-}
-	}

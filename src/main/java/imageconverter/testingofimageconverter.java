@@ -1,111 +1,62 @@
 package imageconverter;
 
 import java.awt.AWTException;
-
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import pageobjectmodal.ImageConverterPage;
 
 @Test
 public class testingofimageconverter {
 
-	public void imageConverterSvgToPng() throws AWTException {
-		
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		//close
-     
-       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-	    Goto page1 = new Goto(driver);
-	       page1.goTo();
-	       
-	
-		driver.manage().window().maximize();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+	private WebDriver driver;
+	private ImageConverterPage imageConverterPage;
+	private Goto goto1;
+	private static final String FILE_PATH = "//Users/yeshsharma//Documents//Female doctor to guide.svg";
 
-		// Scroll down the page
-		js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-		driver.findElement(
-				By.xpath("//a[@href='/image-convertor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']"))
-				.click();
-		WebElement ele = driver.findElement(By.cssSelector("input[type='file']"));
-		ele.sendKeys("//Users/yeshsharma//Documents//Female doctor to guide.svg");
-		driver.findElement(By.cssSelector(".files-item__download")).click();
-		driver.close();
-
-	}
-	
-
-	public void imageConverterSvgToJpeg() throws AWTException {
-
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
+	@BeforeMethod
+	public void setUp() {
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		 Goto page1 = new Goto(driver);
-	       page1.goTo();
 		driver.manage().window().maximize();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-		driver.findElement(
-				By.xpath("//a[@href='/image-convertor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']"))
-				.click();
-		driver.findElement(By.xpath("//a[2]")).click();
+		// Initialize page objects
+		imageConverterPage = new ImageConverterPage(driver);
+		goto1 = new Goto(driver);
 
-		WebElement ele = driver.findElement(By.cssSelector("input[type='file']"));
-		ele.sendKeys("//Users/yeshsharma//Documents//Female doctor to guide.svg");
-		driver.findElement(By.cssSelector(".files-item__download")).click();
-		driver.close();
+		// Navigate to the application
+		goto1.goTo();
 	}
 
-	public void imageConverterSvgToBase64() throws AWTException {
-
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		 Goto page1 = new Goto(driver);
-	       page1.goTo();
-		driver.manage().window().maximize();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-
-		js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-		driver.findElement(
-				By.xpath("//a[@href='/image-convertor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']"))
-				.click();
-		driver.findElement(By.xpath("//a[3]")).click();
-		WebElement ele = driver.findElement(By.cssSelector("input[type='file']"));
-		ele.sendKeys("//Users/yeshsharma//Documents//Female doctor to guide.svg");
-		driver.findElement(By.cssSelector(".files-item__download")).click();
-		driver.close();
+	@Test
+	public void testImageConverterSvgToPng() throws AWTException {
+		imageConverterPage.convertSvgToPng(FILE_PATH);
 	}
 
-	public void imageConverterSvgToWebp() throws AWTException {
-
-		WebDriver driver = new ChromeDriver(ChromeOptionConfig.getChromeOptions());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		 Goto page1 = new Goto(driver);
-	       page1.goTo();
-		driver.manage().window().maximize();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-
-	//Stop
-		js.executeScript("window.scrollBy(0, 300);"); // Scroll down by 1000 pixels
-		driver.findElement(
-				By.xpath("//a[@href='/image-convertor']//div[@class='card p-4 py-md-5 shadow-sm border border-1']"))
-				.click();
-		driver.findElement(By.xpath("//a[4]")).click();
-		WebElement ele = driver.findElement(By.cssSelector("input[type='file']"));
-		ele.sendKeys("//Users/yeshsharma//Documents//Female doctor to guide.svg");
-		driver.findElement(By.cssSelector(".files-item__download")).click();
-		driver.close();
-		//driver
-		
+	@Test
+	public void testImageConverterSvgToJpeg() throws AWTException {
+		imageConverterPage.convertSvgToJpeg(FILE_PATH);
 	}
 
+	@Test
+	public void testImageConverterSvgToBase64() throws AWTException {
+		imageConverterPage.convertSvgToBase64(FILE_PATH);
+	}
+
+	@Test
+	public void testImageConverterSvgToWebp() throws AWTException {
+		imageConverterPage.convertSvgToWebp(FILE_PATH);
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }

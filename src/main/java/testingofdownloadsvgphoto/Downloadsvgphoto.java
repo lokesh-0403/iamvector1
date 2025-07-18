@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import imageconverter.ChromeOptionConfig;
+
 import imageconverter.Goto;
 
 import java.time.Duration;
@@ -24,7 +24,7 @@ public class Downloadsvgphoto {
 
 	@BeforeMethod
 	public void setUp() {
-		driver.set(new ChromeDriver(ChromeOptionConfig.getChromeOptions()));
+		driver.set(new ChromeDriver());
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		getDriver().manage().window().maximize();
 	}

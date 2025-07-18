@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg"/>
+      <class name="testingofdownloadsvgphoto.Downloadsvgphoto"/>
+      <class name="monitoringandnotification.MonitoringandNotification"/>
+      <class name="testingoffigmaplugin.Figmaplugintesting"/>
+      <class name="monitoringandnotification.WebsiteMonitorJob"/>
+      <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp"/>
+      <class name="iamvector.iamvector.photo.AppTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
