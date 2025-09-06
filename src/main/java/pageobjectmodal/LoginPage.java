@@ -57,7 +57,7 @@ public class LoginPage {
     
     public void login(String email, String password) {
         clickLoginButton();
-        clickAuthLoginButton();
+//        clickAuthLoginButton();
         enterEmail(email);
         enterPassword(password);
         clickSubmitButton();

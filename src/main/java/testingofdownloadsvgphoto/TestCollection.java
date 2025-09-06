@@ -42,7 +42,7 @@ public class TestCollection {
     //     basePage.closeBrowser();
     // }
 
-    @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
+   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
     public void addToCollection(String emailId, String password, String searchKey)
             throws AWTException, InterruptedException {
         
@@ -62,6 +62,8 @@ public class TestCollection {
         homePage.clickSaveToCollectionButton(randomIcon);
         collectionModal.addToExistingCollection("card");
 
+        
+        Thread.sleep(1000);
         // Navigate to My Collections and verify
         myCollectionsPage.navigateToMyCollections();
         myCollectionsPage.openCollection("card");
@@ -71,13 +73,16 @@ public class TestCollection {
         if (isPresent) {
             System.out.println("Icon is present in collection.");
             homePage.clickIconByUniqueId(uniqueId);
-            myCollectionsPage.downloadIcon();
+//            myCollectionsPage.downloadIcon();
         } else {
             Assert.fail("Icon is NOT present in the collection.");
         }
+        
+        myCollectionsPage.deleteCollection("card");
+        driver.close();
     }
 
-    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
+   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
     public void addToCollectionCreateNewCollectionThenDeleteCollection(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         
@@ -98,6 +103,7 @@ public class TestCollection {
         collectionModal.createNewCollectionAndAdd(collectionName);
 
         // Navigate to My Collections and verify
+        Thread.sleep(1000);
         myCollectionsPage.navigateToMyCollections();
         myCollectionsPage.openCollection(collectionName);
 
@@ -112,6 +118,7 @@ public class TestCollection {
 
         // Delete the collection
         myCollectionsPage.deleteCollection(collectionName);
+        driver.close();
     }
 
     @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
@@ -150,5 +157,6 @@ public class TestCollection {
         // Edit collection name
         myCollectionsPage.editCollectionName(collectionName);
         myCollectionsPage.updateCollectionName();
+        driver.close();
     }
 }

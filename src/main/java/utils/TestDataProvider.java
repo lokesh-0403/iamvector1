@@ -18,7 +18,7 @@ public class TestDataProvider {
     @DataProvider(name = "loginCredentialsAndKeyValue")
     public Object[][] getLoginCredentials() {
         return new Object[][] {
-            {"yeshsharma516032@gmail.com", "Yesh255198@", "table"},
+            {"yeshsharma516032@gmail.com", "Yesh255198@", "creature"},
           //  {"yeshsharma516032@gmail.com", "Yesh255198@", "chair"},
           //  {"yeshsharma516032@gmail.com", "Yesh255198@", "mobile"},
         };
