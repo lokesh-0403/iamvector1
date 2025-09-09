@@ -70,18 +70,9 @@ public class Downloadsvgphoto {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-	
 	}
+	
+	
 	@Test
 
 	public void outlinedSvgDownload() throws InterruptedException {

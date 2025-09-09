@@ -38,7 +38,7 @@ public class Downloadinginmultiplepixelwebp {
 	}
 
 	@Test
-	public void downloadInWebpWith26px() {
+	public void downloadInWebpWith26px() throws InterruptedException {
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -85,10 +85,12 @@ public class Downloadinginmultiplepixelwebp {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
+		Thread.sleep(2000);
 
 	}
 
-	public void downloadInWebpWith46px() {
+	
+	public void downloadInWebpWith46px() throws InterruptedException {
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -129,10 +131,12 @@ public class Downloadinginmultiplepixelwebp {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
+		Thread.sleep(2000);
 
 	}
 
-	public void downloadInWebpWith96px() {
+	@Test
+	public void downloadInWebpWith96px() throws InterruptedException {
 
 		WebDriver driver = getDriver();
 
@@ -174,9 +178,11 @@ public class Downloadinginmultiplepixelwebp {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
-
+		Thread.sleep(2000);
+		
 	}
 
+	
 	public void downloadInWebpWith128px() {
 
 		WebDriver driver = getDriver();
@@ -222,6 +228,7 @@ public class Downloadinginmultiplepixelwebp {
 
 	}
 
+	
 	public void downloadInWebpWith512px() {
 		WebDriver driver = getDriver();
 
@@ -266,6 +273,7 @@ public class Downloadinginmultiplepixelwebp {
 
 	}
 
+	@Test
 	public void downloadInWebpWith1024px() {
 		WebDriver driver = getDriver();
 

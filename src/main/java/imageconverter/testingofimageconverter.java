@@ -11,13 +11,13 @@ import org.testng.annotations.Test;
 
 import pageobjectmodal.ImageConverterPage;
 
-@Test
+
 public class testingofimageconverter {
 
 	private WebDriver driver;
 	private ImageConverterPage imageConverterPage;
 	private Goto goto1;
-	private static final String FILE_PATH = "//Users/yeshsharma//Documents//Female doctor to guide.svg";
+	private static final String FILE_PATH = "C:\\Users\\admin\\Downloads\\Sendarrow right arrow arrows next go send.svg";
 
 	@BeforeMethod
 	public void setUp() {
@@ -34,23 +34,23 @@ public class testingofimageconverter {
 	}
 
 	@Test
-	public void testImageConverterSvgToPng() throws AWTException {
-		imageConverterPage.convertSvgToPng(FILE_PATH);
+	public void testImageConverterSvgToPng() throws AWTException, InterruptedException {
+		imageConverterPage.convertSvgToPng(FILE_PATH, driver);
 	}
 
 	@Test
-	public void testImageConverterSvgToJpeg() throws AWTException {
-		imageConverterPage.convertSvgToJpeg(FILE_PATH);
+	public void testImageConverterSvgToJpeg() throws AWTException, InterruptedException {
+		imageConverterPage.convertSvgToJpeg(FILE_PATH, driver);
 	}
 
 	@Test
-	public void testImageConverterSvgToBase64() throws AWTException {
-		imageConverterPage.convertSvgToBase64(FILE_PATH);
+	public void testImageConverterSvgToBase64() throws AWTException, InterruptedException {
+		imageConverterPage.convertSvgToBase64(FILE_PATH, driver);
 	}
 
 	@Test
-	public void testImageConverterSvgToWebp() throws AWTException {
-		imageConverterPage.convertSvgToWebp(FILE_PATH);
+	public void testImageConverterSvgToWebp() throws AWTException, InterruptedException {
+		imageConverterPage.convertSvgToWebp(FILE_PATH, driver);
 	}
 
 	@AfterMethod
