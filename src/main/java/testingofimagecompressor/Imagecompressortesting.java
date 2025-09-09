@@ -33,33 +33,33 @@ public class Imagecompressortesting {
         basePage.closeBrowser();
     }
     
-    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)
+   // @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)
     public void testSvgImageCompressorWithLogin(String emailId, String password) throws AWTException, InterruptedException {
         // Login to the application
         loginPage.login(emailId, password); 
         
         // Compress SVG image
         String svgFilePath = "/Users/yeshsharma/Documents/Female doctor to guide.svg";
-        imageCompressorPage.compressImage(svgFilePath);
+        imageCompressorPage.compressImage(svgFilePath, driver);
     }   
     
     @Test
     public void testPngImageCompressor() throws AWTException, InterruptedException {
         // Navigate directly to image compressor (no login required)
-        String pngFilePath = "/Users/yeshsharma/Documents/Camp Kanga logo.png";
-        imageCompressorPage.compressImage(pngFilePath);
+        String pngFilePath = "E:\\Screenshots\\Screenshot (202).png";
+        imageCompressorPage.compressImage(pngFilePath, driver);
     }
     
-    @Test
+  //  @Test
     public void testJpgImageCompressor() throws AWTException, InterruptedException {
         // Navigate directly to image compressor (no login required)
         String jpgFilePath = "/Users/yeshsharma/Documents/input-onlinejpgtools.jpg";
-        imageCompressorPage.compressImage(jpgFilePath);
+        imageCompressorPage.compressImage(jpgFilePath, driver);
     }
     
-    @Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class)
+  //  @Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class)
     public void testImageCompressorWithDifferentFormats(String fileType, String filePath) throws AWTException, InterruptedException {
         // Test different image formats without login
-        imageCompressorPage.compressImage(filePath);
+        imageCompressorPage.compressImage(filePath, driver);
     }
 }

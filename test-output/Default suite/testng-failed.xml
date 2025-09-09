@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="imageconverter.testingofimageconverter">
+      <class name="testingofimagecompressor.Imagecompressortesting">
         <methods>
-          <include name="testImageConverterSvgToWebp"/>
-          <include name="testImageConverterSvgToBase64"/>
-          <include name="testImageConverterSvgToJpeg"/>
-          <include name="testImageConverterSvgToPng"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="testPngImageCompressor"/>
         </methods>
-      </class> <!-- imageconverter.testingofimageconverter -->
+      </class> <!-- testingofimagecompressor.Imagecompressortesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
