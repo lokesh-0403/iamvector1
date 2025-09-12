@@ -24,7 +24,14 @@ public class TestDataProvider {
         };
     }
     
-    
+    @DataProvider(name = "loginCredentials")
+    public Object[][] LoginCredentials() {
+        return new Object[][] {
+            {"yeshsharma516032@gmail.com", "Yesh255198@"}
+          //  {"yeshsharma516032@gmail.com", "Yesh255198@"},
+          //  {"yeshsharma516032@gmail.com", "Yesh255198@"},
+        };
+    }
     
     @DataProvider(name = "loginCredentialsForManageCollection")
    
@@ -38,9 +45,14 @@ public class TestDataProvider {
     }
     
     
-    
-    
-    
-    
+    @DataProvider(name = "uplaodingSVGFile")
+    public Object uploadSVGFile() {
+    	String file = "C:\\Users\\admin\\Downloads\\Female doctor with cross mark.png";
+    	String fileE ="C:\\Users\\admin\\Downloads\\SVG.svg";
+    	return new Object[][] {
+              {"yeshsharma516032@gmail.com", "Yesh255198@", file,fileE},
+          
+          };
+    }  
     
 }

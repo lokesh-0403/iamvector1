@@ -2,24 +2,42 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-09T15:15:24 IST" name="Default suite" finished-at="2025-09-09T15:15:54 IST" duration-ms="30452">
+  <suite started-at="2025-09-11T11:18:01 IST" name="Default suite" finished-at="2025-09-11T11:18:56 IST" duration-ms="55197">
     <groups>
     </groups>
-    <test started-at="2025-09-09T15:15:24 IST" name="Default test" finished-at="2025-09-09T15:15:54 IST" duration-ms="30452">
-      <class name="testingofimagecompressor.Imagecompressortesting">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@8519cb4]" started-at="2025-09-09T15:15:24 IST" name="setUp" finished-at="2025-09-09T15:15:34 IST" duration-ms="9610" status="PASS">
+    <test started-at="2025-09-11T11:18:01 IST" name="Default test" finished-at="2025-09-11T11:18:56 IST" duration-ms="55197">
+      <class name="testingofdownloadsvgphoto.UploadingSVG">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.UploadingSVG@5b247367]" started-at="2025-09-11T11:18:01 IST" name="setUp" finished-at="2025-09-11T11:18:08 IST" duration-ms="7692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testPngImageCompressor()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@8519cb4]" started-at="2025-09-09T15:15:34 IST" name="testPngImageCompressor" finished-at="2025-09-09T15:15:54 IST" duration-ms="20562" status="PASS">
+        <test-method signature="uploadSvg(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.UploadingSVG@5b247367]" started-at="2025-09-11T11:18:08 IST" name="uploadSvg" data-provider="uplaodingSVGFile" finished-at="2025-09-11T11:18:56 IST" duration-ms="47436" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yeshsharma516032@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yesh255198@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[C:\Users\admin\Downloads\Female doctor with cross mark.png]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[C:\Users\admin\Downloads\SVG.svg]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPngImageCompressor -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@8519cb4]" started-at="2025-09-09T15:15:54 IST" name="tearDown" finished-at="2025-09-09T15:15:54 IST" duration-ms="216" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testingofimagecompressor.Imagecompressortesting -->
+        </test-method> <!-- uploadSvg -->
+      </class> <!-- testingofdownloadsvgphoto.UploadingSVG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

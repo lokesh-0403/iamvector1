@@ -54,6 +54,7 @@ public class ImageCompressorPage {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
     	js.executeScript("window.scrollBy(0,350)");
     	Thread.sleep(2000);
+    	
 //    WebElement qualitypanel = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class='accordion-button']")));
 //    qualitypanel.click();
 //    WebElement quality = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("//label[normalize-space()='Quality']")));
