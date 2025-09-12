@@ -83,10 +83,10 @@ public class CollectionModal extends BasePage {
     	searchCollection.sendKeys(Keys.ENTER);
     	Thread.sleep(2000);  
     	 WebElement checkbox = driver.findElement(By.cssSelector("input[type='checkbox']"));
-//    	 if (!checkbox.isSelected()) {
-// 	        checkbox.click();
-// 	    }
-        
+    	 if (!checkbox.isSelected()) {
+ 	        checkbox.click();
+	    }
+    	 Thread.sleep(3000);        
 //     	if (collectionName.equals("card")) {
 //     	WebElement coll = checkboxes.stream().filter(p->p.
 // 				findElement( By.xpath("//span[normalize-space(text())='" + collectionName + "' or starts-with(normalize-space(text()), '" + collectionName + " ')]"))

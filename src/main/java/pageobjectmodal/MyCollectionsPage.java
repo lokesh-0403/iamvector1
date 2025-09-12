@@ -33,7 +33,7 @@ public class MyCollectionsPage extends BasePage {
     // Constructor
     public MyCollectionsPage(WebDriver driver) {
         super(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(25));
         this.actions = new Actions(driver);
         this.js = (JavascriptExecutor) driver;
         PageFactory.initElements(driver, this);

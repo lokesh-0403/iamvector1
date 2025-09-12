@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
@@ -84,6 +85,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </reporter-output>
         </test-method> <!-- setUp -->
         <test-method signature="addToCollection(java.lang.String,java.lang.String)[pri:0, instance:brokenLinkTest.LinkStatusCheck@5db6b9cd]" started-at="2025-09-16T17:03:25 IST" name="addToCollection" data-provider="loginCredentials" finished-at="2025-09-16T17:03:25 IST" duration-ms="1" status="SKIP">
+=======
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-12T15:17:03 IST" name="Default suite" finished-at="2025-09-12T15:27:05 IST" duration-ms="602375">
+    <groups>
+    </groups>
+    <test started-at="2025-09-12T15:17:03 IST" name="Default test" finished-at="2025-09-12T15:27:05 IST" duration-ms="602375">
+      <class name="testingofdownloadsvgphoto.TestCollection">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:17:03 IST" name="setUp" finished-at="2025-09-12T15:17:24 IST" duration-ms="21579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="addToCollection(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:17:24 IST" name="addToCollection" data-provider="loginCredentialsAndKeyValue" finished-at="2025-09-12T15:20:29 IST" duration-ms="184464" status="PASS">
+>>>>>>> 936887c (done)
           <params>
             <param index="0">
               <value>
@@ -95,6 +111,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
                 <![CDATA[Yesh255198@]]>
               </value>
             </param>
+<<<<<<< HEAD
+=======
+            <param index="2">
+              <value>
+                <![CDATA[creature]]>
+              </value>
+            </param>
+>>>>>>> 936887c (done)
           </params>
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
@@ -171,11 +195,75 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollection -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="tearDown()[pri:0, instance:brokenLinkTest.LinkStatusCheck@5db6b9cd]" started-at="2025-09-16T17:03:25 IST" name="tearDown" finished-at="2025-09-16T17:03:25 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- brokenLinkTest.LinkStatusCheck -->
+=======
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:20:29 IST" name="setUp" finished-at="2025-09-12T15:20:52 IST" duration-ms="23642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="addToCollectionCreateNewCollectionThenDeleteCollection(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:20:52 IST" name="addToCollectionCreateNewCollectionThenDeleteCollection" data-provider="loginCredentialsForManageCollection" finished-at="2025-09-12T15:24:12 IST" duration-ms="199228" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yeshsharma516032@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yesh255198@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[login]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AutoCollection_raven_1757670629223]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCollectionCreateNewCollectionThenDeleteCollection -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:24:12 IST" name="setUp" finished-at="2025-09-12T15:24:31 IST" duration-ms="19407" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:24:31 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2025-09-12T15:27:05 IST" duration-ms="153944" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yeshsharma516032@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yesh255198@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[login]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AutoCollection_chimpanzee_1757670852113]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCollectionCreateNewCollectionThenEditCollectionName -->
+      </class> <!-- testingofdownloadsvgphoto.TestCollection -->
+>>>>>>> 936887c (done)
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

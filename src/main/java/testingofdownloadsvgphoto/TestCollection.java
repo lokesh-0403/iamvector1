@@ -63,7 +63,7 @@ public class TestCollection {
         collectionModal.addToExistingCollection("card");
 
         
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         // Navigate to My Collections and verify
         myCollectionsPage.navigateToMyCollections();
         myCollectionsPage.openCollection("card");
