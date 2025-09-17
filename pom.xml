@@ -87,13 +87,18 @@
     <version>1.7.32</version> <!-- or the latest version -->
 </dependency>
 
-		
 
-		
 
-   
-   
 
+
+
+
+
+		<dependency>
+			<groupId>org.zasya</groupId>
+			<artifactId>AutoPractice</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>

@@ -15,6 +15,20 @@ public class Goto {
 
 		driver.get("https://dev.iamvector.com/");
 
+	//	driver.get("https://dev.iamvector.com/dashboard");
+		
+    //	driver.get("https://iamvector.com/");
+		
+	//	driver.get("https://dev.iamvector.com/icons");
+		
+	//	driver.get("https://iamvector.com/svg-editor");
+	
+	//	driver.get("https://iamvector.com/image-compressor");
+		
+	//	driver.get("https://iamvector.com/image-converter/svg-to-png");
+		
+		
+		
 }
 
 }
