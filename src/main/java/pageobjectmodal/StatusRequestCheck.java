@@ -117,18 +117,7 @@ public class StatusRequestCheck {
 	 
 	 
 	 public void checkLinkStatus(String link) {
-		 ChromeDriver driver = new ChromeDriver();
-		 DevTools devTools = driver.getDevTools();
-		 devTools.createSession();
-		 
-		 devTools.send(Fetch.enable(Optional.empty(),Optional.empty()));
-//		 devTools.addListener(Fetch.requestPaused()), request->
-//		 {
-//			 if(request.getRequest().getUrl().contains("vector")) {
-//				 String newUrl = request.getRequest().getUrl().replace("=");
-//			 }
-//		 });
-//		 
+		
 		 
 		  try {
 	            HttpURLConnection connection = (HttpURLConnection) new URL(link).openConnection();
