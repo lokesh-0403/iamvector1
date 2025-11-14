@@ -3,22 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="brokenLinkTest.LinkStatusCheck">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="addToCollection"/>
-        </methods>
-      </class> <!-- brokenLinkTest.LinkStatusCheck -->
-=======
-      <class name="testingofdownloadsvgphoto.TestCollection">
+      <class name="testingofdownloadsvgphoto.UploadingSVG">
         <methods>
           <include name="setUp"/>
-          <include name="addToCollection" invocation-numbers="0"/>
+          <include name="uploadSvg" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testingofdownloadsvgphoto.TestCollection -->
->>>>>>> 936887c (done)
+      </class> <!-- testingofdownloadsvgphoto.UploadingSVG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

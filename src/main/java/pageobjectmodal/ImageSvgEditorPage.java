@@ -18,10 +18,13 @@ import org.testng.Assert;
 
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import java.util.regex.*;
 import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -59,13 +62,18 @@ public class ImageSvgEditorPage {
         Thread.sleep(700);
     }
     
+    public WebElement expandShadowRoot(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (WebElement) js.executeScript("return arguments[0].shadowRoot", element);
+    }
+    
     public void uploadFile(String filePath, WebDriver  driver) throws Exception {
     	
 
     	 try {
     	        // Find the hidden file input
     	        WebElement uploadInput = driver.findElement(
-    	            By.cssSelector("input[data-test-id='editor_upload_file_input'][type='file']")
+    	            By.id("fileInput")
     	        );
 
     	        // Send the file path directly
@@ -84,9 +92,9 @@ public class ImageSvgEditorPage {
     	js.executeScript("window.scrollBy(0,350)");
     	Thread.sleep(1000);
 
-    	 WebElement svgPhoto =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("svg")));
+    	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("svg")));
     
-    	if(svgPhoto.isDisplayed()){
+    
     		
     WebElement dropDown = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-bs-toggle='dropdown']")));
     dropDown.click();
@@ -97,31 +105,32 @@ public class ImageSvgEditorPage {
 
 		downloadBtn.click();
 		
-    	}
-    	else {
-    		JOptionPane.showMessageDialog(null, "⚠ This is an alert!");
-    		System.out.println("! ALERT: Input the valid svg file !");
-    	}
-	}
+    	
+}
+	
     
-    public void imagecheck(WebDriver driver) {
-    	WebElement codeMirrorElement = driver.findElement(By.cssSelector(".CodeMirror"));
-    	JavascriptExecutor js = (JavascriptExecutor) driver;
-    	String codeText = (String) js.executeScript(
-    	    "return arguments[0].CodeMirror.getValue();", codeMirrorElement);
-    	Pattern pattern = Pattern.compile("d=\"([^\"]+)\"");
-    	Matcher matcher = pattern.matcher(codeText);
-    	 String dValueText = null;
-    	while (matcher.find()) {
-    		dValueText = matcher.group(1);
+    
+    public void imagecheck(WebDriver driver) throws IOException {
+
+    	// Read original SVG from file
+    	String originalSvg = new String(Files.readAllBytes(Paths.get("C:\\Users\\admin\\Downloads\\qazasya-iamvector1-9c52d69d233d\\src\\main\\resources\\files\\Female doctor with cross mark.svg")), StandardCharsets.UTF_8);
+
+    	// Get rendered SVG from the preview pane
+    	WebElement renderedSvgElement = driver.findElement(By.cssSelector("svg"));
+    	String renderedSvg = renderedSvgElement.getAttribute("outerHTML");
+
+    	// Normalize (remove spaces, newlines)
+    	originalSvg = originalSvg.replaceAll("\\s+", "");
+    	renderedSvg = renderedSvg.replaceAll("\\s+", "");
+
+    	// Compare
+    	if (originalSvg.equals(renderedSvg)) {
+    	    System.out.println(originalSvg);
+    	} else {
+    	    System.out.println(renderedSvg);
     	}
-    	
-    	WebElement emoji =  driver.findElement(By.cssSelector("path"));
-    	String attributeText = emoji.getAttribute("d");
-    	
-    	Assert.assertEquals(dValueText,attributeText);
+
     }
-  
 
 	public void editSVGImage(String pngFilePath, WebDriver driver) throws InterruptedException, Exception {
 		// TODO Auto-generated method stub

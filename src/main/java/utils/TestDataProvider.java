@@ -48,7 +48,7 @@ public class TestDataProvider {
     @DataProvider(name = "uplaodingSVGFile")
     public Object uploadSVGFile() {
     	String file = "C:\\Users\\admin\\Downloads\\Female doctor with cross mark.png";
-    	String fileE ="C:\\Users\\admin\\Downloads\\SVG.svg";
+    	String fileE ="C:\\Users\\admin\\Downloads\\qazasya-iamvector1-9c52d69d233d\\src\\main\\resources\\files\\Female doctor with cross mark.svg";
     	return new Object[][] {
               {"yeshsharma516032@gmail.com", "Yesh255198@", file,fileE},
           

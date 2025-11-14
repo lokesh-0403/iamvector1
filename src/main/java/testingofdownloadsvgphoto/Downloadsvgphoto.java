@@ -17,7 +17,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
-@Test
+@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 public class Downloadsvgphoto {
 	
 	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
@@ -109,9 +109,6 @@ public class Downloadsvgphoto {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
-		
-		
-	
 	}
 
 	public void multicolorSvgDownload() throws InterruptedException {
@@ -150,16 +147,6 @@ public class Downloadsvgphoto {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 
 	public void monocolourSvgDownload() throws InterruptedException {

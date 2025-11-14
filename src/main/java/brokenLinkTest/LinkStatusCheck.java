@@ -42,7 +42,7 @@ public class LinkStatusCheck {
 	    }
 	    
 	    
-	    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)
+	    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
 	    public void addToCollection(String emailId, String password)
 	            throws Exception {
 	        

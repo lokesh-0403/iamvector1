@@ -114,7 +114,7 @@ public class HomePageCollection extends BasePage {
 				System.out.println("Attempt " + (i + 1) + ": Button not found or not interactable.");
 			}
 	
-		System.out.println(">>I am out of loop");
+		System.out.println(">>I am in loop");
 		JavascriptExecutor js = (JavascriptExecutor) driver; 
    	        js.executeScript("arguments[0].scrollIntoView(true);", saveToCollectionButton);
 	

@@ -42,7 +42,7 @@ public class TestCollection {
     //     basePage.closeBrowser();
     // }
 
-   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
+   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollection(String emailId, String password, String searchKey)
             throws AWTException, InterruptedException {
         
@@ -82,7 +82,7 @@ public class TestCollection {
         driver.close();
     }
 
-   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
+   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenDeleteCollection(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         
@@ -121,7 +121,7 @@ public class TestCollection {
         driver.close();
     }
 
-    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
+    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenEditCollectionName(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         

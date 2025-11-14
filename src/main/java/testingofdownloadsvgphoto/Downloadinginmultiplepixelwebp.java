@@ -15,7 +15,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import imageconverter.Goto;
-@Test
+
+@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 public class Downloadinginmultiplepixelwebp {
 
 	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();

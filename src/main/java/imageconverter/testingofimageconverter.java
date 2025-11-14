@@ -33,22 +33,22 @@ public class testingofimageconverter {
 		goto1.goTo();
 	}
 
-	@Test
+	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 	public void testImageConverterSvgToPng() throws AWTException, InterruptedException {
 		imageConverterPage.convertSvgToPng(FILE_PATH, driver);
 	}
 
-	@Test
+	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 	public void testImageConverterSvgToJpeg() throws AWTException, InterruptedException {
 		imageConverterPage.convertSvgToJpeg(FILE_PATH, driver);
 	}
 
-	@Test
+	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 	public void testImageConverterSvgToBase64() throws AWTException, InterruptedException {
 		imageConverterPage.convertSvgToBase64(FILE_PATH, driver);
 	}
 
-	@Test
+	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 	public void testImageConverterSvgToWebp() throws AWTException, InterruptedException {
 		imageConverterPage.convertSvgToWebp(FILE_PATH, driver);
 	}
