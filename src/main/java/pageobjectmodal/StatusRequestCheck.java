@@ -46,29 +46,7 @@ public class StatusRequestCheck {
 		 JavascriptExecutor js = (JavascriptExecutor) driver;
 		 
 		 
-		 
-		 // only to be used while testing the icons page
-		 
-//		 WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
-//					By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-//			searchBox.sendKeys("doctor");
-//
-//			
-//			try {
-//
-//				WebElement searchEnter = wait.until(ExpectedConditions.elementToBeClickable(
-//						By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-//				searchEnter.sendKeys(Keys.ENTER);
-//
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
-		
-			
-			
-			
+	
 			
 		 long lastHeight = (long) js.executeScript("return document.body.scrollHeight");
 		   while (true) {
@@ -111,7 +89,7 @@ public class StatusRequestCheck {
 	        }
 		//   driver.findElement(By.cssSelector("li[title='Follow Us on LinkedIn']")).click();
 		   
-	        System.out.println("✅ Total unique links checked: " + checkedLinks.size());
+	        System.out.println(" Total unique links checked: " + checkedLinks.size());
             	        
 } 
 	 

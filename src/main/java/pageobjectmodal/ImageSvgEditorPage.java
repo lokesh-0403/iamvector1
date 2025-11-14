@@ -91,11 +91,7 @@ public class ImageSvgEditorPage {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
     	js.executeScript("window.scrollBy(0,350)");
     	Thread.sleep(1000);
-
-    	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("svg")));
-    
-    
-    		
+  		
     WebElement dropDown = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-bs-toggle='dropdown']")));
     dropDown.click();
     WebElement selectPixel = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[normalize-space()='256Px']")));
@@ -104,12 +100,9 @@ public class ImageSvgEditorPage {
     WebElement downloadBtn = wait.until(ExpectedConditions.elementToBeClickable(downloadButtonBy));
 
 		downloadBtn.click();
-		
-    	
+	 	
 }
-	
-    
-    
+	  
     public void imagecheck(WebDriver driver) throws IOException {
 
     	// Read original SVG from file
@@ -127,7 +120,8 @@ public class ImageSvgEditorPage {
     	if (originalSvg.equals(renderedSvg)) {
     	    System.out.println(originalSvg);
     	} else {
-    	    System.out.println(renderedSvg);
+    		 System.out.println("Uploaded svg"+originalSvg);
+    	    System.out.println("Render SVG"+renderedSvg);
     	}
 
     }

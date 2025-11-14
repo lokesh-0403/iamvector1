@@ -63,7 +63,7 @@ public class TestCollection {
         collectionModal.addToExistingCollection("card");
 
         
-        Thread.sleep(5000);
+        Thread.sleep(4000);
         // Navigate to My Collections and verify
         myCollectionsPage.navigateToMyCollections();
         myCollectionsPage.openCollection("card");
@@ -78,7 +78,7 @@ public class TestCollection {
             Assert.fail("Icon is NOT present in the collection.");
         }
         
-        myCollectionsPage.deleteCollection("card");
+       
         driver.close();
     }
 
