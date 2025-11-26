@@ -6,7 +6,7 @@
       <class name="testingofdownloadsvgphoto.UploadingSVG">
         <methods>
           <include name="setUp"/>
-          <include name="uploadSvg"/>
+          <include name="uploadSvg" invocation-numbers="0"/>
         </methods>
       </class> <!-- testingofdownloadsvgphoto.UploadingSVG -->
     </classes>

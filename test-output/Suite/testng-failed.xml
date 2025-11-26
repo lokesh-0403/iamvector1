@@ -7,6 +7,16 @@
   </listeners>
   <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
+      <class name="testingofimagecompressor.Imagecompressortesting">
+        <methods>
+          <include name="setUp"/>
+          <include name="testSvgImageCompressorWithLogin"/>
+          <include name="tearDown"/>
+          <include name="testJpgImageCompressor"/>
+          <include name="testPngImageCompressor"/>
+          <include name="testImageCompressorWithDifferentFormats" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- testingofimagecompressor.Imagecompressortesting -->
       <class name="imageconverter.Testingofimageconverter">
         <methods>
           <include name="tearDown"/>

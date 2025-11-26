@@ -41,7 +41,7 @@ public class UploadingSVG {
 
 	
 	@Test(dataProvider = "uplaodingSVGFile",dataProviderClass=TestDataProvider.class)
-	public void uploadSvg(String emailId,String password,String  file, String fileE) throws Exception {
+	public void uploadSvg(String emailId,String password,String  file) throws Exception {
 		
 		
 		basePage.navigateToApplication();
@@ -50,8 +50,6 @@ public class UploadingSVG {
 		imageSVGEditor.editSVGImage(file,driver);
 		
 		driver.quit();
-		
-			
 		}
 		    	
 	}	

@@ -11,9 +11,9 @@ public class TestDataProvider {
     @DataProvider(name = "imageFiles")
     public Object[][] getImageFiles() {
         return new Object[][] {
-            {"SVG", "/Users/yeshsharma/Documents/Female doctor to guide.svg"},
-            {"PNG", "/Users/yeshsharma/Documents/Camp Kanga logo.png"},
-            {"JPG", "/Users/yeshsharma/Documents/input-onlinejpgtools.jpg"}
+            {"SVG", ResourceHelper.getResourceFilePath("files/Female doctor with cross mark.svg")},
+            {"PNG", ResourceHelper.getResourceFilePath("files/iamvector_download.png")},
+            {"JPG", ResourceHelper.getResourceFilePath("files/Mini arrow left.jpg")}
         };
     }
     
@@ -50,9 +50,8 @@ public class TestDataProvider {
     @DataProvider(name = "uplaodingSVGFile")
     public Object uploadSVGFile() {
     	 String file = ResourceHelper.getResourceFilePath("files/Female doctor with cross mark.svg");
-    	String fileE ="C:\\Users\\admin\\Downloads\\qazasya-iamvector1-9c52d69d233d\\src\\main\\resources\\files\\Female doctor with cross mark.svg";
     	return new Object[][] {
-              {"yeshsharma516032@gmail.com", "Yesh255198@", file,fileE},
+              {"yeshsharma516032@gmail.com", "Yesh255198@", file},
           
           };
     }  

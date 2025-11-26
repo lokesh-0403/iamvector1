@@ -67,25 +67,30 @@ public class ImageSvgEditorPage {
         return (WebElement) js.executeScript("return arguments[0].shadowRoot", element);
     }
     
-    public void uploadFile(String filePath, WebDriver  driver) throws Exception {
-    	
+    public void uploadFile(String filePath, WebDriver driver) {
+        try {
+            WebElement uploadInput = driver.findElement(By.id("fileInput"));
+            uploadInput.sendKeys(filePath);
 
-    	 try {
-    	        // Find the hidden file input
-    	        WebElement uploadInput = driver.findElement(
-    	            By.id("fileInput")
-    	        );
+            System.out.println("[DEBUG] File upload triggered...");
 
-    	        // Send the file path directly
-    	        uploadInput.sendKeys(filePath);
-    	        Thread.sleep(5000);
-    	        System.out.println("[DEBUG] File uploaded: " + filePath);
-    	    } catch (Exception e) {
-    	        System.err.println("[ERROR] Upload failed: " + e.getMessage());
-    	        e.printStackTrace();
-    	    }
-    	
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+            // Wait for SVG preview to appear (means upload finished)
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("svg")));
+
+            // Optionally wait until download button becomes clickable (strong validation)
+            wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".svg-download-button")));
+
+            System.out.println("[DEBUG] Upload completed and SVG rendered.");
+
+        } catch (Exception e) {
+            System.err.println("[ERROR] Upload failed: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
     }
+
     
     public void downloadeditedFile(WebDriver driver) throws InterruptedException {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
