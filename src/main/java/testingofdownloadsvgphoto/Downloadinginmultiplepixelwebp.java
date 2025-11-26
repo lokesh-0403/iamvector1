@@ -12,12 +12,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import imageconverter.Goto;
 import pageobjectmodal.BaseTest;
 
+
+
 @Test(retryAnalyzer = utils.RetryAnalyzer.class)
+
 public class Downloadinginmultiplepixelwebp extends BaseTest{
 
 //	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();

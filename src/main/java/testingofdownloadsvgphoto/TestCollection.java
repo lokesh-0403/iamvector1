@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pageobjectmodal.BasePage;
@@ -42,7 +43,12 @@ public class TestCollection {
     //     basePage.closeBrowser();
     // }
 
-   //@Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
+    
+   
+
+
+   
+   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollection(String emailId, String password, String searchKey)
             throws AWTException, InterruptedException {
         

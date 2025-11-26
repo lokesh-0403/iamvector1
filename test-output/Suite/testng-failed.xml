@@ -1,42 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="testingoffigmaplugin(failed)">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Listeners.RetryListener"/>
+    <listener class-name="Listeners.TestListener"/>
+  </listeners>
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="testingoffigmaplugin.Figmaplugintesting">
+      <class name="imageconverter.Testingofimageconverter">
         <methods>
-          <include name="testingOfFigmaPlugin"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testImageConverterSvgToPng"/>
+          <include name="testImageConverterSvgToBase64"/>
+          <include name="testImageConverterSvgToWebp"/>
+          <include name="testImageConverterSvgToJpeg"/>
         </methods>
-      </class> <!-- testingoffigmaplugin.Figmaplugintesting -->
+      </class> <!-- imageconverter.Testingofimageconverter -->
     </classes>
-  </test> <!-- testingoffigmaplugin(failed) -->
-  <test thread-count="5" parallel="tests" name="testingofdownloadsvgphoto(failed)">
-    <classes>
-      <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp">
-        <methods>
-          <include name="downloadInWebpWith26px"/>
-          <include name="downloadInWebpWith46px"/>
-          <include name="downloadInWebpWith96px"/>
-          <include name="downloadInWebpWith128px"/>
-          <include name="downloadInWebpWith1024px"/>
-        </methods>
-      </class> <!-- testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp -->
-      <class name="testingofdownloadsvgphoto.Downloadsvgphoto">
-        <methods>
-          <include name="allAssestsSvgDownload"/>
-          <include name="filledrSvgDownload"/>
-          <include name="iconSvgDownload"/>
-        </methods>
-      </class> <!-- testingofdownloadsvgphoto.Downloadsvgphoto -->
-      <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg">
-        <methods>
-          <include name="downloadInPngWith96px"/>
-          <include name="downloadInPngWith1024px"/>
-          <include name="downloadInPngWith26px"/>
-          <include name="downloadInPngWith46px"/>
-          <include name="downloadInPngWith128px"/>
-        </methods>
-      </class> <!-- testingofdownloadsvgphoto.Downloadinmultiplepixelsvg -->
-    </classes>
-  </test> <!-- testingofdownloadsvgphoto(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
