@@ -40,13 +40,13 @@ public class UploadingSVG {
 
 	
 	@Test(dataProvider = "uplaodingSVGFile",dataProviderClass=TestDataProvider.class)
-	public void uploadSvg(String emailId,String password,String file, String fileE) throws Exception {
+	public void uploadSvg(String emailId,String password,String  file, String fileE) throws Exception {
 		
 		
 		basePage.navigateToApplication();
 		loginPage.login(emailId,password);
 		
-		imageSVGEditor.editSVGImage(fileE,driver);
+		imageSVGEditor.editSVGImage(file,driver);
 		
 		driver.quit();
 		

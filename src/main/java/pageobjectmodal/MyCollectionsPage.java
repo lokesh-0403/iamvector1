@@ -150,8 +150,18 @@ public class MyCollectionsPage extends BasePage {
         editField.clear();
         editField.sendKeys(editedName);
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("button[id='save-name-btn']"));
-       
+      
+       WebElement saveBtn= driver.findElement(By.cssSelector("button[id='save-name-btn']"));
+       saveBtn.click();
+        Thread.sleep(1000);
+
+        WebElement collName = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("(//a[normalize-space()='"+editedName+"'])[1]")));
+       if(collName.isDisplayed()) {
+        System.out.println("Updated Successfully");
+       }else {
+    	   throw new  IllegalArgumentException("!! Your custom exception message here.");
+       }
         Thread.sleep(3000);
         
     }

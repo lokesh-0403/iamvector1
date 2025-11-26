@@ -120,7 +120,7 @@ public class ImageSvgEditorPage {
     	if (originalSvg.equals(renderedSvg)) {
     	    System.out.println(originalSvg);
     	} else {
-    		 System.out.println("Uploaded svg"+originalSvg);
+    		 System.out.println("Uploaded SVG"+originalSvg);
     	    System.out.println("Render SVG"+renderedSvg);
     	}
 

@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import pageobjectmodal.ImageConverterPage;
 
 
-public class testingofimageconverter {
+public class Testingofimageconverter {
 
 	private WebDriver driver;
 	private ImageConverterPage imageConverterPage;

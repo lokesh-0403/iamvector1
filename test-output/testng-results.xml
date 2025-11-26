@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-14T16:18:06 IST" name="Default suite" finished-at="2025-11-14T16:18:27 IST" duration-ms="21219">
+  <suite started-at="2025-11-26T14:50:55 IST" name="Default suite" finished-at="2025-11-26T14:51:11 IST" duration-ms="16204">
     <groups>
     </groups>
-    <test started-at="2025-11-14T16:18:06 IST" name="Default test" finished-at="2025-11-14T16:18:27 IST" duration-ms="21219">
+    <test started-at="2025-11-26T14:50:55 IST" name="Default test" finished-at="2025-11-26T14:51:11 IST" duration-ms="16204">
       <class name="testingofdownloadsvgphoto.UploadingSVG">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.UploadingSVG@1190200a]" started-at="2025-11-14T16:18:06 IST" name="setUp" finished-at="2025-11-14T16:18:12 IST" duration-ms="5722" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.UploadingSVG@4c39bec8]" started-at="2025-11-26T14:50:55 IST" name="setUp" finished-at="2025-11-26T14:51:00 IST" duration-ms="5612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="uploadSvg(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.UploadingSVG@1190200a]" started-at="2025-11-14T16:18:12 IST" name="uploadSvg" data-provider="uplaodingSVGFile" finished-at="2025-11-14T16:18:27 IST" duration-ms="15420" status="PASS">
+        <test-method signature="uploadSvg(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.UploadingSVG@4c39bec8]" started-at="2025-11-26T14:51:01 IST" name="uploadSvg" data-provider="uplaodingSVGFile" finished-at="2025-11-26T14:51:11 IST" duration-ms="10510" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,7 +25,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[C:\Users\admin\Downloads\Female doctor with cross mark.png]]>
+                <![CDATA[/C:/Users/admin/Downloads/qazasya-iamvector1-9c52d69d233d/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
               </value>
             </param>
             <param index="3">

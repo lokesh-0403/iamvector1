@@ -2,18 +2,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <listeners>
-    <listener class-name="Listeners.RetryListener" />
+    <listener class-name="Listeners.RetryListener"/>
+    <listener class-name="Listeners.TestListener"/>
 </listeners>
 
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg"/>
-      <class name="testingofdownloadsvgphoto.Downloadsvgphoto"/>
-      <class name="monitoringandnotification.MonitoringandNotification"/>
-      <class name="testingoffigmaplugin.Figmaplugintesting"/>
-      <class name="monitoringandnotification.WebsiteMonitorJob"/>
+      <class name="brokenLinkTest.LinkStatusCheck"/>
+      <class name="imageconverter.Testingofimageconverter"/>
       <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp"/>
-      <class name="iamvector.iamvector.photo.AppTest"/>
+      <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg"/>
+      <class name="testingofdownloadsvgphoto.Downloadsvgphoto"/>         
+      <class name="testingofdownloadsvgphoto.TestCollection"/>
+      <class name="testingofdownloadsvgphoto.UploadingSVG"/>
+      <class name="testingofimagecompressor.Imagecompressortesting"/> 
+      
+    
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
