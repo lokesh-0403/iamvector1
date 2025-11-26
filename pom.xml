@@ -20,7 +20,12 @@
 	</properties>
 
 	<dependencies>
-		
+		<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.23.0</version> <!-- or your preferred Selenium 4.x version -->
+</dependency>
+
 		<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
