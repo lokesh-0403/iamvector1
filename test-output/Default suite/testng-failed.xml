@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testingofdownloadsvgphoto.UploadingSVG">
+      <class name="testingofimagecompressor.Imagecompressortesting">
         <methods>
           <include name="setUp"/>
-          <include name="uploadSvg" invocation-numbers="0"/>
+          <include name="testSvgImageCompressorWithLogin" invocation-numbers="0"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- testingofdownloadsvgphoto.UploadingSVG -->
+      </class> <!-- testingofimagecompressor.Imagecompressortesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

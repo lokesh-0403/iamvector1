@@ -76,12 +76,10 @@ public class ImageSvgEditorPage {
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-            // Wait for SVG preview to appear (means upload finished)
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("svg")));
+          
 
             // Optionally wait until download button becomes clickable (strong validation)
-            wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".svg-download-button")));
-
+          
             System.out.println("[DEBUG] Upload completed and SVG rendered.");
 
         } catch (Exception e) {

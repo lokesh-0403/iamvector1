@@ -42,47 +42,74 @@ public class ImageCompressorPage {
         compressorElement.click();
     }
     
-    public void uploadFile(String filePath) {
-        WebElement uploadElement = wait.until(ExpectedConditions.presenceOfElementLocated(
-            By.cssSelector("input[data-test-id='compressor_upload_file_input']")));
-        uploadElement.sendKeys(filePath);
-    	String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
-		this.firstWord = fileName.split(" ")[0];
-    }
+    public void uploadFile(String filePath, WebDriver driver) throws Exception {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	    try {
+	        WebElement fileInput = driver.findElement(By.cssSelector("input[data-test-id='compressor_upload_file_input']"));
+//	        fileInput.sendKeys(filePath);
+
+	        js.executeScript("arguments[0].removeAttribute('hidden'); arguments[0].style.display='block';", fileInput);
+
+	        fileInput.sendKeys(filePath);
+	        System.out.println("✔ File sent to input");
+	        Thread.sleep(2000);
+	        // ⏳ WAIT UNTIL FILE NAME APPEARS IN LIST
+	        WebElement fileItem = wait.until(ExpectedConditions.visibilityOfElementLocated(
+	                By.xpath("//div[@class='files-item dz-processing dz-success dz-complete']")
+	        		));
+	        js.executeScript("window.scrollBy(0, 350);");
+	        System.out.println("✔ Upload processing started");
+
+	        // Wait till it's marked as uploaded or downloadable
+	        wait.until(ExpectedConditions.or(
+	                ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".dz-complete")),
+	                ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".files-item__download"))
+	        ));
+
+	        System.out.println("✔ Upload completed and file entry visible");
+
+	        String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
+	        this.firstWord = fileName.split(" ")[0];
+
+	    } catch (Exception e) {
+	        System.err.println("❌ File Upload Failed: " + e.getMessage());
+	        throw e;
+	    }
+	}
     
-    public void downloadCompressedFile(WebDriver driver) throws InterruptedException {
-    	JavascriptExecutor js = (JavascriptExecutor) driver;
-    	js.executeScript("window.scrollBy(0,350)");
-    	Thread.sleep(2000);
-    	
-//    WebElement qualitypanel = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[class='accordion-button']")));
-//    qualitypanel.click();
-//    WebElement quality = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("//label[normalize-space()='Quality']")));
-//    quality.click(); 
-//    
-//    	WebElement slider = driver.findElement(By.cssSelector("input[type='range']"));
-//    	Actions action = new Actions(driver);
-//    	action.clickAndHold(slider).moveByOffset(-30, 0).release().perform();
-    	
-    	Thread.sleep(3000);
-    	List<WebElement> downloads = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+    public void clickDownload() throws InterruptedException {
+		System.out.println("Uploaded file firstWord Before showing download: " + firstWord);
+		List<WebElement> downloads = wait
+			    .until(ExpectedConditions.presenceOfAllElementsLocatedBy(
 			        By.xpath("//div[contains(@class,'dz-complete')]")));
+
+		System.out.println("Uploaded file firstWord During showing download: " + firstWord);
+	
+
 
 		WebElement dwn = downloads.stream()
 				.filter(p -> p.findElement(By.cssSelector("div[class='files-item__name']")).getText().split(" ")[0].trim()
 						.equals(firstWord))
 				.map(p -> p.findElement(By.cssSelector("div[class='files-item__name']")).findElement(By.xpath("..")))
 				.findFirst().orElse(null);
-		
+		System.out.println("Uploaded file firstWord After showing download: " + firstWord);
+		Thread.sleep(1000);
+		if (dwn == null) {
+			throw new RuntimeException("No matching uploaded file found for: " + firstWord);
+		}
+//		WebElement dwnArea = dwn.findElement(By.xpath(".."));
 		WebElement downloadBtn =dwn.findElement(downloadButtonBy);
-
+//wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
+		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
 		downloadBtn.click();
-    }
+		
+	}
     
-    public void compressImage(String filePath, WebDriver driver) throws InterruptedException {
+    public void compressImage(String filePath, WebDriver driver) throws Exception {
         navigateToImageCompressor();
-        uploadFile(filePath);
-        downloadCompressedFile(driver);
+        uploadFile(filePath,driver);
+        clickDownload();
     }
 }
 

@@ -1,6 +1,8 @@
 package imageconverter;
 
-import java.awt.AWTException;
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.time.Duration;
 
 import org.openqa.selenium.*;
@@ -10,6 +12,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pageobjectmodal.ImageConverterPage;
+import utils.ResourceHelper;
+import utils.RetryAnalyzer;
+import utils.TestDataProvider;
 
 
 public class Testingofimageconverter {
@@ -17,7 +22,7 @@ public class Testingofimageconverter {
 	private WebDriver driver;
 	private ImageConverterPage imageConverterPage;
 	private Goto goto1;
-	private static final String FILE_PATH = "C:\\Users\\admin\\Downloads\\Sendarrow right arrow arrows next go send.svg";
+	
 
 	@BeforeMethod
 	public void setUp() {
@@ -33,24 +38,30 @@ public class Testingofimageconverter {
 		goto1.goTo();
 	}
 
-	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
-	public void testImageConverterSvgToPng() throws AWTException, InterruptedException {
-		imageConverterPage.convertSvgToPng(FILE_PATH, driver);
+
+	
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	public void testImageConverterSvgToPng(String email, String password, String FILE_PATH) throws Exception {
+		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
+		imageConverterPage.convertSvgToPng(fixedPath, driver);
 	}
 
-	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
-	public void testImageConverterSvgToJpeg() throws AWTException, InterruptedException {
-		imageConverterPage.convertSvgToJpeg(FILE_PATH, driver);
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	public void testImageConverterSvgToJpeg(String email, String password, String FILE_PATH) throws Exception {
+		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
+		imageConverterPage.convertSvgToJpeg(fixedPath, driver);
 	}
 
-	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
-	public void testImageConverterSvgToBase64() throws AWTException, InterruptedException {
-		imageConverterPage.convertSvgToBase64(FILE_PATH, driver);
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	public void testImageConverterSvgToBase64(String email, String password, String FILE_PATH) throws Exception {
+		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
+		imageConverterPage.convertSvgToBase64(fixedPath, driver);
 	}
 
-	@Test(retryAnalyzer = utils.RetryAnalyzer.class)
-	public void testImageConverterSvgToWebp() throws AWTException, InterruptedException {
-		imageConverterPage.convertSvgToWebp(FILE_PATH, driver);
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	public void testImageConverterSvgToWebp(String email, String password, String FILE_PATH) throws Exception {
+		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
+		imageConverterPage.convertSvgToWebp(fixedPath, driver);
 	}
 
 	@AfterMethod
