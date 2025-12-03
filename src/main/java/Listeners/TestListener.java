@@ -62,7 +62,7 @@ public class TestListener implements ITestListener {
             extentTest.get().log(Status.WARNING, "Driver instance not found, screenshot not captured");
             System.err.println("Driver is null for test: " + result.getMethod().getMethodName());
         }
-
+        System.out.println("ScreenShot functionality done");
         extentTest.remove();
     }
 

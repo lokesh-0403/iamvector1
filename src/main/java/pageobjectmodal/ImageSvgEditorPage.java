@@ -103,6 +103,7 @@ public class ImageSvgEditorPage {
     WebElement downloadBtn = wait.until(ExpectedConditions.elementToBeClickable(downloadButtonBy));
 
 		downloadBtn.click();
+		Thread.sleep(5000);
 	 	
 }
 	  

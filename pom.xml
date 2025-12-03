@@ -21,21 +21,21 @@
 
 	<dependencies>
 		<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.23.0</version> <!-- or your preferred Selenium 4.x version -->
-</dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.23.0</version> <!-- or your preferred Selenium 4.x version -->
+		</dependency>
 
 		<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.10.2</version>
-</dependency>
-<dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>1.0.2</version>
-</dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.10.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-grid -->
 		<dependency>
@@ -58,14 +58,13 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.33.0</version>
+			<version>4.26.0</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.7.0</version> <!-- Check for the latest version if needed -->
+			<version>5.8.0</version>
 		</dependency>
 
 
@@ -84,32 +83,27 @@
 			<version>4.33.0</version>
 		</dependency>
 
-		
-		
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>1.7.32</version> <!-- or the latest version -->
-</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.32</version> <!-- or the latest version -->
+		</dependency>
 
 
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.0.0</version>
-</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.0</version>
+		</dependency>
 
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.11.0</version>
-</dependency>
-
-
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
 
 
-
-	
 	</dependencies>
 
 	<profiles>
@@ -125,16 +119,16 @@
 
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0-M7</version>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.0.0-M7</version>
 							<configuration>
 								<suiteXmlFiles>
 									<suiteXmlFile>testsuites/convertor.xml</suiteXmlFile>
 									<suiteXmlFile>testsuites/downloadsvg.xml</suiteXmlFile>
 									<suiteXmlFile>testsuites/figmaplugin.xml</suiteXmlFile>
 									<suiteXmlFile>testsuites/imagecompressor.xml</suiteXmlFile>
-									
-										
+
+
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -158,7 +152,7 @@
 							<artifactId>maven-compiler-plugin</artifactId>
 							<version>3.8.0</version>
 						</plugin>
-						
+
 						<plugin>
 							<artifactId>maven-jar-plugin</artifactId>
 							<version>3.0.2</version>

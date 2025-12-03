@@ -103,7 +103,7 @@ public class ImageCompressorPage {
 //wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
 		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
 		downloadBtn.click();
-		
+		Thread.sleep(5000);
 	}
     
     public void compressImage(String filePath, WebDriver driver) throws Exception {

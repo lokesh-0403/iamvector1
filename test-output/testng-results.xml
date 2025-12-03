@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-27T14:01:47 IST" name="Default suite" finished-at="2025-11-27T14:03:23 IST" duration-ms="95954">
+  <suite started-at="2025-11-27T17:06:52 IST" name="Default suite" finished-at="2025-11-27T17:08:17 IST" duration-ms="84481">
     <groups>
     </groups>
-    <test started-at="2025-11-27T14:01:47 IST" name="Default test" finished-at="2025-11-27T14:03:23 IST" duration-ms="95954">
-      <class name="testingofdownloadsvgphoto.TestCollection">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@9d5509a]" started-at="2025-11-27T14:01:47 IST" name="setUp" finished-at="2025-11-27T14:01:52 IST" duration-ms="4251" status="PASS">
+    <test started-at="2025-11-27T17:06:52 IST" name="Default test" finished-at="2025-11-27T17:08:17 IST" duration-ms="84481">
+      <class name="imageconverter.Testingofimageconverter">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:06:52 IST" name="setUp" finished-at="2025-11-27T17:06:55 IST" duration-ms="2541" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@9d5509a]" started-at="2025-11-27T14:01:52 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2025-11-27T14:03:23 IST" duration-ms="91497" status="PASS">
+        <test-method signature="testImageConverterSvgToBase64(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:06:55 IST" name="testImageConverterSvgToBase64" data-provider="uplaodingSVGFile" finished-at="2025-11-27T17:07:14 IST" duration-ms="19460" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,19 +25,105 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[login]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AutoCollection_mule_1764232307798]]>
+                <![CDATA[/C:/Users/admin/Downloads/qazasya-iamvector1-9c52d69d233d/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToCollectionCreateNewCollectionThenEditCollectionName -->
-      </class> <!-- testingofdownloadsvgphoto.TestCollection -->
+        </test-method> <!-- testImageConverterSvgToBase64 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:14 IST" name="tearDown" finished-at="2025-11-27T17:07:14 IST" duration-ms="266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:14 IST" name="setUp" finished-at="2025-11-27T17:07:18 IST" duration-ms="3564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testImageConverterSvgToJpeg(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:18 IST" name="testImageConverterSvgToJpeg" data-provider="uplaodingSVGFile" finished-at="2025-11-27T17:07:35 IST" duration-ms="16597" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yeshsharma516032@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yesh255198@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[/C:/Users/admin/Downloads/qazasya-iamvector1-9c52d69d233d/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImageConverterSvgToJpeg -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:35 IST" name="tearDown" finished-at="2025-11-27T17:07:35 IST" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:35 IST" name="setUp" finished-at="2025-11-27T17:07:40 IST" duration-ms="5021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testImageConverterSvgToPng(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:40 IST" name="testImageConverterSvgToPng" data-provider="uplaodingSVGFile" finished-at="2025-11-27T17:07:57 IST" duration-ms="17435" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yeshsharma516032@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yesh255198@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[/C:/Users/admin/Downloads/qazasya-iamvector1-9c52d69d233d/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImageConverterSvgToPng -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:57 IST" name="tearDown" finished-at="2025-11-27T17:07:57 IST" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:57 IST" name="setUp" finished-at="2025-11-27T17:07:59 IST" duration-ms="1743" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testImageConverterSvgToWebp(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:07:59 IST" name="testImageConverterSvgToWebp" data-provider="uplaodingSVGFile" finished-at="2025-11-27T17:08:16 IST" duration-ms="17049" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[yeshsharma516032@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Yesh255198@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[/C:/Users/admin/Downloads/qazasya-iamvector1-9c52d69d233d/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImageConverterSvgToWebp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:imageconverter.Testingofimageconverter@74e52ef6]" started-at="2025-11-27T17:08:16 IST" name="tearDown" finished-at="2025-11-27T17:08:17 IST" duration-ms="252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- imageconverter.Testingofimageconverter -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

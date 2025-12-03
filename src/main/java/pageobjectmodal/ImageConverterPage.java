@@ -124,7 +124,7 @@ public class ImageConverterPage {
 //wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
 		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
 		downloadBtn.click();
-		
+		Thread.sleep(5000);
 	}
 
 	public void clickpngTab(WebDriver driver) throws InterruptedException {

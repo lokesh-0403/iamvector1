@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -38,17 +39,12 @@ public class TestCollection {
     }
 
     // Uncomment when needed
-    // @AfterMethod
-    // public void tearDown() {
-    //     basePage.closeBrowser();
-    // }
-
-    
+     @AfterMethod
+     public void tearDown() {
+         basePage.closeBrowser();
+     }
    
-
-
-   
- //  @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
+//   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollection(String emailId, String password, String searchKey)
             throws AWTException, InterruptedException {
         
@@ -82,13 +78,11 @@ public class TestCollection {
 //            myCollectionsPage.downloadIcon();
         } else {
             Assert.fail("Icon is NOT present in the collection.");
-        }
-        
-       
+        }   
         driver.close();
     }
 
- //  @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
+//   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenDeleteCollection(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         
@@ -121,13 +115,12 @@ public class TestCollection {
         } else {
             Assert.fail("Icon is NOT present in the new collection.");
         }
-
         // Delete the collection
         myCollectionsPage.deleteCollection(collectionName);
         driver.close();
     }
 
-    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
+    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenEditCollectionName(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         

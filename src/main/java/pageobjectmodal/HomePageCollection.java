@@ -79,22 +79,6 @@ public class HomePageCollection extends BasePage {
 	public void clickSaveToCollectionButton(WebElement icon) throws InterruptedException {
 		WebElement saveToCollectionButton = null;
 
-//    	for (WebElement icons : iconElements) {
-//    	    try {
-//    	        WebElement saveBtn = icons.findElement(saveUnsavedIcon);
-//    	        String state = saveBtn.getAttribute("id");
-//    	        System.out.println("yash"+state);
-//    	        if (state != null && state.equals("svg_save")) {
-//    	            saveToCollectionButton = saveBtn;
-//    	            System.out.println(">>Ifinding button1"+saveBtn);
-//    	            System.out.println(">>Ifinding button"+saveToCollectionButton);
-//    	            break;
-//    	        }
-//    	    } catch (Exception ignored) {
-//    	        // ignore icons without save button
-//    	    }
-//    	}
-
 		boolean buttonFound = false;
 		int maxscrollby = 5;
 		for (int i = 0; i < maxscrollby; i++) {
@@ -116,10 +100,10 @@ public class HomePageCollection extends BasePage {
 	
 		System.out.println(">>I am in loop");
 		JavascriptExecutor js = (JavascriptExecutor) driver; 
-   	        js.executeScript("arguments[0].scrollIntoView(true);", saveToCollectionButton);
-	
+   	    js.executeScript("arguments[0].scrollIntoView(true);", saveToCollectionButton);
+   	    Thread.sleep(2000);
 //		js.executeScript("window.scrollBy(0,300)");
-		Thread.sleep(800);
+		
 
 		if (!loadMoreButtons.isEmpty()) {
 			try {

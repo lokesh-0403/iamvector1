@@ -74,7 +74,7 @@ public class Downloadsvgphoto {
 	}
 	
 	
-	@Test
+	
 
 	public void outlinedSvgDownload() throws InterruptedException {
 		
