@@ -28,7 +28,8 @@ public class HomePageCollection extends BasePage {
 	@FindBy(css = "input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")
 	private WebElement searchEnterButton;
 
-	@FindBy(xpath = "//div[@id='icons_div_container'] //div[@data-test-id='icon_element']")
+
+	@FindBy(xpath = "//div[@data-test-id='icon_element']")
 	private List<WebElement> iconElements;
 
 	@FindBy(xpath = "//span[contains(text(),'Load')]")
@@ -59,6 +60,7 @@ public class HomePageCollection extends BasePage {
 
 		Thread.sleep(5000); // Wait for search results
 	}
+	
 
 	public WebElement selectRandomIcon() {
 		wait.until(ExpectedConditions.visibilityOfAllElements(iconElements));
@@ -71,10 +73,13 @@ public class HomePageCollection extends BasePage {
 
 		return iconElements.get(rand.nextInt(iconElements.size()));
 	}
+	
 
 	public String getIconUniqueId(WebElement icon) {
 		return icon.getAttribute("data-slugid");
 	}
+	
+	
 
 	public void clickSaveToCollectionButton(WebElement icon) throws InterruptedException {
 		WebElement saveToCollectionButton = null;

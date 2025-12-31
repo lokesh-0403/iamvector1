@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="addToCollectionCreateNewCollectionThenEditCollectionName" invocation-numbers="0"/>
+          <include name="addToCollectionCreateNewCollectionThenDeleteCollection" invocation-numbers="0"/>
         </methods>
       </class> <!-- testingofdownloadsvgphoto.TestCollection -->
     </classes>
