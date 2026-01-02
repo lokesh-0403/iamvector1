@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="2" ignored="0" total="5" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-31T14:43:49 IST" name="Default suite" finished-at="2025-12-31T14:47:42 IST" duration-ms="232456">
+  <suite started-at="2026-01-02T16:16:41 IST" name="Default suite" finished-at="2026-01-02T16:20:53 IST" duration-ms="251854">
     <groups>
     </groups>
-    <test started-at="2025-12-31T14:43:49 IST" name="Default test" finished-at="2025-12-31T14:47:42 IST" duration-ms="232456">
+    <test started-at="2026-01-02T16:16:41 IST" name="Default test" finished-at="2026-01-02T16:20:53 IST" duration-ms="251854">
       <class name="testingofdownloadsvgphoto.TestCollection">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:43:49 IST" name="setUp" finished-at="2025-12-31T14:43:53 IST" duration-ms="4046" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:16:41 IST" name="setUp" finished-at="2026-01-02T16:16:48 IST" duration-ms="6735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCollection(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:43:53 IST" name="addToCollection" data-provider="loginCredentialsAndKeyValue" finished-at="2025-12-31T14:44:42 IST" duration-ms="48978" status="PASS">
+        <test-method signature="addToCollection(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:16:48 IST" name="addToCollection" data-provider="loginCredentialsAndKeyValue" finished-at="2026-01-02T16:17:56 IST" duration-ms="68603" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,15 +32,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:44:42 IST" name="tearDown" finished-at="2025-12-31T14:44:42 IST" duration-ms="45" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:17:56 IST" name="tearDown" finished-at="2026-01-02T16:17:57 IST" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:44:42 IST" name="setUp" finished-at="2025-12-31T14:44:46 IST" duration-ms="3990" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:17:57 IST" name="setUp" finished-at="2026-01-02T16:18:03 IST" duration-ms="6167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method retried="true" signature="addToCollectionCreateNewCollectionThenDeleteCollection(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:44:46 IST" name="addToCollectionCreateNewCollectionThenDeleteCollection" data-provider="loginCredentialsForManageCollection" finished-at="2025-12-31T14:45:18 IST" duration-ms="32220" status="SKIP">
+        <test-method signature="addToCollectionCreateNewCollectionThenDeleteCollection(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:18:03 IST" name="addToCollectionCreateNewCollectionThenDeleteCollection" data-provider="loginCredentialsForManageCollection" finished-at="2026-01-02T16:19:29 IST" duration-ms="85823" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -59,88 +59,22 @@
             </param>
             <param index="3">
               <value>
-                <![CDATA[AutoCollection_bat_1767172482721]]>
+                <![CDATA[AutoCollection_buffalo_1767350877112]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.JavascriptException">
-            <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.2', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [63ed5e6b7f7abcde23a076e741ff2cbe, executeScript {args=[null], script=arguments[0].scrollIntoView(true);}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: /var/folders/x9/xxt7kvhx1v7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53923}, goog:processID: 5622, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53923/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 63ed5e6b7f7abcde23a076e741ff2cbe]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.2', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [63ed5e6b7f7abcde23a076e741ff2cbe, executeScript {args=[null], script=arguments[0].scrollIntoView(true);}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: /var/folders/x9/xxt7kvhx1v7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53923}, goog:processID: 5622, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53923/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 63ed5e6b7f7abcde23a076e741ff2cbe
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
-at pageobjectmodal.HomePageCollection.clickSaveToCollectionButton(HomePageCollection.java:108)
-at testingofdownloadsvgphoto.TestCollection.addToCollectionCreateNewCollectionThenDeleteCollection(TestCollection.java:102)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollectionCreateNewCollectionThenDeleteCollection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:45:18 IST" name="tearDown" finished-at="2025-12-31T14:45:19 IST" duration-ms="110" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:19:29 IST" name="tearDown" finished-at="2026-01-02T16:19:29 IST" duration-ms="69" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:45:19 IST" name="setUp" finished-at="2025-12-31T14:45:22 IST" duration-ms="3890" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:19:29 IST" name="setUp" finished-at="2026-01-02T16:19:33 IST" duration-ms="4010" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCollectionCreateNewCollectionThenDeleteCollection(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:45:22 IST" name="addToCollectionCreateNewCollectionThenDeleteCollection" data-provider="loginCredentialsForManageCollection" finished-at="2025-12-31T14:45:55 IST" duration-ms="32225" status="FAIL">
+        <test-method signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:19:33 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2026-01-02T16:20:53 IST" duration-ms="80153" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -159,217 +93,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </param>
             <param index="3">
               <value>
-                <![CDATA[AutoCollection_bat_1767172482721]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.JavascriptException">
-            <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.2', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ead39e4a529132f5075739c077ffc4c4, executeScript {args=[null], script=arguments[0].scrollIntoView(true);}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: /var/folders/x9/xxt7kvhx1v7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53977}, goog:processID: 5678, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53977/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ead39e4a529132f5075739c077ffc4c4]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'scrollIntoView')
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.2', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ead39e4a529132f5075739c077ffc4c4, executeScript {args=[null], script=arguments[0].scrollIntoView(true);}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: /var/folders/x9/xxt7kvhx1v7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53977}, goog:processID: 5678, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53977/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ead39e4a529132f5075739c077ffc4c4
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:475)
-at pageobjectmodal.HomePageCollection.clickSaveToCollectionButton(HomePageCollection.java:108)
-at testingofdownloadsvgphoto.TestCollection.addToCollectionCreateNewCollectionThenDeleteCollection(TestCollection.java:102)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.JavascriptException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addToCollectionCreateNewCollectionThenDeleteCollection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:45:55 IST" name="tearDown" finished-at="2025-12-31T14:45:55 IST" duration-ms="111" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:45:55 IST" name="setUp" finished-at="2025-12-31T14:45:59 IST" duration-ms="4004" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method retried="true" signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:45:59 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2025-12-31T14:46:35 IST" duration-ms="36219" status="SKIP">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[yeshsharma516032@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Yesh255198@]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[login]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AutoCollection_ox_1767172555297]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element is not clickable at point (1204, -215)
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.2', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6599deb8a4f4861e6ba9d93134397e5d, clickElement {id=f.6866A90B243143D3FF7F4917A62EA267.d.014F90C254DB5CD681A9CACB2F9F67D7.e.306}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: /var/folders/x9/xxt7kvhx1v7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54030}, goog:processID: 5737, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54030/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on mac (6599deb8a4f4861e6ba9d93134397e5d)] -> xpath: //div[@data-test-id='icon_element']]] -> xpath: .//div[@class='rounded bg-white svg_save']]
-Session ID: 6599deb8a4f4861e6ba9d93134397e5d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1204, -215)
-  (Session info: chrome=143.0.7499.170)
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.2', java.version: '17.0.11'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6599deb8a4f4861e6ba9d93134397e5d, clickElement {id=f.6866A90B243143D3FF7F4917A62EA267.d.014F90C254DB5CD681A9CACB2F9F67D7.e.306}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: /var/folders/x9/xxt7kvhx1v7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54030}, goog:processID: 5737, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54030/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[ChromeDriver: chrome on mac (6599deb8a4f4861e6ba9d93134397e5d)] -> xpath: //div[@data-test-id='icon_element']]] -> xpath: .//div[@class='rounded bg-white svg_save']]
-Session ID: 6599deb8a4f4861e6ba9d93134397e5d
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at pageobjectmodal.HomePageCollection.clickSaveToCollectionButton(HomePageCollection.java:133)
-at testingofdownloadsvgphoto.TestCollection.addToCollectionCreateNewCollectionThenEditCollectionName(TestCollection.java:140)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addToCollectionCreateNewCollectionThenEditCollectionName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:46:35 IST" name="tearDown" finished-at="2025-12-31T14:46:35 IST" duration-ms="128" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:46:35 IST" name="setUp" finished-at="2025-12-31T14:46:39 IST" duration-ms="3536" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:46:39 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2025-12-31T14:47:42 IST" duration-ms="62810" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[yeshsharma516032@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Yesh255198@]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[login]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[AutoCollection_ox_1767172555297]]>
+                <![CDATA[AutoCollection_impala_1767350969187]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollectionCreateNewCollectionThenEditCollectionName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2025-12-31T14:47:42 IST" name="tearDown" finished-at="2025-12-31T14:47:42 IST" duration-ms="50" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:20:53 IST" name="tearDown" finished-at="2026-01-02T16:20:53 IST" duration-ms="87" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -49,6 +49,11 @@ public class CollectionModal extends BasePage {
     @FindBy(id="search-create-input")
     WebElement searchCollection;
     
+    
+    @FindBy(xpath = "//a[normalize-space()='Clear all']")
+    private WebElement clearAllButton;
+    
+    
     By searchCollectionBy = By.id("search-create-input");
     By selectCollectionBy = By.cssSelector("input[type='checkbox']");
     By collectionNameBy = By.cssSelector("div[class='form-check p-0'] span[class='fw-semibold']");
@@ -65,18 +70,11 @@ public class CollectionModal extends BasePage {
     
 
     public void addToExistingCollection(String collectionName) throws InterruptedException {
-
-        // Uncheck any selected checkboxes (initial state cleanup)
-        List<WebElement> initialCheckboxes =
-                wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
-                        By.cssSelector("input[type='checkbox']")));
-
-        for (WebElement chk : initialCheckboxes) {
-            if (chk.isSelected()) {
-                chk.click();
-            }
-        }
-
+ 
+    	  wait.until(ExpectedConditions.visibilityOf(clearAllButton));
+    	  clearAllButton.click();
+       
+      
         // Search collection
         WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(searchCollectionBy));
         searchInput.clear();

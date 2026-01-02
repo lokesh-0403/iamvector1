@@ -44,43 +44,84 @@ public class TestCollection {
          basePage.closeBrowser();
      }
    
-   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
-    public void addToCollection(String emailId, String password, String searchKey)
-            throws AWTException, InterruptedException {
-        
-        // Login
-        loginPage.login(emailId, password);
-        Thread.sleep(6000);
+//   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
+//    public void addToCollection(String emailId, String password, String searchKey)
+//            throws AWTException, InterruptedException {
+//        
+//        // Login
+//        loginPage.login(emailId, password);
+//        Thread.sleep(6000);
+//
+//        // Search for content
+//        homePage.searchForContent(searchKey);
+//
+//        // Select random icon and get its ID
+//        WebElement randomIcon = homePage.selectRandomIcon();
+//        String uniqueId = homePage.getIconUniqueId(randomIcon);
+//        System.out.println("Selected Icon ID: " + uniqueId);
+//
+//        // Save to collection
+//        homePage.clickSaveToCollectionButton(randomIcon);
+//        collectionModal.addToExistingCollection("card");
+//
+//        
+//        Thread.sleep(4000);
+//        // Navigate to My Collections and verify
+//        myCollectionsPage.navigateToMyCollections();
+//        myCollectionsPage.openCollection("card");
+//
+//        // Verify icon is present and download
+//        boolean isPresent = homePage.isIconPresentInList(uniqueId);
+//        if (isPresent) {
+//            System.out.println("Icon is present in collection.");
+//            homePage.clickIconByUniqueId(uniqueId);
+////            myCollectionsPage.downloadIcon();
+//        } else {
+//            Assert.fail("Icon is NOT present in the collection.");
+//        }   
+//      //  driver.close();
+//    }
+     
+     @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
+     public void addToCollection(String emailId, String password, String searchKey)
+             throws AWTException, InterruptedException {
 
-        // Search for content
-        homePage.searchForContent(searchKey);
+         // Login
+         loginPage.login(emailId, password);
+         Thread.sleep(6000);
 
-        // Select random icon and get its ID
-        WebElement randomIcon = homePage.selectRandomIcon();
-        String uniqueId = homePage.getIconUniqueId(randomIcon);
-        System.out.println("Selected Icon ID: " + uniqueId);
+         // Search for content
+         homePage.searchForContent(searchKey);
 
-        // Save to collection
-        homePage.clickSaveToCollectionButton(randomIcon);
-        collectionModal.addToExistingCollection("card");
+         // Select random UNSAVED icon and get its ID
+         WebElement randomIcon = homePage.selectUnsavedRandomIcon(); // Changed method
+         String uniqueId = homePage.getIconUniqueId(randomIcon);
+         System.out.println("Selected Icon ID: " + uniqueId);
 
-        
-        Thread.sleep(4000);
-        // Navigate to My Collections and verify
-        myCollectionsPage.navigateToMyCollections();
-        myCollectionsPage.openCollection("card");
+         // Save to collection
+         homePage.clickSaveToCollectionButton(randomIcon);
+         collectionModal.addToExistingCollection("card");
 
-        // Verify icon is present and download
-        boolean isPresent = homePage.isIconPresentInList(uniqueId);
-        if (isPresent) {
-            System.out.println("Icon is present in collection.");
-            homePage.clickIconByUniqueId(uniqueId);
-//            myCollectionsPage.downloadIcon();
-        } else {
-            Assert.fail("Icon is NOT present in the collection.");
-        }   
-        driver.close();
-    }
+         Thread.sleep(4000);
+         
+         // Navigate to My Collections and verify
+         myCollectionsPage.navigateToMyCollections();
+         myCollectionsPage.openCollection("card");
+
+         // Verify icon is present and download
+         boolean isPresent = homePage.isIconPresentInList(uniqueId);
+         if (isPresent) {
+             System.out.println("Icon is present in collection.");
+             homePage.clickIconByUniqueId(uniqueId);
+         } else {
+             Assert.fail("Icon is NOT present in the collection.");
+         }
+     }
+     
+     
+     
+     
+     
 
    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenDeleteCollection(String emailId, String password,
@@ -94,7 +135,7 @@ public class TestCollection {
         homePage.searchForContent(searchKey);
 
         // Select random icon and get its ID
-        WebElement randomIcon = homePage.selectRandomIcon();
+        WebElement randomIcon = homePage.selectUnsavedRandomIcon();
         String uniqueId = homePage.getIconUniqueId(randomIcon);
         System.out.println("Selected Icon ID: " + uniqueId);
 
@@ -120,7 +161,7 @@ public class TestCollection {
         driver.close();
     }
 
-    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
+   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenEditCollectionName(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         
@@ -132,7 +173,7 @@ public class TestCollection {
         homePage.searchForContent(searchKey);
 
         // Select random icon and get its ID
-        WebElement randomIcon = homePage.selectRandomIcon();
+        WebElement randomIcon = homePage.selectUnsavedRandomIcon();
         String uniqueId = homePage.getIconUniqueId(randomIcon);
         System.out.println("Selected Icon ID: " + uniqueId);
 
