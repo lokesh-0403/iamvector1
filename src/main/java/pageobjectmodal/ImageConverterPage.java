@@ -30,7 +30,7 @@ public class ImageConverterPage {
 	@FindBy(css = "a[class='files-item__download']")
 	private WebElement downloadButton;
 
-	By downloadButtonBy =By.cssSelector(".files-item__download");
+	By downloadButtonBy =By.cssSelector("a[class='files-item__download']");
 	
 	@FindBy(xpath = "//div[@class='links']//a[1]")
 	private WebElement pngTab;
@@ -61,21 +61,42 @@ public class ImageConverterPage {
 		Thread.sleep(1000);
 	}
 
-	public void uploadFile(String filePath,WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		System.out.println("Before Uplaod: ");
-		WebElement fileInput = wait
-				.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[data-test-id='converter_file_upload_input']")));
-		
-		System.out.println("during Uploaded: " + fileInput);
-		
-		js.executeScript("arguments[0].removeAttribute('hidden'); arguments[0].style.display='block';", fileInput);
-		fileInput.sendKeys(filePath);
-		System.out.println("After Uplaod: ");
-		String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
-		this.firstWord = fileName.split(" ")[0];
-	
+	public void uploadFile(String filePath, WebDriver driver) throws Exception {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	    try {
+	        WebElement fileInput = driver.findElement(By.cssSelector("input[data-test-id='converter_file_upload_input']"));
+//	        fileInput.sendKeys(filePath);
+
+	        js.executeScript("arguments[0].removeAttribute('hidden'); arguments[0].style.display='block';", fileInput);
+
+	        fileInput.sendKeys(filePath);
+	        System.out.println("✔ File sent to input");
+	        Thread.sleep(2000);
+	        // ⏳ WAIT UNTIL FILE NAME APPEARS IN LIST
+	        WebElement fileItemName = wait.until(ExpectedConditions.presenceOfElementLocated(
+	                By.xpath("//div[@class='files-item__name']")
+	        		));
+//	        js.executeScript("arguments[0].scrollIntoView(true);", fileItemName);
+	        System.out.println("✔ Upload processing started");
+
+	        // Wait till it's marked as uploaded or downloadable
+	        wait.until(ExpectedConditions.or(
+	                ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".dz-complete")),
+	                ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".files-item__download"))
+	        ));
+
+	        System.out.println("✔ Upload completed and file entry visible");
+
+	        String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
+	        this.firstWord = fileName.split(" ")[0];
+
+	    } catch (Exception e) {
+	        System.err.println("❌ File Upload Failed: " + e.getMessage());
+	        throw e;
+	    }
 	}
+
 
 	
 	public void clickDownload() throws InterruptedException {
@@ -103,7 +124,7 @@ public class ImageConverterPage {
 //wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
 		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
 		downloadBtn.click();
-		
+		Thread.sleep(5000);
 	}
 
 	public void clickpngTab(WebDriver driver) throws InterruptedException {
@@ -143,7 +164,7 @@ public class ImageConverterPage {
 	}
 
 	// Combined methods for complete workflows
-	public void convertSvgToPng(String filePath, WebDriver driver) throws InterruptedException {
+	public void convertSvgToPng(String filePath, WebDriver driver) throws Exception {
 		
 		clickImageConverterCard();
 		clickpngTab(driver);
@@ -152,7 +173,7 @@ public class ImageConverterPage {
 		clickDownload();
 	}
 
-	public void convertSvgToJpeg(String filePath, WebDriver driver) throws InterruptedException {
+	public void convertSvgToJpeg(String filePath, WebDriver driver) throws Exception {
 		clickImageConverterCard();
 		clickJpegTab(driver);
 		
@@ -160,7 +181,7 @@ public class ImageConverterPage {
 		clickDownload();
 	}
 
-	public void convertSvgToBase64(String filePath, WebDriver driver) throws InterruptedException {
+	public void convertSvgToBase64(String filePath, WebDriver driver) throws Exception {
 		clickImageConverterCard();
 		clickBase64Tab(driver);
 		
@@ -168,7 +189,7 @@ public class ImageConverterPage {
 		clickDownload();
 	}
 
-	public void convertSvgToWebp(String filePath, WebDriver driver) throws InterruptedException {
+	public void convertSvgToWebp(String filePath, WebDriver driver) throws Exception {
 		clickImageConverterCard();
 		clickWebpTab(driver);
 		

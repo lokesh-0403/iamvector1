@@ -1,13 +1,18 @@
  package brokenLinkTest;
 
+import java.net.http.HttpClient;
 import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,7 +31,17 @@ public class LinkStatusCheck {
 	    private LoginPage loginPage;
 	    private	DevTools devTools;
 	    private	StatusRequestCheck statusRequestCheck;
+	    public static ExecutorService executor;
+	    public static HttpClient client;
 	    private Set<String> links = new HashSet<>();
+	    
+	    @BeforeClass
+	    public void setupHttpClient() {
+	        executor = Executors.newFixedThreadPool(5);
+	        client = HttpClient.newBuilder()
+	                .executor(executor)
+	                .build();
+	    }
 	   
 	    @BeforeMethod
 	    public void setUp() {
@@ -42,7 +57,7 @@ public class LinkStatusCheck {
 	    }
 	    
 	    
-	    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)
+	    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
 	    public void addToCollection(String emailId, String password)
 	            throws Exception {
 	        
@@ -60,4 +75,7 @@ public class LinkStatusCheck {
 	            driver.quit();
 	        }
 	    }
+	    
+	
+
 }

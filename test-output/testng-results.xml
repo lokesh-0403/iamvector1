@@ -1,105 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2025-09-16T17:03:16 IST" name="Default suite" finished-at="2025-09-16T17:03:25 IST" duration-ms="8885">
-    <groups>
-    </groups>
-    <test started-at="2025-09-16T17:03:16 IST" name="Default test" finished-at="2025-09-16T17:03:25 IST" duration-ms="8885">
-      <class name="brokenLinkTest.LinkStatusCheck">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:brokenLinkTest.LinkStatusCheck@5db6b9cd]" started-at="2025-09-16T17:03:16 IST" name="setUp" finished-at="2025-09-16T17:03:25 IST" duration-ms="8746" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[unknown error: failed to change window state to 'normal', current state is 'maximized'
-  (Session info: chrome=140.0.7339.128)
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ed24f6092aaa8992c7d23a3ecaee6540, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ed24f6092aaa8992c7d23a3ecaee6540]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: failed to change window state to 'normal', current state is 'maximized'
-  (Session info: chrome=140.0.7339.128)
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ed24f6092aaa8992c7d23a3ecaee6540, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ed24f6092aaa8992c7d23a3ecaee6540
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:630)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:634)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1060)
-at pageobjectmodal.BasePage.navigateToApplication(BasePage.java:20)
-at brokenLinkTest.LinkStatusCheck.setUp(LinkStatusCheck.java:41)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addToCollection(java.lang.String,java.lang.String)[pri:0, instance:brokenLinkTest.LinkStatusCheck@5db6b9cd]" started-at="2025-09-16T17:03:25 IST" name="addToCollection" data-provider="loginCredentials" finished-at="2025-09-16T17:03:25 IST" duration-ms="1" status="SKIP">
-=======
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-12T15:17:03 IST" name="Default suite" finished-at="2025-09-12T15:27:05 IST" duration-ms="602375">
+  <suite started-at="2026-01-02T16:16:41 IST" name="Default suite" finished-at="2026-01-02T16:20:53 IST" duration-ms="251854">
     <groups>
     </groups>
-    <test started-at="2025-09-12T15:17:03 IST" name="Default test" finished-at="2025-09-12T15:27:05 IST" duration-ms="602375">
+    <test started-at="2026-01-02T16:16:41 IST" name="Default test" finished-at="2026-01-02T16:20:53 IST" duration-ms="251854">
       <class name="testingofdownloadsvgphoto.TestCollection">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:17:03 IST" name="setUp" finished-at="2025-09-12T15:17:24 IST" duration-ms="21579" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:16:41 IST" name="setUp" finished-at="2026-01-02T16:16:48 IST" duration-ms="6735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCollection(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:17:24 IST" name="addToCollection" data-provider="loginCredentialsAndKeyValue" finished-at="2025-09-12T15:20:29 IST" duration-ms="184464" status="PASS">
->>>>>>> 936887c (done)
+        <test-method signature="addToCollection(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:16:48 IST" name="addToCollection" data-provider="loginCredentialsAndKeyValue" finished-at="2026-01-02T16:17:56 IST" duration-ms="68603" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -111,102 +23,24 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
                 <![CDATA[Yesh255198@]]>
               </value>
             </param>
-<<<<<<< HEAD
-=======
             <param index="2">
               <value>
-                <![CDATA[creature]]>
+                <![CDATA[login]]>
               </value>
             </param>
->>>>>>> 936887c (done)
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[unknown error: failed to change window state to 'normal', current state is 'maximized'
-  (Session info: chrome=140.0.7339.128)
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ed24f6092aaa8992c7d23a3ecaee6540, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ed24f6092aaa8992c7d23a3ecaee6540]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: failed to change window state to 'normal', current state is 'maximized'
-  (Session info: chrome=140.0.7339.128)
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ed24f6092aaa8992c7d23a3ecaee6540, maximizeCurrentWindow {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62815}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62815/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ed24f6092aaa8992c7d23a3ecaee6540
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:630)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:634)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1060)
-at pageobjectmodal.BasePage.navigateToApplication(BasePage.java:20)
-at brokenLinkTest.LinkStatusCheck.setUp(LinkStatusCheck.java:41)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollection -->
-<<<<<<< HEAD
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:brokenLinkTest.LinkStatusCheck@5db6b9cd]" started-at="2025-09-16T17:03:25 IST" name="tearDown" finished-at="2025-09-16T17:03:25 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:17:56 IST" name="tearDown" finished-at="2026-01-02T16:17:57 IST" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- brokenLinkTest.LinkStatusCheck -->
-=======
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:20:29 IST" name="setUp" finished-at="2025-09-12T15:20:52 IST" duration-ms="23642" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:17:57 IST" name="setUp" finished-at="2026-01-02T16:18:03 IST" duration-ms="6167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCollectionCreateNewCollectionThenDeleteCollection(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:20:52 IST" name="addToCollectionCreateNewCollectionThenDeleteCollection" data-provider="loginCredentialsForManageCollection" finished-at="2025-09-12T15:24:12 IST" duration-ms="199228" status="PASS">
+        <test-method signature="addToCollectionCreateNewCollectionThenDeleteCollection(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:18:03 IST" name="addToCollectionCreateNewCollectionThenDeleteCollection" data-provider="loginCredentialsForManageCollection" finished-at="2026-01-02T16:19:29 IST" duration-ms="85823" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -225,18 +59,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </param>
             <param index="3">
               <value>
-                <![CDATA[AutoCollection_raven_1757670629223]]>
+                <![CDATA[AutoCollection_buffalo_1767350877112]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollectionCreateNewCollectionThenDeleteCollection -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:24:12 IST" name="setUp" finished-at="2025-09-12T15:24:31 IST" duration-ms="19407" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:19:29 IST" name="tearDown" finished-at="2026-01-02T16:19:29 IST" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:19:29 IST" name="setUp" finished-at="2026-01-02T16:19:33 IST" duration-ms="4010" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@5be6e01c]" started-at="2025-09-12T15:24:31 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2025-09-12T15:27:05 IST" duration-ms="153944" status="PASS">
+        <test-method signature="addToCollectionCreateNewCollectionThenEditCollectionName(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:19:33 IST" name="addToCollectionCreateNewCollectionThenEditCollectionName" data-provider="loginCredentialsForManageCollection" finished-at="2026-01-02T16:20:53 IST" duration-ms="80153" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -255,15 +93,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </param>
             <param index="3">
               <value>
-                <![CDATA[AutoCollection_chimpanzee_1757670852113]]>
+                <![CDATA[AutoCollection_impala_1767350969187]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCollectionCreateNewCollectionThenEditCollectionName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofdownloadsvgphoto.TestCollection@3a93b025]" started-at="2026-01-02T16:20:53 IST" name="tearDown" finished-at="2026-01-02T16:20:53 IST" duration-ms="87" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- testingofdownloadsvgphoto.TestCollection -->
->>>>>>> 936887c (done)
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

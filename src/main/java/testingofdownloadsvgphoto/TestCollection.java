@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pageobjectmodal.BasePage;
@@ -37,52 +39,91 @@ public class TestCollection {
     }
 
     // Uncomment when needed
-    // @AfterMethod
-    // public void tearDown() {
-    //     basePage.closeBrowser();
-    // }
+     @AfterMethod
+     public void tearDown() {
+         basePage.closeBrowser();
+     }
+   
+//   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
+//    public void addToCollection(String emailId, String password, String searchKey)
+//            throws AWTException, InterruptedException {
+//        
+//        // Login
+//        loginPage.login(emailId, password);
+//        Thread.sleep(6000);
+//
+//        // Search for content
+//        homePage.searchForContent(searchKey);
+//
+//        // Select random icon and get its ID
+//        WebElement randomIcon = homePage.selectRandomIcon();
+//        String uniqueId = homePage.getIconUniqueId(randomIcon);
+//        System.out.println("Selected Icon ID: " + uniqueId);
+//
+//        // Save to collection
+//        homePage.clickSaveToCollectionButton(randomIcon);
+//        collectionModal.addToExistingCollection("card");
+//
+//        
+//        Thread.sleep(4000);
+//        // Navigate to My Collections and verify
+//        myCollectionsPage.navigateToMyCollections();
+//        myCollectionsPage.openCollection("card");
+//
+//        // Verify icon is present and download
+//        boolean isPresent = homePage.isIconPresentInList(uniqueId);
+//        if (isPresent) {
+//            System.out.println("Icon is present in collection.");
+//            homePage.clickIconByUniqueId(uniqueId);
+////            myCollectionsPage.downloadIcon();
+//        } else {
+//            Assert.fail("Icon is NOT present in the collection.");
+//        }   
+//      //  driver.close();
+//    }
+     
+     @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
+     public void addToCollection(String emailId, String password, String searchKey)
+             throws AWTException, InterruptedException {
 
-   @Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
-    public void addToCollection(String emailId, String password, String searchKey)
-            throws AWTException, InterruptedException {
-        
-        // Login
-        loginPage.login(emailId, password);
-        Thread.sleep(6000);
+         // Login
+         loginPage.login(emailId, password);
+         Thread.sleep(6000);
 
-        // Search for content
-        homePage.searchForContent(searchKey);
+         // Search for content
+         homePage.searchForContent(searchKey);
 
-        // Select random icon and get its ID
-        WebElement randomIcon = homePage.selectRandomIcon();
-        String uniqueId = homePage.getIconUniqueId(randomIcon);
-        System.out.println("Selected Icon ID: " + uniqueId);
+         // Select random UNSAVED icon and get its ID
+         WebElement randomIcon = homePage.selectUnsavedRandomIcon(); // Changed method
+         String uniqueId = homePage.getIconUniqueId(randomIcon);
+         System.out.println("Selected Icon ID: " + uniqueId);
 
-        // Save to collection
-        homePage.clickSaveToCollectionButton(randomIcon);
-        collectionModal.addToExistingCollection("card");
+         // Save to collection
+         homePage.clickSaveToCollectionButton(randomIcon);
+         collectionModal.addToExistingCollection("card");
 
-        
-        Thread.sleep(5000);
-        // Navigate to My Collections and verify
-        myCollectionsPage.navigateToMyCollections();
-        myCollectionsPage.openCollection("card");
+         Thread.sleep(4000);
+         
+         // Navigate to My Collections and verify
+         myCollectionsPage.navigateToMyCollections();
+         myCollectionsPage.openCollection("card");
 
-        // Verify icon is present and download
-        boolean isPresent = homePage.isIconPresentInList(uniqueId);
-        if (isPresent) {
-            System.out.println("Icon is present in collection.");
-            homePage.clickIconByUniqueId(uniqueId);
-//            myCollectionsPage.downloadIcon();
-        } else {
-            Assert.fail("Icon is NOT present in the collection.");
-        }
-        
-        myCollectionsPage.deleteCollection("card");
-        driver.close();
-    }
+         // Verify icon is present and download
+         boolean isPresent = homePage.isIconPresentInList(uniqueId);
+         if (isPresent) {
+             System.out.println("Icon is present in collection.");
+             homePage.clickIconByUniqueId(uniqueId);
+         } else {
+             Assert.fail("Icon is NOT present in the collection.");
+         }
+     }
+     
+     
+     
+     
+     
 
-   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
+   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenDeleteCollection(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         
@@ -94,7 +135,7 @@ public class TestCollection {
         homePage.searchForContent(searchKey);
 
         // Select random icon and get its ID
-        WebElement randomIcon = homePage.selectRandomIcon();
+        WebElement randomIcon = homePage.selectUnsavedRandomIcon();
         String uniqueId = homePage.getIconUniqueId(randomIcon);
         System.out.println("Selected Icon ID: " + uniqueId);
 
@@ -115,13 +156,12 @@ public class TestCollection {
         } else {
             Assert.fail("Icon is NOT present in the new collection.");
         }
-
         // Delete the collection
         myCollectionsPage.deleteCollection(collectionName);
         driver.close();
     }
 
-    @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class)
+   @Test(dataProvider = "loginCredentialsForManageCollection", dataProviderClass = TestDataProvider.class,retryAnalyzer = utils.RetryAnalyzer.class)
     public void addToCollectionCreateNewCollectionThenEditCollectionName(String emailId, String password,
             String searchKey, String collectionName) throws AWTException, InterruptedException {
         
@@ -133,7 +173,7 @@ public class TestCollection {
         homePage.searchForContent(searchKey);
 
         // Select random icon and get its ID
-        WebElement randomIcon = homePage.selectRandomIcon();
+        WebElement randomIcon = homePage.selectUnsavedRandomIcon();
         String uniqueId = homePage.getIconUniqueId(randomIcon);
         System.out.println("Selected Icon ID: " + uniqueId);
 

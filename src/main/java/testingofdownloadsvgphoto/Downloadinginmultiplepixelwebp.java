@@ -12,30 +12,36 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import imageconverter.Goto;
-@Test
-public class Downloadinginmultiplepixelwebp {
+import pageobjectmodal.BaseTest;
 
-	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	@BeforeMethod
-	public void setUp() {
-		driver.set(new ChromeDriver());
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		getDriver().manage().window().maximize();
-	}
 
-	@AfterMethod
-	public void tearDown() {
-		getDriver().quit();
-		driver.remove();
-	}
+@Test(retryAnalyzer = utils.RetryAnalyzer.class)
 
-	private WebDriver getDriver() {
-		return driver.get();
-	}
+public class Downloadinginmultiplepixelwebp extends BaseTest{
+
+//	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+//
+//	
+//	public void setUp() {
+//		driver.set(new ChromeDriver());
+//		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//		getDriver().manage().window().maximize();
+//	}
+//
+////	@AfterMethod
+//	public void tearDown() {
+//		getDriver().quit();
+//		driver.remove();
+//	}
+//
+//	private WebDriver getDriver() {
+//		return driver.get();
+//	}
 
 	@Test
 	public void downloadInWebpWith26px() throws InterruptedException {

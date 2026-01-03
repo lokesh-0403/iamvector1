@@ -49,6 +49,11 @@ public class CollectionModal extends BasePage {
     @FindBy(id="search-create-input")
     WebElement searchCollection;
     
+    
+    @FindBy(xpath = "//a[normalize-space()='Clear all']")
+    private WebElement clearAllButton;
+    
+    
     By searchCollectionBy = By.id("search-create-input");
     By selectCollectionBy = By.cssSelector("input[type='checkbox']");
     By collectionNameBy = By.cssSelector("div[class='form-check p-0'] span[class='fw-semibold']");
@@ -65,56 +70,39 @@ public class CollectionModal extends BasePage {
     
 
     public void addToExistingCollection(String collectionName) throws InterruptedException {
-//        wait.until(ExpectedConditions.elementToBeClickable(customSearchButton));
-//        customSearchButton.click();
-    	List<WebElement> checkboxes =wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
-    			By.cssSelector("input[type='checkbox']")));
-    	if(!checkboxes.isEmpty()) {
-    		
-    		for(int i=0; i<checkboxes.size();i++) {
-    			WebElement allCheckBox = checkboxes.get(i);
-    		if(allCheckBox.isSelected()) {
-    			System.out.println("Unselect the selected check box");
-    			allCheckBox.click();    		
-    			}	
-    	}
-    }	
-    	wait.until(ExpectedConditions.presenceOfElementLocated(searchCollectionBy)).sendKeys(collectionName);
-    	searchCollection.sendKeys(Keys.ENTER);
-    	Thread.sleep(2000);  
-    	 WebElement checkbox = driver.findElement(By.cssSelector("input[type='checkbox']"));
-    	 if (!checkbox.isSelected()) {
- 	        checkbox.click();
-	    }
-    	 Thread.sleep(3000);        
-//     	if (collectionName.equals("card")) {
-//     	WebElement coll = checkboxes.stream().filter(p->p.
-// 				findElement( By.xpath("//span[normalize-space(text())='" + collectionName + "' or starts-with(normalize-space(text()), '" + collectionName + " ')]"))
-// 				.getText().split("\\(")[0].trim().equalsIgnoreCase(collectionName))
-//     			.findFirst().orElse(null);
-////     	coll.findElement(By.cssSelector("input[type='checkbox']")).click();
-//     	 WebElement checkbox =  driver.findElement(
-//     	            with(By.cssSelector("input[type='checkbox']")).toLeftOf(By.cssSelector("div[id='recent-"+collectionName+"'] span[class='fw-semibold'])"
-//     	        )));
-//     	   if (!checkbox.isSelected()) {
-//     	        checkbox.click();
-//     	    }
-//   }    	 
-//            cardCollection.click();
-//             else {
-//            // For other collection names, use dynamic xpath
-//            WebElement collection = wait.until(ExpectedConditions.elementToBeClickable(
-//                By.xpath("//div[normalize-space()='" + collectionName + "']")));
-//            collection.click();
-//        }
-        
-//        removeFromDefaultCollection();
-    	 
+ 
+    	  wait.until(ExpectedConditions.visibilityOf(clearAllButton));
+    	  clearAllButton.click();
+       
+      
+        // Search collection
+        WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(searchCollectionBy));
+        searchInput.clear();
+        searchInput.sendKeys(collectionName, Keys.ENTER);
+
+        // Wait for results to load
+        Thread.sleep(1500);
+
+        // Extract short name for matching
+        String shortCollName = collectionName.split("\\(")[0].trim();
+
+        // ---- IMPORTANT PART : Locate the correct checkbox after search ----
+        String xpath =
+                "//span[normalize-space(text())='" + shortCollName + "' " +
+                        "or starts-with(normalize-space(text()), '" + shortCollName + "')]"
+                        + "/ancestor::div[contains(@class,'form-check p-0')]//input[@type='checkbox']";
+
+        WebElement targetCheckbox = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+
+        if (!targetCheckbox.isSelected()) {
+            targetCheckbox.click();
+        }
+
+        // Save and close
         saveToCollection();
         closeModal();
-        
-        Thread.sleep(4000);
     }
+
     
     public void listOfCollections() {
     	

@@ -1,5 +1,7 @@
 package testingofdownloadsvgphoto;
 
+import java.io.File;
+import java.net.URLDecoder;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -13,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.TestDataProvider;
 
@@ -38,19 +41,26 @@ public class UploadingSVG {
 	}
 
 
-	
-	@Test(dataProvider = "uplaodingSVGFile",dataProviderClass=TestDataProvider.class)
-	public void uploadSvg(String emailId,String password,String file, String fileE) throws Exception {
-		
-		
-		basePage.navigateToApplication();
-		loginPage.login(emailId,password);
-		
-		imageSVGEditor.editSVGImage(fileE,driver);
-		
-		driver.quit();
-		
-			
-		}
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class)
+	public void uploadSvg(String emailId, String password, String file) throws Exception {
+
+	    // Fix: decode URL-encoded path
+	    String decodedPath = URLDecoder.decode(file, "UTF-8");
+
+	    File f = new File(decodedPath);
+	    if (!f.exists()) {
+	        throw new RuntimeException("❌ File does NOT exist: " + decodedPath);
+	    }
+
+	    String correctPath = f.getAbsolutePath();
+	    System.out.println("✔ Using Path: " + correctPath);
+
+	    basePage.navigateToApplication();
+	    loginPage.login(emailId, password);
+	    imageSVGEditor.editSVGImage(correctPath, driver);
+
+	    driver.quit();
+	}
+
 		    	
 	}	

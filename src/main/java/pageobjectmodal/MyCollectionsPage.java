@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.github.javafaker.Faker;
 
@@ -90,8 +91,11 @@ public class MyCollectionsPage extends BasePage {
             WebElement deleteOption = driver.findElement(By.xpath(
                 "//ul[contains(@class,'dropdown-menu collection-options show')]//span[contains(@class,'danger')][normalize-space()='Delete Collection']"));
             deleteOption.click();
-            Thread.sleep(800);
-            driver.switchTo().alert().getText();
+          
+      
+           Thread.sleep(800);
+            String alterText= driver.switchTo().alert().getText();
+            Assert.assertEquals(alterText.trim(), "Are you sure you want to delete this collection?");
     		driver.switchTo().alert().accept();
             
           Thread.sleep(3000);         
@@ -146,8 +150,18 @@ public class MyCollectionsPage extends BasePage {
         editField.clear();
         editField.sendKeys(editedName);
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("button[id='save-name-btn']"));
-       
+      
+       WebElement saveBtn= driver.findElement(By.cssSelector("button[id='save-name-btn']"));
+       saveBtn.click();
+        Thread.sleep(1000);
+
+        WebElement collName = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("(//a[normalize-space()='"+editedName+"'])[1]")));
+       if(collName.isDisplayed()) {
+        System.out.println("Updated Successfully");
+       }else {
+    	   throw new  IllegalArgumentException("!! Your custom exception message here.");
+       }
         Thread.sleep(3000);
         
     }
