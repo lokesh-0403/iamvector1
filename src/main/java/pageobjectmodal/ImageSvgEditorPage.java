@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import utils.ResourceHelper;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -110,8 +111,10 @@ public class ImageSvgEditorPage {
     public void imagecheck(WebDriver driver) throws IOException {
 
     	// Read original SVG from file
-    	String originalSvg = new String(Files.readAllBytes(Paths.get("C:\\Users\\admin\\Downloads\\qazasya-iamvector1-9c52d69d233d\\src\\main\\resources\\files\\Female doctor with cross mark.svg")), StandardCharsets.UTF_8);
-
+    //	String originalSvg = new String(Files.readAllBytes(Paths.get("C:\\Users\\admin\\Downloads\\qazasya-iamvector1-9c52d69d233d\\src\\main\\resources\\files\\Female doctor with cross mark.svg")), StandardCharsets.UTF_8);
+    	String originalSvg = ResourceHelper.getResourceFilePath("files/Female doctor with cross mark.svg");
+    	
+    //	String originalSvg = new String(Files.readAllBytes(Paths.get("C:\\Users\\admin\\Downloads\\Female doctor with cross mark.svg")), StandardCharsets.UTF_8);
     	// Get rendered SVG from the preview pane
     	WebElement renderedSvgElement = driver.findElement(By.cssSelector("svg"));
     	String renderedSvg = renderedSvgElement.getAttribute("outerHTML");

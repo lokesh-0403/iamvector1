@@ -13,14 +13,14 @@ public class TestDataProvider {
         return new Object[][] {
             {"SVG", ResourceHelper.getResourceFilePath("files/Female doctor with cross mark.svg")},
             {"PNG", ResourceHelper.getResourceFilePath("files/iamvector_download.png")},
-            {"JPG", ResourceHelper.getResourceFilePath("files/Mini arrow left.jpg")}
+            {"JPG", ResourceHelper.getResourceFilePath("files/Computer desktop imac.jpg")}
         };
     }
     
     @DataProvider(name = "loginCredentialsAndKeyValue")
     public Object[][] getLoginCredentials() {
         return new Object[][] {
-            {"yeshsharma516032@gmail.com", "Yesh255198@", "login"},
+            {"yeshsharma516032@gmail.com", "Yesh255198@", "Book"},
           //  {"yeshsharma516032@gmail.com", "Yesh255198@", "chair"},
           //  {"yeshsharma516032@gmail.com", "Yesh255198@", "mobile"},
         };
@@ -41,7 +41,7 @@ public class TestDataProvider {
     	Faker faker = new Faker();
     	String collectionName = "AutoCollection_" + faker.animal().name()+ "_" + System.currentTimeMillis();
         return new Object[][] {
-            {"yeshsharma516032@gmail.com", "Yesh255198@", "login", collectionName},
+            {"yeshsharma516032@gmail.com", "Yesh255198@", "Phone", collectionName},
         
         };
     }

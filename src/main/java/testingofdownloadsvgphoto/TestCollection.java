@@ -11,13 +11,14 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pageobjectmodal.BasePage;
+import pageobjectmodal.BaseTest;
 import pageobjectmodal.CollectionModal;
 import pageobjectmodal.HomePageCollection;
 import pageobjectmodal.LoginPage;
 import pageobjectmodal.MyCollectionsPage;
 import utils.TestDataProvider;
 
-public class TestCollection {
+public class TestCollection extends BaseTest {
     private WebDriver driver;
     private BasePage basePage;
     private LoginPage loginPage;
@@ -28,7 +29,7 @@ public class TestCollection {
 
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver();
+    	driver = getDriver();
         basePage = new BasePage(driver);
         loginPage = new LoginPage(driver);
         homePage = new HomePageCollection(driver);

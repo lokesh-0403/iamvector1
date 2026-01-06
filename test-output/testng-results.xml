@@ -1,17 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-06T12:58:15 IST" name="Default suite" finished-at="2026-01-06T12:59:52 IST" duration-ms="96575">
+  <suite started-at="2026-01-06T16:31:16 IST" name="Default suite" finished-at="2026-01-06T16:32:50 IST" duration-ms="93263">
     <groups>
     </groups>
-    <test started-at="2026-01-06T12:58:15 IST" name="Default test" finished-at="2026-01-06T12:59:52 IST" duration-ms="96575">
+    <test started-at="2026-01-06T16:31:16 IST" name="Default test" finished-at="2026-01-06T16:32:50 IST" duration-ms="93263">
       <class name="testingofimagecompressor.Imagecompressortesting">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@7c7a06ec]" started-at="2026-01-06T12:58:15 IST" name="setUp" finished-at="2026-01-06T12:58:40 IST" duration-ms="24752" status="PASS">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:16 IST" name="setup" finished-at="2026-01-06T16:31:21 IST" duration-ms="4176" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55e2fe3c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:21 IST" name="setUp" finished-at="2026-01-06T16:31:23 IST" duration-ms="2435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSvgImageCompressorWithLogin(java.lang.String,java.lang.String)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@7c7a06ec]" started-at="2026-01-06T12:58:40 IST" name="testSvgImageCompressorWithLogin" data-provider="loginCredentials" finished-at="2026-01-06T12:59:51 IST" duration-ms="71499" status="PASS">
+        <test-method signature="testImageCompressorWithDifferentFormats(java.lang.String,java.lang.String)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:23 IST" name="testImageCompressorWithDifferentFormats" data-provider="imageFiles" finished-at="2026-01-06T16:31:34 IST" duration-ms="10936" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SVG]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/Users/shalini/iamvector1/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImageCompressorWithDifferentFormats -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:34 IST" name="tearDown" finished-at="2026-01-06T16:31:34 IST" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:34 IST" name="setup" finished-at="2026-01-06T16:31:36 IST" duration-ms="1756" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55e2fe3c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:36 IST" name="setUp" finished-at="2026-01-06T16:31:38 IST" duration-ms="2440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testImageCompressorWithDifferentFormats(java.lang.String,java.lang.String)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:38 IST" name="testImageCompressorWithDifferentFormats" data-provider="imageFiles" finished-at="2026-01-06T16:31:49 IST" duration-ms="10737" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PNG]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/Users/shalini/iamvector1/target/classes/files/iamvector_download.png]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImageCompressorWithDifferentFormats -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:49 IST" name="tearDown" finished-at="2026-01-06T16:31:49 IST" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:49 IST" name="setup" finished-at="2026-01-06T16:31:51 IST" duration-ms="1372" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55e2fe3c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:51 IST" name="setUp" finished-at="2026-01-06T16:31:53 IST" duration-ms="2643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testImageCompressorWithDifferentFormats(java.lang.String,java.lang.String)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:31:53 IST" name="testImageCompressorWithDifferentFormats" data-provider="imageFiles" finished-at="2026-01-06T16:32:03 IST" duration-ms="9847" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[JPG]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/Users/shalini/iamvector1/target/classes/files/Computer%20desktop%20imac.jpg]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImageCompressorWithDifferentFormats -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:03 IST" name="tearDown" finished-at="2026-01-06T16:32:03 IST" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:03 IST" name="setup" finished-at="2026-01-06T16:32:05 IST" duration-ms="1409" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55e2fe3c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:05 IST" name="setUp" finished-at="2026-01-06T16:32:07 IST" duration-ms="2115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testJpgImageCompressor()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:07 IST" name="testJpgImageCompressor" finished-at="2026-01-06T16:32:17 IST" duration-ms="10008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testJpgImageCompressor -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:17 IST" name="tearDown" finished-at="2026-01-06T16:32:17 IST" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:17 IST" name="setup" finished-at="2026-01-06T16:32:18 IST" duration-ms="1379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55e2fe3c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:18 IST" name="setUp" finished-at="2026-01-06T16:32:21 IST" duration-ms="2598" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPngImageCompressor()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:21 IST" name="testPngImageCompressor" finished-at="2026-01-06T16:32:31 IST" duration-ms="10379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPngImageCompressor -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:31 IST" name="tearDown" finished-at="2026-01-06T16:32:31 IST" duration-ms="97" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:31 IST" name="setup" finished-at="2026-01-06T16:32:33 IST" duration-ms="1362" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55e2fe3c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:33 IST" name="setUp" finished-at="2026-01-06T16:32:35 IST" duration-ms="2436" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSvgImageCompressorWithLogin(java.lang.String,java.lang.String)[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:35 IST" name="testSvgImageCompressorWithLogin" data-provider="loginCredentials" finished-at="2026-01-06T16:32:50 IST" duration-ms="14375" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,10 +189,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSvgImageCompressorWithLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@7c7a06ec]" started-at="2026-01-06T12:59:52 IST" name="tearDown" finished-at="2026-01-06T12:59:52 IST" duration-ms="176" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:50 IST" name="tearDown" finished-at="2026-01-06T16:32:50 IST" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:testingofimagecompressor.Imagecompressortesting@710f4dc7]" started-at="2026-01-06T16:32:55 IST" name="cleanup" finished-at="2026-01-06T16:32:55 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
       </class> <!-- testingofimagecompressor.Imagecompressortesting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

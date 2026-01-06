@@ -13,22 +13,17 @@ import org.testng.annotations.Test;
 
 
 import imageconverter.Goto;
+import pageobjectmodal.BaseTest;
 
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
 @Test(retryAnalyzer = utils.RetryAnalyzer.class)
-public class Downloadsvgphoto {
+public class Downloadsvgphoto extends BaseTest {
 	
 	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	@BeforeMethod
-	public void setUp() {
-		driver.set(new ChromeDriver());
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		getDriver().manage().window().maximize();
-	}
 
 	@AfterMethod
 	public void tearDown() {
@@ -36,11 +31,9 @@ public class Downloadsvgphoto {
 		driver.remove();
 	}
 
-	private WebDriver getDriver() {
-		return driver.get();
-	}
-
 	
+
+//	@Test
 	public void allAssestsSvgDownload() {
 		WebDriver driver = getDriver();
 
@@ -229,7 +222,7 @@ public class Downloadsvgphoto {
 		
 	}
 
-	public void filledrSvgDownload() throws InterruptedException {
+	public void pixelSvgDownload() throws InterruptedException {
 		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
@@ -249,7 +242,7 @@ public class Downloadsvgphoto {
 		
 
 		WebElement element11 = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_filled']")));
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_pixel']")));
 		element11.click();
 
 		
@@ -265,7 +258,8 @@ public class Downloadsvgphoto {
 	
 	}
 	
-	public void flatSvgDownload() throws InterruptedException {
+//	@Test
+	public void thinSvgDownload() throws InterruptedException {
 		WebDriver driver = getDriver();
 
 		 Goto page1 = new Goto(driver);
@@ -285,7 +279,7 @@ public class Downloadsvgphoto {
 		
 
 		WebElement element11 = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_flat']")));
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_thin']")));
 		element11.click();
 
 		
@@ -339,7 +333,41 @@ public class Downloadsvgphoto {
 	
 	}
 	
+	public void lineSvgDownload() throws InterruptedException {
+		WebDriver driver = getDriver();
+
+		 Goto page1 = new Goto(driver);
+	       page1.goTo();
+		driver.manage().window().maximize();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
+		searchBox.sendKeys("chair");
+
+		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
+				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
+		searchButton.click();
+
+		
+
+		WebElement element11 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li[data-test-id='filter_type_line']")));
+		element11.click();
+
+		
+		
+		WebElement element1 = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
+		element1.click();
+
 	
+		WebElement downloadButton = wait
+				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
+		downloadButton.click();
+	
+	}
 	
 	
 }

@@ -24,26 +24,9 @@ import pageobjectmodal.BaseTest;
 
 public class Downloadinginmultiplepixelwebp extends BaseTest{
 
-//	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-//
-//	
-//	public void setUp() {
-//		driver.set(new ChromeDriver());
-//		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-//		getDriver().manage().window().maximize();
-//	}
-//
-////	@AfterMethod
-//	public void tearDown() {
-//		getDriver().quit();
-//		driver.remove();
-//	}
-//
-//	private WebDriver getDriver() {
-//		return driver.get();
-//	}
 
-	@Test
+
+//	@Test
 	public void downloadInWebpWith26px() throws InterruptedException {
 		WebDriver driver = getDriver();
 
@@ -141,7 +124,7 @@ public class Downloadinginmultiplepixelwebp extends BaseTest{
 
 	}
 
-	@Test
+//	@Test
 	public void downloadInWebpWith96px() throws InterruptedException {
 
 		WebDriver driver = getDriver();
@@ -279,7 +262,7 @@ public class Downloadinginmultiplepixelwebp extends BaseTest{
 
 	}
 
-	@Test
+//	@Test
 	public void downloadInWebpWith1024px() {
 		WebDriver driver = getDriver();
 

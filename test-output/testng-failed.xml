@@ -6,8 +6,10 @@
       <class name="testingofimagecompressor.Imagecompressortesting">
         <methods>
           <include name="setUp"/>
-          <include name="testSvgImageCompressorWithLogin" invocation-numbers="0"/>
+          <include name="setup"/>
           <include name="tearDown"/>
+          <include name="testJpgImageCompressor"/>
+          <include name="cleanup"/>
         </methods>
       </class> <!-- testingofimagecompressor.Imagecompressortesting -->
     </classes>

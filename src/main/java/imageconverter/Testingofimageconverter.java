@@ -11,24 +11,23 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import pageobjectmodal.BaseTest;
 import pageobjectmodal.ImageConverterPage;
 import utils.ResourceHelper;
 import utils.RetryAnalyzer;
 import utils.TestDataProvider;
 
 
-public class Testingofimageconverter {
+public class Testingofimageconverter extends BaseTest {
 
-	private WebDriver driver;
+
 	private ImageConverterPage imageConverterPage;
 	private Goto goto1;
 	
 
 	@BeforeMethod
 	public void setUp() {
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.manage().window().maximize();
+	
 
 		// Initialize page objects
 		imageConverterPage = new ImageConverterPage(driver);

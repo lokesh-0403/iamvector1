@@ -11,18 +11,19 @@ import utils.ResourceHelper;
 import utils.RetryAnalyzer;
 import utils.TestDataProvider;
 import pageobjectmodal.BasePage;
+import pageobjectmodal.BaseTest;
 import pageobjectmodal.ImageCompressorPage;
 import pageobjectmodal.LoginPage;
 
-public class Imagecompressortesting {
-    private WebDriver driver;
+public class Imagecompressortesting extends BaseTest {
+   
     private BasePage basePage;
     private LoginPage loginPage;
     private ImageCompressorPage imageCompressorPage;
     
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver();
+      
         basePage = new BasePage(driver);
         loginPage = new LoginPage(driver);
         imageCompressorPage = new ImageCompressorPage(driver);
@@ -47,23 +48,23 @@ public class Imagecompressortesting {
         imageCompressorPage.compressImage(fixedPath, driver);
     }   
     
- //   @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testPngImageCompressor() throws Exception {
         // Navigate directly to image compressor (no login required)
         String pngFilePath = ResourceHelper.getResourceFilePath("files/iamvector_download.png");
         String fixedPath = ResourceHelper.absolutePath(pngFilePath);
-        imageCompressorPage.compressImage(pngFilePath, driver);
+        imageCompressorPage.compressImage(fixedPath, driver);
     }
     
-   // @Test(retryAnalyzer = RetryAnalyzer.class)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testJpgImageCompressor() throws Exception {
         // Navigate directly to image compressor (no login required)
         String jpgFilePath = ResourceHelper.getResourceFilePath("files/Computer desktop imac.jpg");
         String fixedPath = ResourceHelper.absolutePath(jpgFilePath);
-        imageCompressorPage.compressImage(jpgFilePath, driver);
+        imageCompressorPage.compressImage(fixedPath, driver);
     }
     
-    //@Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+    @Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
     public void testImageCompressorWithDifferentFormats(String fileType, String filePath) throws Exception {
         // Test different image formats without login
     	String fixedPath = ResourceHelper.absolutePath(filePath);

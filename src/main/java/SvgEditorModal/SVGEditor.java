@@ -3,22 +3,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import utils.TestDataProvider;
 import pageobjectmodal.BasePage;
+import pageobjectmodal.BaseTest;
 import pageobjectmodal.ImageSvgEditorPage;
 import pageobjectmodal.LoginPage;
 
-public class SVGEditor {
-    private WebDriver driver;
-    private BasePage basePage; 
-    private LoginPage loginPage;
-    private ImageSvgEditorPage imageSvgEditorPage;
+public class SVGEditor extends BaseTest {
+	
+	   private BasePage basePage;
+	    private LoginPage loginPage;
+	    private ImageSvgEditorPage imageSvgEditorPage;
     
     @BeforeMethod
     public void setUp() {
-    	 driver = new ChromeDriver();
+    
     	    basePage = new BasePage(driver);
     	    basePage.setupDriver();
     	    basePage.navigateToApplication();
@@ -26,10 +28,7 @@ public class SVGEditor {
     	    imageSvgEditorPage = new ImageSvgEditorPage(driver);
     }
     
-    @AfterMethod
-    public void tearDown() {
-        basePage.closeBrowser();
-    }
+   
     
    
     @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)

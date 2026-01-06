@@ -88,7 +88,7 @@ public class ImageConverterPage {
 
 	        System.out.println("✔ Upload completed and file entry visible");
 
-	        String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
+	        String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
 	        this.firstWord = fileName.split(" ")[0];
 
 	    } catch (Exception e) {

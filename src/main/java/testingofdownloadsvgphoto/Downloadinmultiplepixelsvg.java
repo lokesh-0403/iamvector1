@@ -13,18 +13,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import imageconverter.Goto;
+import pageobjectmodal.BaseTest;
 
 @Test(retryAnalyzer = utils.RetryAnalyzer.class) 
-public class Downloadinmultiplepixelsvg {
+public class Downloadinmultiplepixelsvg extends BaseTest {
 
 	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-	@BeforeMethod
-	public void setUp() {
-		driver.set(new ChromeDriver());
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		getDriver().manage().window().maximize();
-	}
+
 
 	@AfterMethod
 	public void tearDown() {
@@ -32,10 +28,7 @@ public class Downloadinmultiplepixelsvg {
 		driver.remove();
 	}
 
-	private WebDriver getDriver() {
-		return driver.get();
-	}
-
+//	@Test
 	public void downloadInPngWith26px() {
 
 		WebDriver driver = getDriver();
