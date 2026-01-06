@@ -24,6 +24,7 @@ public class TestCollection {
     private HomePageCollection homePage;
     private CollectionModal collectionModal;
     private MyCollectionsPage myCollectionsPage;
+    
 
     @BeforeMethod
     public void setUp() {
@@ -37,6 +38,9 @@ public class TestCollection {
         basePage.setupDriver();
         basePage.navigateToApplication();
     }
+    
+    
+    
 
     // Uncomment when needed
      @AfterMethod

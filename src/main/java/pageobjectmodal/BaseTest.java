@@ -2,6 +2,7 @@ package pageobjectmodal;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -9,14 +10,17 @@ import org.testng.annotations.BeforeMethod;
 
 import brokenLinkTest.LinkStatusCheck;
 import reports.ExtentManager;
+import utils.ChromeOptionsConfig;
 
 public class BaseTest {
 
     protected WebDriver driver;
+    ChromeOptions options = ChromeOptionsConfig.getChromeOptions();
 
     @BeforeMethod
     public void setup(ITestContext context) {
-        driver = new ChromeDriver();
+    	
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         context.setAttribute("driver", driver); // Listener will use this
     }

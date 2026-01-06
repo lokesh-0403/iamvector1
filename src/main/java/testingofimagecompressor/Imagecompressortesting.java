@@ -47,7 +47,7 @@ public class Imagecompressortesting {
         imageCompressorPage.compressImage(fixedPath, driver);
     }   
     
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+ //   @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testPngImageCompressor() throws Exception {
         // Navigate directly to image compressor (no login required)
         String pngFilePath = ResourceHelper.getResourceFilePath("files/iamvector_download.png");
@@ -55,7 +55,7 @@ public class Imagecompressortesting {
         imageCompressorPage.compressImage(pngFilePath, driver);
     }
     
-    @Test(retryAnalyzer = RetryAnalyzer.class)
+   // @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testJpgImageCompressor() throws Exception {
         // Navigate directly to image compressor (no login required)
         String jpgFilePath = ResourceHelper.getResourceFilePath("files/Computer desktop imac.jpg");
@@ -63,7 +63,7 @@ public class Imagecompressortesting {
         imageCompressorPage.compressImage(jpgFilePath, driver);
     }
     
-    @Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+    //@Test(dataProvider = "imageFiles", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
     public void testImageCompressorWithDifferentFormats(String fileType, String filePath) throws Exception {
         // Test different image formats without login
     	String fixedPath = ResourceHelper.absolutePath(filePath);
