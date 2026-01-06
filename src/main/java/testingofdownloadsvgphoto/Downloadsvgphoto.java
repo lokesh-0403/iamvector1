@@ -240,7 +240,7 @@ public class Downloadsvgphoto {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("chair");
+		searchBox.sendKeys("animals");
 
 		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
@@ -276,7 +276,7 @@ public class Downloadsvgphoto {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("chair");
+		searchBox.sendKeys("animals");
 
 		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
