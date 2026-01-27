@@ -22,3 +22,7 @@ out/
 build/
 *.pyc
 __pycache__/
+.classpath
+.project
+.settings/
+test-output/
