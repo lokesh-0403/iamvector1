@@ -15,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class HomePageCollection extends BasePage {
 
@@ -25,25 +26,24 @@ public class HomePageCollection extends BasePage {
 	// Page Elements
 	@FindBy(xpath = "//div[@id='homeSearchInput']//input[@name='search']")
 	private WebElement searchBox;
-	
-	
+
 	@FindBy(xpath = "//button[@id='remove-btn']")
 	private WebElement RemoveIcon;
-	
-	
+
 	@FindBy(xpath = "//button[@id='add-btn']")
 	private WebElement saveButton;
-	
 
 	@FindBy(css = "input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")
 	private WebElement searchEnterButton;
-
 
 	@FindBy(xpath = "//div[@data-test-id='icon_element']")
 	private List<WebElement> iconElements;
 
 	@FindBy(xpath = "//span[contains(text(),'Load')]")
 	private List<WebElement> loadMoreButtons;
+
+	@FindBy(xpath = "//div[@id='recommended_icons_container'] /div[@data-test-id='icon_element']")
+	private List<WebElement> recomendedIcon;
 
 	By saveUnsavedIcon = By.xpath(".//div[@data-test-id='save_unsave_icon_element']");
 
@@ -70,7 +70,6 @@ public class HomePageCollection extends BasePage {
 
 		Thread.sleep(5000); // Wait for search results
 	}
-	
 
 	public WebElement selectRandomIcon() {
 		wait.until(ExpectedConditions.visibilityOfAllElements(iconElements));
@@ -83,64 +82,58 @@ public class HomePageCollection extends BasePage {
 
 		return iconElements.get(rand.nextInt(iconElements.size()));
 	}
-	
-	
+
 	public WebElement selectUnsavedRandomIcon() throws InterruptedException {
-	    wait.until(ExpectedConditions.visibilityOfAllElements(iconElements));
+		wait.until(ExpectedConditions.visibilityOfAllElements(iconElements));
 
-	    if (iconElements.size() == 0) {
-	        throw new RuntimeException("No icons found!");
-	    }
+		if (iconElements.size() == 0) {
+			throw new RuntimeException("No icons found!");
+		}
 
-	    Random rand = new Random();
-	    int maxAttempts = Math.min(iconElements.size(), 20); // Limit attempts to avoid infinite loops
-	    int attempts = 0;
-	    
-	    while (attempts < maxAttempts) {
-	        WebElement randomIcon = iconElements.get(rand.nextInt(iconElements.size()));
-	        
-	        System.out.println("Attempt " + (attempts + 1) + ": Checking if icon is saved...");
-	        
-	        // Scroll icon into view first
-	        JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", randomIcon);
-	        Thread.sleep(500);
-	        
-	        // Hover to reveal buttons
-	        actions.moveToElement(randomIcon).perform();
-	        Thread.sleep(800); // Increased wait time for buttons to appear
-	        
-	        // Check if icon is already saved (has unsave button)
-	        List<WebElement> unsaveButtons = randomIcon.findElements(By.id("svg_unsave"));
-	        
-	        if (unsaveButtons.size() > 0 && unsaveButtons.get(0).isDisplayed()) {
-	            System.out.println("Icon is already saved. Selecting another icon...");
-	            attempts++;
-	            
-	            // Move mouse away to hide buttons before next attempt
-	            actions.moveByOffset(100, 100).perform();
-	            Thread.sleep(300);
-	            
-	            continue; // Icon is saved, try another one
-	        } else {
-	            // Icon is not saved, this is what we want
-	            System.out.println("Found an unsaved icon!");
-	            return randomIcon;
-	        }
-	    }
-	    
-	    throw new RuntimeException("Could not find an unsaved icon after " + maxAttempts + " attempts. All checked icons appear to be saved.");
+		Random rand = new Random();
+		int maxAttempts = Math.min(iconElements.size(), 20); // Limit attempts to avoid infinite loops
+		int attempts = 0;
+
+		while (attempts < maxAttempts) {
+			WebElement randomIcon = iconElements.get(rand.nextInt(iconElements.size()));
+
+			System.out.println("Attempt " + (attempts + 1) + ": Checking if icon is saved...");
+
+			// Scroll icon into view first
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", randomIcon);
+			Thread.sleep(500);
+
+			// Hover to reveal buttons
+			actions.moveToElement(randomIcon).perform();
+			Thread.sleep(800); // Increased wait time for buttons to appear
+
+			// Check if icon is already saved (has unsave button)
+			List<WebElement> unsaveButtons = randomIcon.findElements(By.id("svg_unsave"));
+
+			if (unsaveButtons.size() > 0 && unsaveButtons.get(0).isDisplayed()) {
+				System.out.println("Icon is already saved. Selecting another icon...");
+				attempts++;
+
+				// Move mouse away to hide buttons before next attempt
+				actions.moveByOffset(100, 100).perform();
+				Thread.sleep(300);
+
+				continue; // Icon is saved, try another one
+			} else {
+				// Icon is not saved, this is what we want
+				System.out.println("Found an unsaved icon!");
+				return randomIcon;
+			}
+		}
+
+		throw new RuntimeException("Could not find an unsaved icon after " + maxAttempts
+				+ " attempts. All checked icons appear to be saved.");
 	}
-	
-	
-	
-	
-	
+
 	public String getIconUniqueId(WebElement icon) {
 		return icon.getAttribute("data-slugid");
 	}
-	
-	
 
 //	public void clickSaveToCollectionButton(WebElement icon) throws InterruptedException {
 //		WebElement saveToCollectionButton = null;
@@ -196,7 +189,7 @@ public class HomePageCollection extends BasePage {
 //		System.out.println("-->> Exiting the saveCollectionButtonClick method ");
 //
 //	}
-	
+
 //	public void clickSaveToCollectionButton(WebElement icon) throws InterruptedException {
 //	    WebElement saveToCollectionButton = null;
 //	    boolean buttonFound = false;
@@ -320,7 +313,7 @@ public class HomePageCollection extends BasePage {
 //	    
 //	    System.out.println("Save to Collection button clicked successfully!");
 //	}
-	
+
 //	public void clickSaveToCollectionButton(WebElement icon) throws InterruptedException {
 //	    JavascriptExecutor js = (JavascriptExecutor) driver;
 //
@@ -410,45 +403,44 @@ public class HomePageCollection extends BasePage {
 //	        throw new RuntimeException("Save button could not be found on the icon: " + e.getMessage());
 //	    }
 //	}
-	
+
 	public void clickSaveToCollectionButton(WebElement icon) throws InterruptedException {
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    By saveButtonLocator = By.id("svg_save");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		By saveButtonLocator = By.id("svg_save");
 
-	    System.out.println("Saving icon to collection...");
+		System.out.println("Saving icon to collection...");
 
-	    // Hover over the icon to make buttons appear
-	    actions.moveToElement(icon).perform();
-	    Thread.sleep(600);
+		// Hover over the icon to make buttons appear
+		actions.moveToElement(icon).perform();
+		Thread.sleep(600);
 
-	    try {
-	        WebElement saveToCollectionButton = icon.findElement(saveButtonLocator);
-	        System.out.println("Save button found!");
+		try {
+			WebElement saveToCollectionButton = icon.findElement(saveButtonLocator);
+			System.out.println("Save button found!");
 
-	        // Scroll the button into view
-	        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",
-	                         saveToCollectionButton);
-	        Thread.sleep(500);
+			// Scroll the button into view
+			js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",
+					saveToCollectionButton);
+			Thread.sleep(500);
 
-	        // Move to element and click
-	        actions.moveToElement(saveToCollectionButton).perform();
-	        Thread.sleep(500);
+			// Move to element and click
+			actions.moveToElement(saveToCollectionButton).perform();
+			Thread.sleep(500);
 
-	        // Try click with retry
-	        try {
-	            saveToCollectionButton.click();
-	        } catch (Exception e) {
-	            System.out.println("Normal click failed, trying JS click...");
-	            js.executeScript("arguments[0].click();", saveToCollectionButton);
-	        }
+			// Try click with retry
+			try {
+				saveToCollectionButton.click();
+			} catch (Exception e) {
+				System.out.println("Normal click failed, trying JS click...");
+				js.executeScript("arguments[0].click();", saveToCollectionButton);
+			}
 
-	        System.out.println("Icon saved successfully!");
+			System.out.println("Icon saved successfully!");
 
-	    } catch (NoSuchElementException e) {
-	        throw new RuntimeException("Save button could not be found on the icon: " + e.getMessage());
-	    }
+		} catch (NoSuchElementException e) {
+			throw new RuntimeException("Save button could not be found on the icon: " + e.getMessage());
+		}
 	}
-	
 
 	public void clickIconByUniqueId(String uniqueId) {
 		String xpath = "//div[@data-slugid='" + uniqueId + "']";
@@ -463,4 +455,61 @@ public class HomePageCollection extends BasePage {
 				.anyMatch(card -> card.getAttribute("data-slugid").equals(uniqueId));
 
 	}
+
+	public List<WebElement> getAllRecomendedIcons() {
+		return wait.until(ExpectedConditions.visibilityOfAllElements(iconElements));
+	}
+
+	public WebElement iconCountElement() {
+
+		return wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("span[id=iconsCount]")));
+	}
+
+	public boolean isLoadMoreButtonDisplayed() {
+		// TODO Auto-generated method stub
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space()='Load More']")));
+		return true;
+	}
+
+	public void clickLoadMoreButton() {
+		// TODO Auto-generated method stub
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space()='Load More']")))
+				.click();
+	}
+
+	public void loadIconsUntilCountMatches(int expectedCount) throws InterruptedException {
+		int previousCount = -1;
+
+		while (true) {
+
+			List<WebElement> icons = getAllRecomendedIcons();
+			int actualIconCount = icons.size();
+
+			if (actualIconCount == getExpectedIconCount()) {
+				break;
+			}
+			if (actualIconCount == previousCount && !isLoadMoreButtonDisplayed()) {
+				break;
+			}
+
+			previousCount = actualIconCount;
+			js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+			Thread.sleep(2000);
+
+			if (isLoadMoreButtonDisplayed()) {
+				clickLoadMoreButton();
+			}
+			Thread.sleep(2000);
+		}
+		Assert.assertEquals(getAllRecomendedIcons().size(), getExpectedIconCount(), "Icon count mismatch!");
+		System.out.println("Icon count validated successfully.");
+	}
+
+	public int getExpectedIconCount() {
+		String text = iconCountElement().getText();
+		String number = text.replaceAll("\\D+", "");
+		return number.isEmpty() ? 0 : Integer.parseInt(number);
+
+	}
+
 }
