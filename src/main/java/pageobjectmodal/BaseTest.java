@@ -1,5 +1,9 @@
 package pageobjectmodal;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,17 +16,31 @@ import brokenLinkTest.LinkStatusCheck;
 import reports.ExtentManager;
 import utils.ChromeOptionsConfig;
 
+
+
 public class BaseTest {
+	
+
+	protected Path downloadDir;
+
+	public Path getDownloadDir() {
+	    return downloadDir;
+	} 
 
     protected WebDriver driver;
-    ChromeOptions options = ChromeOptionsConfig.getChromeOptions();
+   
 
     @BeforeMethod
-    public void setup(ITestContext context) {
+    public void setup(ITestContext context) throws IOException {
     	
+    	downloadDir = Files.createTempDirectory("test_downloads");
+    	 ChromeOptions options =   ChromeOptionsConfig.getChromeOptions(downloadDir.toFile().getAbsolutePath());
+
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         context.setAttribute("driver", driver); // Listener will use this
+        context.setAttribute("downloadDir", downloadDir);
+    
     }
     public WebDriver getDriver() {
         return driver;

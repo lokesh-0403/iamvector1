@@ -1,5 +1,7 @@
 package pageobjectmodal;
 
+import java.io.File;
+import java.nio.file.Path;
 import java.time.Duration;
 import java.util.List;
 
@@ -12,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class ImageConverterPage {
 
@@ -46,12 +49,21 @@ public class ImageConverterPage {
 
 	//public String filePath = "C:\\Users\\admin\\Downloads\\Sendarrow right arrow arrows next go send.svg";
 	// Constructor
-	public ImageConverterPage(WebDriver driver) {
+	  WebDriver driver;
+	  private Path downloadDir;
 
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		this.actions = new Actions(driver);
-		PageFactory.initElements(driver, this);
-	}
+	    public ImageConverterPage(WebDriver driver, Path downloadDir) {
+	        this.driver = driver;
+	        this.downloadDir = downloadDir;
+	    
+	        if (downloadDir == null) {
+	            throw new RuntimeException("DownloadDir is NULL. Pass it from BaseTest.");
+	        }
+	     
+	        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	        this.actions = new Actions(driver);
+	        PageFactory.initElements(driver, this);
+	    }
 
 	// Page Actions/Methods
 	public void clickImageConverterCard() throws InterruptedException {
@@ -125,8 +137,37 @@ public class ImageConverterPage {
 		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
 		downloadBtn.click();
 		Thread.sleep(5000);
+		 Assert.assertTrue(
+			        waitForDownload(20),
+			        "File was not downloaded successfully"
+			    );
 	}
+	  private boolean waitForDownload(int timeoutSeconds) {
 
+	        File folder = downloadDir.toFile();
+	        int waited = 0;
+
+	        while (waited < timeoutSeconds) {
+	            File[] files = folder.listFiles();
+
+	            if (files != null && files.length > 0) {
+	                for (File file : files) {
+	                    if (!file.getName().endsWith(".crdownload")) {
+	                        System.out.println("Downloaded: " + file.getName());
+	                        return file.length() > 0;
+	                    }
+	                }
+	            }
+
+	            try {
+	                Thread.sleep(1000);
+	                waited++;
+	            } catch (InterruptedException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	        return false;
+	    }
 	public void clickpngTab(WebDriver driver) throws InterruptedException {
 		Thread.sleep(1000);
 		WebElement jpeg = wait.until(ExpectedConditions.elementToBeClickable(pngTab));

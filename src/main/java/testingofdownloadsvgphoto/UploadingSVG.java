@@ -37,7 +37,7 @@ public class UploadingSVG extends BaseTest {
 		driver = getDriver();
 		basePage = new BasePage(driver);
 		loginPage = new LoginPage(driver);
-		imageSVGEditor = new ImageSvgEditorPage(driver);
+		imageSVGEditor = new ImageSvgEditorPage(driver,getDownloadDir());
 	    basePage.setupDriver();
 		basePage.navigateToApplication();
 	}

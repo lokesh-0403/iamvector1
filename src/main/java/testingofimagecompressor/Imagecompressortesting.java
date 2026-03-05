@@ -1,52 +1,45 @@
 package testingofimagecompressor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import imageconverter.Testingofimageconverter;
-import utils.ResourceHelper;
-import utils.RetryAnalyzer;
-import utils.TestDataProvider;
+
 import pageobjectmodal.BasePage;
 import pageobjectmodal.BaseTest;
 import pageobjectmodal.ImageCompressorPage;
 import pageobjectmodal.LoginPage;
-
+import utils.TestDataProvider;
+import utils.ResourceHelper;
+import utils.RetryAnalyzer;
 public class Imagecompressortesting extends BaseTest {
-   
+
     private BasePage basePage;
     private LoginPage loginPage;
     private ImageCompressorPage imageCompressorPage;
-    
+
     @BeforeMethod
     public void setUp() {
-      
         basePage = new BasePage(driver);
         loginPage = new LoginPage(driver);
-        imageCompressorPage = new ImageCompressorPage(driver);
-        
-        basePage.setupDriver();
+        imageCompressorPage = new ImageCompressorPage(driver, getDownloadDir());
+
         basePage.navigateToApplication();
     }
-    
-    @AfterMethod
-    public void tearDown() {
-        basePage.closeBrowser();
-    }
-    
-    @Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class)
+
+    @Test(dataProvider = "loginCredentials",
+          dataProviderClass = TestDataProvider.class,
+          retryAnalyzer = RetryAnalyzer.class)
     public void testSvgImageCompressorWithLogin(String emailId, String password) throws Exception {
-        // Login to the application
-        loginPage.login(emailId, password); 
-        
-        // Compress SVG image
+
+        loginPage.login(emailId, password);
+
         String svgFilePath = ResourceHelper.getResourceFilePath("files/Female doctor with cross mark.svg");
         String fixedPath = ResourceHelper.absolutePath(svgFilePath);
+
         imageCompressorPage.compressImage(fixedPath, driver);
-    }   
+    }
+
+  
     
     @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testPngImageCompressor() throws Exception {

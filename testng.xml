@@ -16,7 +16,7 @@
       <class name="testingofdownloadsvgphoto.TestCollection"/>
       <class name="testingofdownloadsvgphoto.UploadingSVG"/>
       <class name="testingofimagecompressor.Imagecompressortesting"/>
-      <class name="testingofdownloadsvgphoto.IconCountTest.java"/>
+      <class name="testingofdownloadsvgphoto.IconCountTest"/>
     </classes>
   </test>
 </suite>

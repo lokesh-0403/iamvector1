@@ -12,7 +12,7 @@ public class ResourceHelper {
 
 	    File f = new File(decodedPath);
 	    if (!f.exists()) {
-	        throw new RuntimeException("❌ File does NOT exist: " + decodedPath);
+	        throw new RuntimeException(" File does NOT exist: " + decodedPath);
 	    }
 
 	    String correctPath = f.getAbsolutePath();

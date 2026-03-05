@@ -21,7 +21,7 @@ public class LoginPage {
     @FindBy(id = "auth-login-email")
     private WebElement emailField;
     
-    @FindBy(id = "auth-login-password")
+    @FindBy(id = "auth-login-password") 
     private WebElement passwordField;
     
     @FindBy(id = "auth-loginBtn")

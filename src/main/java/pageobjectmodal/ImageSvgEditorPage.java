@@ -47,14 +47,23 @@ public class ImageSvgEditorPage {
     
     By downloadButtonBy =By.cssSelector(".svg-download-button");
     
+    WebDriver driver;
+    private Path downloadDir;
+
+    public ImageSvgEditorPage(WebDriver driver, Path downloadDir) {
+        this.driver = driver;
+        this.downloadDir = downloadDir;
     
-    
-    public ImageSvgEditorPage(WebDriver driver) {
-   
+        if (downloadDir == null) {
+            throw new RuntimeException("DownloadDir is NULL. Pass it from BaseTest.");
+        }
+     
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         this.actions = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
+    
+  
     
     public void navigateToSVGEditor() throws InterruptedException {
         WebElement editorElement = wait.until(ExpectedConditions.elementToBeClickable(svgEditorCard));
@@ -105,8 +114,38 @@ public class ImageSvgEditorPage {
 
 		downloadBtn.click();
 		Thread.sleep(5000);
-	 	
-}
+		  Assert.assertTrue(
+			        waitForDownload(20),
+			        "File was not downloaded successfully"
+			    );
+	}
+  
+  private boolean waitForDownload(int timeoutSeconds) {
+
+      File folder = downloadDir.toFile();
+      int waited = 0;
+
+      while (waited < timeoutSeconds) {
+          File[] files = folder.listFiles();
+
+          if (files != null && files.length > 0) {
+              for (File file : files) {
+                  if (!file.getName().endsWith(".crdownload")) {
+                      System.out.println("Downloaded: " + file.getName());
+                      return file.length() > 0;
+                  }
+              }
+          }
+
+          try {
+              Thread.sleep(1000);
+              waited++;
+          } catch (InterruptedException e) {
+              e.printStackTrace();
+          }
+      }
+      return false;
+  }
 	  
     public void imagecheck(WebDriver driver) throws IOException {
 

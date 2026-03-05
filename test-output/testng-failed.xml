@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testingofdownloadsvgphoto.IconCountTest">
+      <class name="imageconverter.Testingofimageconverter">
         <methods>
-          <include name="setUp"/>
-          <include name="setup"/>
           <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="setUp"/>
+          <include name="testImageConverterSvgToBase64" invocation-numbers="0"/>
           <include name="cleanup"/>
-          <include name="iconCountTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testingofdownloadsvgphoto.IconCountTest -->
+      </class> <!-- imageconverter.Testingofimageconverter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

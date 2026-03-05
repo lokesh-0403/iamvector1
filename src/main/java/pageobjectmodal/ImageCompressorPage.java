@@ -8,13 +8,38 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 public class ImageCompressorPage {
 
     private WebDriverWait wait;
     private Actions actions;
     private String firstWord = null;
+    
+    WebDriver driver;
+    private Path downloadDir;
+
+    public ImageCompressorPage(WebDriver driver, Path downloadDir) {
+        this.driver = driver;
+        this.downloadDir = downloadDir;
+    
+        if (downloadDir == null) {
+            throw new RuntimeException("DownloadDir is NULL. Pass it from BaseTest.");
+        }
+     
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        this.actions = new Actions(driver);
+        PageFactory.initElements(driver, this);
+    }
+
     
     @FindBy(xpath = "//h5[normalize-space()='Image Compressor']")
     private WebElement imageCompressorCard;
@@ -27,14 +52,15 @@ public class ImageCompressorPage {
     
     By downloadButtonBy =By.cssSelector(".files-item__download");
     
+  
     
-    
-    public ImageCompressorPage(WebDriver driver) {
-   
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        this.actions = new Actions(driver);
-        PageFactory.initElements(driver, this);
-    }
+//    public ImageCompressorPage(WebDriver driver) {
+//    	
+//    	this.driver = driver;
+//        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        this.actions = new Actions(driver);
+//        PageFactory.initElements(driver, this);
+//    }
     
     public void navigateToImageCompressor() {
         WebElement compressorElement = wait.until(ExpectedConditions.elementToBeClickable(imageCompressorCard));
@@ -105,7 +131,38 @@ public class ImageCompressorPage {
 		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
 		downloadBtn.click();
 		Thread.sleep(5000);
+		  Assert.assertTrue(
+			        waitForDownload(20),
+			        "File was not downloaded successfully"
+			    );
 	}
+    
+    private boolean waitForDownload(int timeoutSeconds) {
+
+        File folder = downloadDir.toFile();
+        int waited = 0;
+
+        while (waited < timeoutSeconds) {
+            File[] files = folder.listFiles();
+
+            if (files != null && files.length > 0) {
+                for (File file : files) {
+                    if (!file.getName().endsWith(".crdownload")) {
+                        System.out.println("Downloaded: " + file.getName());
+                        return file.length() > 0;
+                    }
+                }
+            }
+
+            try {
+                Thread.sleep(1000);
+                waited++;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
     
     public void compressImage(String filePath, WebDriver driver) throws Exception {
         navigateToImageCompressor();
