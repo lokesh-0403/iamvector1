@@ -8,8 +8,8 @@
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setUp"/>
-          <include name="testImageConverterSvgToBase64" invocation-numbers="0"/>
           <include name="cleanup"/>
+          <include name="testImageConverterSvgToBase64" invocation-numbers="0"/>
         </methods>
       </class> <!-- imageconverter.Testingofimageconverter -->
     </classes>

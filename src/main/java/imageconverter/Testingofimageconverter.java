@@ -38,8 +38,7 @@ public class Testingofimageconverter extends BaseTest {
 	}
 
 
-	
-//	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	//	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
 	public void testImageConverterSvgToPng(String email, String password, String FILE_PATH) throws Exception {
 		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
 		imageConverterPage.convertSvgToPng(fixedPath, driver);

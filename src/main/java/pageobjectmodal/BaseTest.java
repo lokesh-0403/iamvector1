@@ -13,6 +13,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
 import brokenLinkTest.LinkStatusCheck;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import reports.ExtentManager;
 import utils.ChromeOptionsConfig;
 
@@ -32,15 +33,16 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup(ITestContext context) throws IOException {
-    	
-    	downloadDir = Files.createTempDirectory("test_downloads");
-    	 ChromeOptions options =   ChromeOptionsConfig.getChromeOptions(downloadDir.toFile().getAbsolutePath());
 
+        downloadDir = Files.createTempDirectory("test_downloads");
+
+        ChromeOptions options = ChromeOptionsConfig.getChromeOptions(
+                downloadDir.toFile().getAbsolutePath());
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        context.setAttribute("driver", driver); // Listener will use this
+
+        context.setAttribute("driver", driver);
         context.setAttribute("downloadDir", downloadDir);
-    
     }
     public WebDriver getDriver() {
         return driver;

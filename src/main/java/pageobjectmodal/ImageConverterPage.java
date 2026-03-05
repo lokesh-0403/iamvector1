@@ -108,7 +108,32 @@ public class ImageConverterPage {
 	        throw e;
 	    }
 	}
+	public void clickDownloadBase64() throws InterruptedException {
+		System.out.println("Uploaded file firstWord Before showing download: " + firstWord);
+		List<WebElement> downloads = wait
+			    .until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+			        By.xpath("//div[contains(@class,'dz-complete')]")));
 
+		System.out.println("Uploaded file firstWord During showing download: " + firstWord);
+	
+
+
+		WebElement dwn = downloads.stream()
+				.filter(p -> p.findElement(By.cssSelector("div[class='files-item__name']")).getText().split(" ")[0].trim()
+						.equals(firstWord))
+				.map(p -> p.findElement(By.cssSelector("div[class='files-item__name']")).findElement(By.xpath("..")))
+				.findFirst().orElse(null);
+		System.out.println("Uploaded file firstWord After showing download: " + firstWord);
+		Thread.sleep(1000);
+		if (dwn == null) {
+			throw new RuntimeException("No matching uploaded file found for: " + firstWord);
+		}
+//		WebElement dwnArea = dwn.findElement(By.xpath(".."));
+		WebElement downloadBtn =dwn.findElement(downloadButtonBy);
+//wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
+		downloads.forEach(d -> System.out.println("Found: " + d.getText()));
+		downloadBtn.click();
+	}
 
 	
 	public void clickDownload() throws InterruptedException {
@@ -227,7 +252,7 @@ public class ImageConverterPage {
 		clickBase64Tab(driver);
 		
 		uploadFile(filePath,driver);
-		clickDownload();
+		clickDownloadBase64();
 	}
 
 	public void convertSvgToWebp(String filePath, WebDriver driver) throws Exception {
