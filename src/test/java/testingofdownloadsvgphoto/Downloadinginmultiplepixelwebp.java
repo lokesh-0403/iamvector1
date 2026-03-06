@@ -1,36 +1,33 @@
 package testingofdownloadsvgphoto;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import baseTest.BaseTest;
 import imageconverter.Goto;
-import pageobjectmodal.BaseTest;
-
-@Test(retryAnalyzer = utils.RetryAnalyzer.class) 
-public class Downloadinmultiplepixelsvg extends BaseTest {
-
-	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 
 
-	@AfterMethod
-	public void tearDown() {
-		getDriver().quit();
-		driver.remove();
-	}
+@Test(retryAnalyzer = utils.RetryAnalyzer.class)
+
+public class Downloadinginmultiplepixelwebp extends BaseTest{
+
+
 
 //	@Test
-	public void downloadInPngWith26px() {
-
+	public void downloadInWebpWith26px() throws InterruptedException {
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -38,6 +35,12 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 		driver.manage().window().maximize();
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
@@ -62,7 +65,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
 		element1.click();
 
-		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("webp-option")));
 		webpOption.click();
 		WebElement sizeOption = wait.until(
 				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_26']")));
@@ -71,16 +74,12 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(2000);
+
 	}
 
-	public void downloadInPngWith46px() {
-
+	
+	public void downloadInWebpWith46px() throws InterruptedException {
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -91,7 +90,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("table");
+		searchBox.sendKeys("books");
 
 //		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 //				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
@@ -112,7 +111,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
 		element1.click();
 
-		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("webp-option")));
 		webpOption.click();
 		WebElement sizeOption = wait.until(
 				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_46']")));
@@ -121,10 +120,13 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
+		Thread.sleep(2000);
 
 	}
 
-	public void downloadInPngWith96px() {
+//	@Test
+	public void downloadInWebpWith96px() throws InterruptedException {
+
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -135,7 +137,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("bike");
+		searchBox.sendKeys("office");
 
 //		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 //				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
@@ -156,7 +158,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
 		element1.click();
 
-		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("webp-option")));
 		webpOption.click();
 		WebElement sizeOption = wait.until(
 				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_96']")));
@@ -165,10 +167,12 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 		WebElement downloadButton = wait
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[onclick='downloadIcon()']")));
 		downloadButton.click();
-
+		Thread.sleep(2000);
+		
 	}
 
-	public void downloadInPngWith128px() {
+	
+	public void downloadInWebpWith128px() {
 
 		WebDriver driver = getDriver();
 
@@ -180,8 +184,8 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("telephone");
-//
+		searchBox.sendKeys("bottle");
+
 //		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 //				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
 //		searchButton.click();
@@ -201,7 +205,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
 		element1.click();
 
-		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("webp-option")));
 		webpOption.click();
 		WebElement sizeOption = wait.until(
 				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_128']")));
@@ -213,7 +217,8 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 	}
 
-	public void downloadInPngWith512px() {
+	
+	public void downloadInWebpWith512px() {
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -224,7 +229,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("screen");
+		searchBox.sendKeys("mobile");
 
 //		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 //				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
@@ -245,7 +250,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
 		element1.click();
 
-		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("webp-option")));
 		webpOption.click();
 		WebElement sizeOption = wait.until(
 				ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_512']")));
@@ -257,8 +262,8 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 	}
 
-	public void downloadInPngWith1024px() {
-
+//	@Test
+	public void downloadInWebpWith1024px() {
 		WebDriver driver = getDriver();
 
 		Goto page1 = new Goto(driver);
@@ -269,7 +274,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 
 		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(
 				By.cssSelector("input.bg-white.px-3.px-md-4.search-input-radius.fw-medium.form-control")));
-		searchBox.sendKeys("cup");
+		searchBox.sendKeys("car");
 
 //		WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(
 //				By.cssSelector(".input-group-text.semi-round-search-button.btn-primary.pointer")));
@@ -290,7 +295,7 @@ public class Downloadinmultiplepixelsvg extends BaseTest {
 				.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-test-id='icon_element']")));
 		element1.click();
 
-		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("png-option")));
+		WebElement webpOption = wait.until(ExpectedConditions.elementToBeClickable(By.id("webp-option")));
 		webpOption.click();
 		WebElement sizeOption = wait.until(ExpectedConditions
 				.elementToBeClickable(By.cssSelector("button[data-test-id='icon_size_option_1024']")));

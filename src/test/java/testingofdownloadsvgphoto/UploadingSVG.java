@@ -18,10 +18,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import baseTest.BaseTest;
 import utils.TestDataProvider;
 
 import pageobjectmodal.BasePage;
-import pageobjectmodal.BaseTest;
 import pageobjectmodal.LoginPage;
 import pageobjectmodal.ImageSvgEditorPage;
 

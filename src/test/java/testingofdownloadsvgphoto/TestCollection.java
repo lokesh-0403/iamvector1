@@ -15,8 +15,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import baseTest.BaseTest;
 import pageobjectmodal.BasePage;
-import pageobjectmodal.BaseTest;
 import pageobjectmodal.CollectionModal;
 import pageobjectmodal.HomePageCollection;
 import pageobjectmodal.LoginPage;

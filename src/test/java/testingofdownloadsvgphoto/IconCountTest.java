@@ -6,14 +6,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import baseTest.BaseTest;
 import pageobjectmodal.BasePage;
-import pageobjectmodal.BaseTest;
 import pageobjectmodal.CollectionModal;
 import pageobjectmodal.HomePageCollection;
 import pageobjectmodal.LoginPage;
 import pageobjectmodal.MyCollectionsPage;
 import utils.TestDataProvider;
 
+
+
+
+@Test(dataProvider = "loginCredentialsAndKeyValue", dataProviderClass = TestDataProvider.class)
 public class IconCountTest extends BaseTest {
 
 	
@@ -47,8 +51,7 @@ public class IconCountTest extends BaseTest {
 	     }
 	     
 	     
-	     @Test(dataProvider = "loginCredentialsAndKeyValue",
-	             dataProviderClass = TestDataProvider.class)
+	   
 	       public void iconCountTest(String emailId, String password, String searchKey) throws InterruptedException {
 
 	           loginPage.login(emailId, password);

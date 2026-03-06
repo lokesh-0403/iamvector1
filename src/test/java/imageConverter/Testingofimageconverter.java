@@ -1,4 +1,4 @@
-package imageconverter;
+package imageConverter;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -11,7 +11,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageobjectmodal.BaseTest;
+import baseTest.BaseTest;
+import imageconverter.Goto;
 import pageobjectmodal.ImageConverterPage;
 import utils.ResourceHelper;
 import utils.RetryAnalyzer;

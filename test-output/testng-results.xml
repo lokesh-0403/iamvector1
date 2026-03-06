@@ -2,27 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-05T17:55:49 IST" name="Default suite" finished-at="2026-03-05T17:56:06 IST" duration-ms="17002">
+  <suite started-at="2026-03-06T14:46:40 IST" name="Default suite" finished-at="2026-03-06T14:47:42 IST" duration-ms="61670">
     <groups>
     </groups>
-    <test started-at="2026-03-05T17:55:49 IST" name="Default test" finished-at="2026-03-05T17:56:06 IST" duration-ms="17002">
-      <class name="imageconverter.Testingofimageconverter">
-        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:imageconverter.Testingofimageconverter@62379589]" started-at="2026-03-05T17:55:49 IST" name="setup" finished-at="2026-03-05T17:55:54 IST" duration-ms="5034" status="PASS">
+    <test started-at="2026-03-06T14:46:40 IST" name="Default test" finished-at="2026-03-06T14:47:42 IST" duration-ms="61670">
+      <class name="brokenLinkTest.LinkStatusCheck">
+        <test-method is-config="true" signature="setupHttpClient()[pri:0, instance:brokenLinkTest.LinkStatusCheck@54d9d12d]" started-at="2026-03-06T14:46:40 IST" name="setupHttpClient" finished-at="2026-03-06T14:46:41 IST" duration-ms="355" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupHttpClient -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:brokenLinkTest.LinkStatusCheck@54d9d12d]" started-at="2026-03-06T14:46:41 IST" name="setup" finished-at="2026-03-06T14:46:44 IST" duration-ms="3403" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@10027fc9]]>
+                <![CDATA[org.testng.TestRunner@242a209e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:imageconverter.Testingofimageconverter@62379589]" started-at="2026-03-05T17:55:54 IST" name="setUp" finished-at="2026-03-05T17:55:56 IST" duration-ms="2359" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:brokenLinkTest.LinkStatusCheck@54d9d12d]" started-at="2026-03-06T14:46:44 IST" name="setUp" finished-at="2026-03-06T14:46:46 IST" duration-ms="1852" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testImageConverterSvgToBase64(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:imageconverter.Testingofimageconverter@62379589]" started-at="2026-03-05T17:55:56 IST" name="testImageConverterSvgToBase64" data-provider="uplaodingSVGFile" finished-at="2026-03-05T17:56:06 IST" duration-ms="9371" status="PASS">
+        <test-method signature="addToCollection(java.lang.String,java.lang.String)[pri:0, instance:brokenLinkTest.LinkStatusCheck@54d9d12d]" started-at="2026-03-06T14:46:46 IST" name="addToCollection" data-provider="loginCredentials" finished-at="2026-03-06T14:47:42 IST" duration-ms="55748" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,24 +38,19 @@
                 <![CDATA[Yesh255198@]]>
               </value>
             </param>
-            <param index="2">
-              <value>
-                <![CDATA[/Users/shalini/iamvector1/target/classes/files/Female%20doctor%20with%20cross%20mark.svg]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testImageConverterSvgToBase64 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:imageconverter.Testingofimageconverter@62379589]" started-at="2026-03-05T17:56:06 IST" name="tearDown" finished-at="2026-03-05T17:56:06 IST" duration-ms="121" status="PASS">
+        </test-method> <!-- addToCollection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:brokenLinkTest.LinkStatusCheck@54d9d12d]" started-at="2026-03-06T14:47:42 IST" name="tearDown" finished-at="2026-03-06T14:47:42 IST" duration-ms="166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="cleanup()[pri:0, instance:imageconverter.Testingofimageconverter@62379589]" started-at="2026-03-05T17:56:08 IST" name="cleanup" finished-at="2026-03-05T17:56:08 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="cleanup()[pri:0, instance:brokenLinkTest.LinkStatusCheck@54d9d12d]" started-at="2026-03-06T14:47:47 IST" name="cleanup" finished-at="2026-03-06T14:47:47 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
-      </class> <!-- imageconverter.Testingofimageconverter -->
+      </class> <!-- brokenLinkTest.LinkStatusCheck -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

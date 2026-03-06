@@ -3,9 +3,8 @@ package testingofimagecompressor;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
+import baseTest.BaseTest;
 import pageobjectmodal.BasePage;
-import pageobjectmodal.BaseTest;
 import pageobjectmodal.ImageCompressorPage;
 import pageobjectmodal.LoginPage;
 import utils.TestDataProvider;

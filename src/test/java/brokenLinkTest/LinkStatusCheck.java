@@ -16,13 +16,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import baseTest.BaseTest;
 import pageobjectmodal.BasePage;
-import pageobjectmodal.BaseTest;
 import pageobjectmodal.LoginPage;
 
 import pageobjectmodal.StatusRequestCheck;
 import utils.TestDataProvider;
 
+
+@Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class, retryAnalyzer = utils.RetryAnalyzer.class)
 public class LinkStatusCheck extends BaseTest {
 
 	private BasePage basePage;
@@ -51,7 +53,7 @@ public class LinkStatusCheck extends BaseTest {
 	}
 
 	@Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class, retryAnalyzer = utils.RetryAnalyzer.class)
-	public void addToCollection(String emailId, String password) throws Exception {
+	public void brokenLinkTest(String emailId, String password) throws Exception {
 
 		// Login
 		loginPage.login(emailId, password);

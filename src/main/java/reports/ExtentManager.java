@@ -1,5 +1,7 @@
 package reports;
 
+import org.testng.annotations.AfterSuite;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -21,5 +23,10 @@ public class ExtentManager {
             extent.setSystemInfo("User", System.getProperty("user.name"));
         }
         return extent;
+    }
+    
+    @AfterSuite
+    public void tearDown() {
+        extent.flush();
     }
 }

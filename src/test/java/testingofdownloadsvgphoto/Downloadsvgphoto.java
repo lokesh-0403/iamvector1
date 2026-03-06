@@ -11,9 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
+import baseTest.BaseTest;
 import imageconverter.Goto;
-import pageobjectmodal.BaseTest;
 
 import java.time.Duration;
 import java.util.List;

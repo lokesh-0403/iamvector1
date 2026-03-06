@@ -9,7 +9,7 @@
   <test name="Test">
     <classes>
       <class name="brokenLinkTest.LinkStatusCheck"/>
-      <class name="imageconverter.Testingofimageconverter"/>
+      <class name="imageConverter.Testingofimageconverter"/>
       <class name="testingofdownloadsvgphoto.Downloadinginmultiplepixelwebp"/>
       <class name="testingofdownloadsvgphoto.Downloadinmultiplepixelsvg"/>
       <class name="testingofdownloadsvgphoto.Downloadsvgphoto"/>         
