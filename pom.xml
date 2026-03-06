@@ -11,7 +11,7 @@
 
 	<name>iamvector.photo</name>
 	<!-- FIXME change it to the project's website -->
-	<url>http://www.example.com</url>
+	<url>http://dev.iamvector.com</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -129,14 +129,16 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-surefire-plugin</artifactId>
-							<version>3.2.5</version>
+							<version>3.0.0-M7</version>
 							<configuration>
+								<includes>
+									<include>**/*.java</include>
+								</includes>
 								<suiteXmlFiles>
 									<suiteXmlFile>testng.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
-
 
 						<!-- clean lifecycle, see
 						https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
