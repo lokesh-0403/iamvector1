@@ -38,13 +38,13 @@ public class Testingofimageconverter extends BaseTest {
 	}
 
 
-	//	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+		@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
 	public void testImageConverterSvgToPng(String email, String password, String FILE_PATH) throws Exception {
 		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
 		imageConverterPage.convertSvgToPng(fixedPath, driver);
 	}
 
-//	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
 	public void testImageConverterSvgToJpeg(String email, String password, String FILE_PATH) throws Exception {
 		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
 		imageConverterPage.convertSvgToJpeg(fixedPath, driver);
@@ -56,7 +56,7 @@ public class Testingofimageconverter extends BaseTest {
 		imageConverterPage.convertSvgToBase64(fixedPath, driver);
 	}
 
-//	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
+	@Test(dataProvider = "uplaodingSVGFile", dataProviderClass = TestDataProvider.class,retryAnalyzer = RetryAnalyzer.class)
 	public void testImageConverterSvgToWebp(String email, String password, String FILE_PATH) throws Exception {
 		String fixedPath = ResourceHelper.absolutePath(FILE_PATH);
 		imageConverterPage.convertSvgToWebp(fixedPath, driver);
