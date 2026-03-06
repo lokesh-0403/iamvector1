@@ -27,6 +27,7 @@ public class ChromeOptionsConfig {
 	        options.addArguments("--disable-notifications");
 	        options.addArguments("--blink-settings=imagesEnabled=false"); 
 	        options.addArguments("--disable-infobars"); 
+	        options.addArguments("--force-device-scale-factor=1");
 
 	        // Download preferences (IMPORTANT)
 	        HashMap<String, Object> prefs = new HashMap<>();
