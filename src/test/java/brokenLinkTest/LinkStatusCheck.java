@@ -24,7 +24,6 @@ import pageobjectmodal.StatusRequestCheck;
 import utils.TestDataProvider;
 
 
-@Test(dataProvider = "loginCredentials", dataProviderClass = TestDataProvider.class, retryAnalyzer = utils.RetryAnalyzer.class)
 public class LinkStatusCheck extends BaseTest {
 
 	private BasePage basePage;
