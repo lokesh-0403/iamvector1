@@ -21,8 +21,12 @@ public class ChromeOptionsConfig {
 	        options.addArguments("--no-sandbox");
 	        options.addArguments("--disable-dev-shm-usage");
 	        options.addArguments("--window-size=1920,1080");
+	        options.addArguments("--start-maximized");
+	        options.addArguments("--remote-allow-origins=*");
 	        options.addArguments("--disable-extensions");
 	        options.addArguments("--disable-notifications");
+	        options.addArguments("--blink-settings=imagesEnabled=false"); 
+	        options.addArguments("--disable-infobars"); 
 
 	        // Download preferences (IMPORTANT)
 	        HashMap<String, Object> prefs = new HashMap<>();
